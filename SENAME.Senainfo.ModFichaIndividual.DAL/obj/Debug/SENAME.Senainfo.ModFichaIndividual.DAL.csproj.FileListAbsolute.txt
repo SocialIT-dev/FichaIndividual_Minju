@@ -1,0 +1,6 @@
+C:\Fuentes MINJU\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll
+C:\Fuentes MINJU\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
+C:\Fuentes MINJU\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.csprojAssemblyReference.cache
+C:\Fuentes MINJU\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.csproj.CoreCompileInputs.cache
+C:\Fuentes MINJU\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll
+C:\Fuentes MINJU\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
