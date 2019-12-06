@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaIndividualResultadosBusqueda.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaIndividual.FichaIndividualResultadosBusqueda" %>--%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaIndividualResultadosBusqueda.aspx.cs" Inherits="SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual.FichaIndividualResultadosBusqueda" %>
 
 
 <div class="col-xs-12 col-sm-12 mytop1y">

@@ -162,7 +162,7 @@
                                 name="OptSexo"
                                 type="radio"
                                 id="optFemenino"
-                                value="femenino" />
+                                value="F" />
                             <label class="form-check-label mright2" for="inlineRadio1">
                                 Femenino</label>
                         </div>
@@ -172,25 +172,25 @@
                                 name="OptSexo"
                                 type="radio"
                                 id="optMasculino"
-                                value="masculino" />
+                                value="M" />
                             <label class="form-check-label" for="inlineRadio2">
                                 Masculino</label>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-md-12 diflex mytop1 mensajeform">
-                        <p class="mrlauto" id="lblMensaje" style="margin-top: 4px !important; margin-bottom: 4px !important;">
+                    <div class="col-xs-12 col-md-12  mytop1 mensajeform" id="divMsjError">
+                        <p class="mrlauto" id="lblMensaje" style="margin-top: 4px !important; margin-bottom: 4px !important; text-align:center;">
                             Ingrese al menos uno de los valores anteriores
                         </p>
 
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 diflex mytop1">
-                        <button type="submit" id="btnBuscarFicha" class="btn btn-primary mrlauto botonw" onclick="BuscarFicha">Buscar Ficha</button>
+                        <button type="button" id="btnBuscarFicha" class="btn btn-primary mrlauto botonw" onclick="BuscarFicha">Buscar Ficha</button>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 diflex mytop1">
-                        <button type="submit" id="btnLimpiar" class="btn btn-narj mrlauto botonw" onclick="LimpiarFormularioBusquedaFI">Limpiar</button>
+                        <button type="button" id="btnLimpiar" class="btn btn-narj mrlauto botonw" onclick="LimpiarFormularioBusquedaFI">Limpiar</button>
                     </div>
 
                 </form>
@@ -205,13 +205,14 @@
 
 
     <script type='text/javascript' src="../Scripts/fichaIndividual.js"></script>
+	   <script type='text/javascript' src="../Scripts/ficha_Individual/FI_Buscador.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
     <!-- Importar Script-->
-    <div id="divconfig" style="display: none;" onclick="InicializaKey();"></div>
+ <%--   <div id="divconfig" style="display: none;" onclick="InicializaKey();"></div>
     <script>
         function importarScript(nombre) {
             var s = document.createElement("script");
@@ -223,7 +224,7 @@
             importarScript("../Scripts/ficha_Individual/FI_Buscador.js?" + d.getTime());
             //importarScript("scripts/ficha/reportes.js?" + d.getTime());   
         });
-    </script>
+    </script>--%>
 
 </body>
 </html>

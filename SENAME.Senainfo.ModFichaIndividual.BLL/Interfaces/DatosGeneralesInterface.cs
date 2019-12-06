@@ -13,7 +13,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
 
 	public interface INiñosVigentes
 	{
-		List<SENAME.Senainfo.ModFichaIndividual.BLL.DTO.NiñosVigentesDto> ObtenerNiñosVigentes(int? CodProyecto);
+		List<SENAME.Senainfo.ModFichaIndividual.BLL.DTO.NiñosVigentesDto> ObtenerNiñosVigentes(int? CodInstitucion, int? CodProyecto, string Rut, int? CodNino, string NombNino, string ApellPaterno, string SexoNino);
 	}
 
 	public interface IResultadoOperacion

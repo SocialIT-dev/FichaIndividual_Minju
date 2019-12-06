@@ -72,7 +72,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
         public static List<NiñosVigentesDto> ObtenerNiños(int CodInstitucion, int CodProyecto, string Rut, int CodNino, string NombNino, string ApellPaterno, string SexoNino)
         {
             NiñosVigentesImpl NinosVigentesImpl = new NiñosVigentesImpl();
-            var result = NinosVigentesImpl.ObtenerNiñosVigentes(CodProyecto);
+            var result = NinosVigentesImpl.ObtenerNiñosVigentes(CodInstitucion, CodProyecto, Rut, CodNino, NombNino, ApellPaterno, SexoNino);
             return result;
         }
 

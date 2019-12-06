@@ -1,5 +1,3 @@
-C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csprojAssemblyReference.cache
-C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CoreCompileInputs.cache
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll.config
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.pdb
@@ -38,6 +36,8 @@ C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.Mo
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.BLL.pdb
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\Newtonsoft.Json.xml
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csprojAssemblyReference.cache
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CoreCompileInputs.cache
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CopyComplete
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.pdb

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaIndividual
+namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
 {
     public partial class FichaIndividualResultadosBusqueda : System.Web.UI.Page
     {

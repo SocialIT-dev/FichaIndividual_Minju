@@ -36,9 +36,9 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 			_niñosVigentesDao = new NiñosVigentesDao();
 		}
 
-		public List<NiñosVigentesDto> ObtenerNiñosVigentes(int? CodProyecto)
+		public List<NiñosVigentesDto> ObtenerNiñosVigentes(int? CodInstitucion, int? CodProyecto, string Rut, int? CodNino, string NombNino, string ApellPaterno, string SexoNino)
 		{
-			var result = _niñosVigentesDao.ObtenerNiñosVigentes(CodProyecto);
+			var result = _niñosVigentesDao.ObtenerNiñosVigentes(CodInstitucion, CodProyecto, Rut, CodNino, NombNino, ApellPaterno, SexoNino);
 			return NiñosVigentesMapper.ToDto(result);
 		}
 	}

@@ -64,11 +64,11 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 				{
 					dto.Rut = dr["Rut"].ToString();
 					dto.Nombres = dr["Nombres"].ToString();
-					dto.ApellidoPaterno = dr["ApellidoPaterno"].ToString();
-					dto.ApellidoMaterno = dr["ApellidoMaterno"].ToString();
-					dto.Rit = dr["Rit"].ToString();
-					dto.CodTribunal = (int)dr["CodTribunal"];
-					dto.NombreTribunal = dr["NombreTribunal"].ToString();
+					dto.ApellidoPaterno = dr["Apellido_Paterno"].ToString();
+					dto.ApellidoMaterno = dr["Apellido_Materno"].ToString();
+					//dto.Rit = dr["Rit"].ToString();
+					//dto.CodTribunal = (int)dr["CodTribunal"];
+					//dto.NombreTribunal = dr["NombreTribunal"].ToString();
 					dto.CodNino = (int)dr["CodNino"];
 					dto.Sexo = dr["Sexo"].ToString();
 				}

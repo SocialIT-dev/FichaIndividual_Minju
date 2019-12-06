@@ -195,7 +195,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
 
     public class NiñosVigentesDao : Repository
     {
-        public DataTable ObtenerNiñosVigentes(int? CodProyecto)
+		public DataTable ObtenerNiñosVigentes(int? CodInstitucion, int? CodProyecto, string Rut, int? CodNino, string NombNino, string ApellPaterno, string SexoNino)
         {
             DataTable dt = new DataTable();
             try
@@ -203,13 +203,19 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
                 using (var con = GetConnection())
                 {
                     con.Open();
-                    using (var cmd = new SqlCommand("FichaRes.GETVigentesNNA", con))
+                    using (var cmd = new SqlCommand("FichaInd.GetListarNNA", con))
                     {
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto.HasValue ? (object)CodProyecto : DBNull.Value);
-                        da.SelectCommand = cmd;
+						cmd.Parameters.AddWithValue("@CodInstitucion", CodInstitucion.HasValue ? (object)CodInstitucion : DBNull.Value);
+						cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto.HasValue ? (object)CodProyecto : DBNull.Value);
+						cmd.Parameters.AddWithValue("@RutNNA", Rut);
+						cmd.Parameters.AddWithValue("@CodNino", CodNino.HasValue ? (object)CodNino : DBNull.Value);
+						cmd.Parameters.AddWithValue("@NombNino", NombNino);
+						cmd.Parameters.AddWithValue("@ApellPaterno", ApellPaterno);
+						cmd.Parameters.AddWithValue("@Sexo", SexoNino);
+						da.SelectCommand = cmd;
                         da.Fill(dt);
 
                         DataColumn columNew = dt.Columns.Add("error", typeof(String));
