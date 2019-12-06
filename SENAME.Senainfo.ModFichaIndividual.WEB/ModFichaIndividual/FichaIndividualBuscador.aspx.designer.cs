@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaIndividual {
+namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
     
     
     public partial class FichaIndividualBuscador {

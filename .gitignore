@@ -3,3 +3,5 @@
 ################################################################################
 
 /SENAME.Senainfo.ModFichaIndividual.WEB/Web.Release.config
+/SENAME.Senainfo.ModFichaIndividual.WEB/Web.Debug.config
+/SENAME.Senainfo.ModFichaIndividual.WEB/Web.config

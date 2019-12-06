@@ -79,6 +79,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\fichaIndividual.css" />
     <Content Include="Content\css\FI_Diseño.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -90,11 +91,111 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ModFichaIndividual\FichaIndividual.aspx" />
+    <Content Include="ModFichaIndividual\FichaIndividualResultadosBusqueda.aspx" />
+    <Content Include="Scripts\ficha\progressbar.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\pregunta_12png.png" />
     <Content Include="ModFichaIndividual\FichaIndividualBuscador.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\fichaIndividual.js" />
+    <Content Include="Scripts\ficha\antecedentes_alimentacion.js" />
+    <Content Include="Scripts\ficha\antecedentes_comparativas.js" />
+    <Content Include="Scripts\ficha\antecedentes_comparativas2.js" />
+    <Content Include="Scripts\ficha\antecedentes_dotacion_personal.js" />
+    <Content Include="Scripts\ficha\antecedentes_educacion.js" />
+    <Content Include="Scripts\ficha\antecedentes_generales.js" />
+    <Content Include="Scripts\ficha\antecedentes_gestion_residencia.js" />
+    <Content Include="Scripts\ficha\antecedentes_infraestructura.js" />
+    <Content Include="Scripts\ficha\antecedentes_poblacion_capacidad.js" />
+    <Content Include="Scripts\ficha\antecedentes_salud.js" />
+    <Content Include="Scripts\ficha\antecedentes_seguridad.js" />
+    <Content Include="Scripts\ficha\loadscripbase.js" />
+    <Content Include="Scripts\ficha\loadscripbaseHist.js" />
+    <Content Include="Scripts\ficha\loadscripbaseObs.js" />
+    <Content Include="Scripts\ficha\progressbar.min.js" />
+    <Content Include="Scripts\ficha\reportes.js" />
+    <Content Include="Scripts\ficha\residencia1.js" />
+    <Content Include="Scripts\ficha\residencia1historial.js" />
+    <Content Include="Scripts\ficha\residencia1observaciones.js" />
+    <Content Include="Scripts\ficha\respuesta_observaciones.js" />
     <Content Include="Scripts\Ficha_Individual\FI_Buscador.js" />
     <Content Include="Scripts\Ficha_Individual\FI_EventosObjetos.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -126,12 +227,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModFichaIndividual\FichaIndividual.aspx.cs">
+      <DependentUpon>FichaIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModFichaIndividual\FichaIndividual.aspx.designer.cs">
+      <DependentUpon>FichaIndividual.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModFichaIndividual\FichaIndividualBuscador.aspx.cs">
       <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ModFichaIndividual\FichaIndividualBuscador.aspx.designer.cs">
       <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModFichaIndividual\FichaIndividualResultadosBusqueda.aspx.cs">
+      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModFichaIndividual\FichaIndividualResultadosBusqueda.aspx.designer.cs">
+      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -149,6 +264,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SENAME.Senainfo.ModFichaIndividual.BLL\SENAME.Senainfo.ModFichaIndividual.BLL.csproj">
+      <Project>{9e43bf94-672c-40d1-a998-f8b687a4e1da}</Project>
+      <Name>SENAME.Senainfo.ModFichaIndividual.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SENAME.Senainfo.ModFichaIndividual.DAL\SENAME.Senainfo.ModFichaIndividual.DAL.csproj">
       <Project>{e6b3a6d0-e2fe-46d6-8e66-1a049d66f253}</Project>
       <Name>SENAME.Senainfo.ModFichaIndividual.DAL</Name>

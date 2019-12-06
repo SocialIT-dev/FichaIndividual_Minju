@@ -1,0 +1,9 @@
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.csprojAssemblyReference.cache
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.dll
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.pdb
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.csproj.CopyComplete
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.dll
+C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.BLL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.pdb

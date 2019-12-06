@@ -14,14 +14,14 @@ function CargaInicial() {
     IdUsuarioActualizacion = $("#idusuario_conect").val();
     CargaDatosInstitucionesUsuario();
 
-    $(document).on('click', '#btnBuscarFicha', function () {
+    $(document).on('click', '#btnBuscarFicha', function () {        
         BuscarFicha();
     });
 
-
+  
     $(document).on('click', '#btnLimpiar', function () {
         LimpiarFormularioBusquedaFI();
-    });
+    });    
 
 }
 
@@ -37,19 +37,19 @@ function CargaInicial() {
 function BuscarFicha() {
 
     var idusuario = IdUsuarioActualizacion;
-
+    
     //Validar 
     var institucion = document.getElementById("cmbInstitucion").value;
     var proyecto = document.getElementById("cmbProyecto").value;
     var rutnino = document.getElementById("txtRutnino").value;
     var nombnino = document.getElementById("txtNombnino").value;
     var apellidonino = document.getElementById("txtApellidopatnino").value;
-    var sexofemenino = document.getElementById("optFemenino");
+    var sexofemenino = document.getElementById("optFemenino"); 
     var sexoMasculino = document.getElementById("optMasculino");
 
-
-    //Falta Validar la selección del Radio 
-
+   
+       //Falta Validar la selección del Radio 
+  
     if (institucion == 0 && proyecto == 0 && rutnino.length == 0 && nombnino.length == 0 && apellidonino.length == 0) {
         alert("Seleccione al menos un valor para realizar la busqueda");
     }
@@ -60,7 +60,7 @@ function BuscarFicha() {
         alert(codproyecto);
         ListarNinosConsulta(codproyecto);
     }
-
+ 
 }
 
 //Boton: Limpiar
@@ -159,7 +159,7 @@ function CargaProyectosInstitucion(codigoInstitucion) {
 
 function ListarNinosConsulta(codProyecto) {
     //alert(codigoInstitucion + " - " + IdUsuarioActualizacion);
-
+    
     $.ajax({
         type: "POST",
         url: "FichaIndividualBuscador.aspx/ObtenerNiñosVigentes",
@@ -174,7 +174,7 @@ function ListarNinosConsulta(codProyecto) {
         }
     }).then(function (r) {
         var proyecto = $("#FichaIndividualResultadosBusqueda");
-
+        
         proyecto.append("<div class='col - xs - 12 col - sm - 12 mytop1y'>< hr class= 'hrmin' /></div >");
 
         if (r.d[0] != null)
@@ -182,7 +182,7 @@ function ListarNinosConsulta(codProyecto) {
                 $.each(r.d,
                     function () {
                         //$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
-                        $("#FichaIndividualResultadosBusqueda").append("<div class='col - xs - 12 col - md - 2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >");
+                        $("#FichaIndividualResultadosBusqueda").append("<div class='col - xs - 12 col - md - 2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >"); 
                         $("#FichaIndividualResultadosBusqueda").append("<div class='col - xs - 12 col - md - 3 mytop1 colnombreinput'> <input type='text' class='form - control inputnombre' value = '" + this.Nombres + "'></option>");
                     }
                 );
