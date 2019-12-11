@@ -4,6 +4,7 @@
 //Funciones para el formulario de Busqueda de Ficha Individual
 
 var IdUsuarioActualizacion;
+var cabmodal = "SENAINFO ";
 
 $(document).ready(function () {
     CargaInicial();
@@ -55,6 +56,7 @@ function BuscarFicha() {
   
     if (institucion == 0 && proyecto == 0 && rutnino.length == 0 && nombnino.length == 0 && apellidonino.length == 0) {
 		//alert("Seleccione al menos un valor para realizar la busqueda");
+        $("#lblMensaje").text("Ingrese al menos uno de los valores anteriores");
 		$("#divMsjError").show();
     }
 	else {
@@ -76,8 +78,10 @@ function LimpiarFormularioBusquedaFI() {
 	document.getElementById("optMasculino").value = "";
 	$("#optFemenino").prop('checked', false);
 	$("#optMasculino").prop('checked', false);
-	$("#FichaIndividualResultadosBusqueda").html("");
-	$("#divMsjError").hide();
+    $("#FichaIndividualResultadosBusqueda").html("");
+    $("#lblMensaje").text("");
+    $("#divMsjError").hide();
+
 }
 
 
@@ -164,6 +168,9 @@ function CargaProyectosInstitucion(codigoInstitucion) {
 }
 
 function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino, apellPaterno, sexoNino) {
+    $("#FichaIndividualResultadosBusqueda").html("");
+    $("#lblMensaje").text("");
+    $("#divMsjError").hide();
 	var parametros = JSON.stringify({
 		'CodInstitucion': codInstitucion,
 		'CodProyecto': codProyecto,
@@ -182,48 +189,36 @@ function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino
 		dataType: "json",
 		success: function (r) {
 			//alert("ajax OK");
-			// Ajax OK ! 
+			// Ajax OK !
 			var proyecto = $("#FichaIndividualResultadosBusqueda");
 
 			proyecto.append("<div class='col-xs-12 col-sm-12 mytop1y'><hr class='hrmin'></div >");
 
-			if (r.d[0] != null)
-				if (r.d != "") {
-					$.each(r.d,
-						function () {
-							//$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
-							$("#FichaIndividualResultadosBusqueda").append("<div class='row padding' style='margin-bottom:5px;'>");
-							$("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >");
-							$("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Nombres + "'></input>");
-							$("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Run o Nº Pasaporte</p> </div >");
-							$("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Rut + "'></input>");
-							$("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary'>Ver información </button>");
-							$("#FichaIndividualResultadosBusqueda").append("</div>");}
-					);
-					//document.getElementById("FichaIndividualResultadosBusqueda").disabled = false;
-				}
+            if (r.d[0] != null) {
+                if (r.d != "") {
+                    $.each(r.d,
+                        function () {
+                            //$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='row padding' style='margin-bottom:5px;'>");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Nombres + "'></input>");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Run o Nº Pasaporte</p> </div >");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Rut + "'></input>");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary'>Ver información </button>");
+                            $("#FichaIndividualResultadosBusqueda").append("</div>");
+                        }
+                    );
+                }
+            }
+            else {
+                $("#lblMensaje").text("No se han encontrado datos para la búsqueda");
+                $("#divMsjError").show();
+            }
 		},
 		error: function (r) {
 			DesplegarExcepcionCriticaApp(r.responseText);
 		}
 	});
-  //  }).then(function (r) {
-		//var proyecto = $("#FichaIndividualResultadosBusqueda");
-        
-  //      proyecto.append("<div class='col - xs - 12 col - sm - 12 mytop1y'>< hr class= 'hrmin' /></div >");
-
-  //      if (r.d[0] != null)
-  //          if (r.d != "") {
-  //              $.each(r.d,
-  //                  function () {
-  //                      //$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
-		//				$("#FichaIndividualResultadosBusqueda").append("<div class='col - xs - 12 col - md - 2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >"); 
-		//				$("#FichaIndividualResultadosBusqueda").append("<div class='col - xs - 12 col - md - 3 mytop1 colnombreinput'> <input type='text' class='form - control inputnombre' value = '" + this.Nombres + "'></option>");
-  //                  }
-  //              );
-  //              //document.getElementById("FichaIndividualResultadosBusqueda").disabled = false;
-  //          }
-  //  });
 }
 //**************************************** FIN Funciones Botones y Carga de Combos ****************************//
 

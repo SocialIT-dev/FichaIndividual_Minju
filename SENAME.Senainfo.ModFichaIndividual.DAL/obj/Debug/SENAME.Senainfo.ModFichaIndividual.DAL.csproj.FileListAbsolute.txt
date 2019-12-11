@@ -9,3 +9,9 @@ C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.Mo
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.csprojAssemblyReference.cache
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.csproj.CoreCompileInputs.cache
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.DAL\obj\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.pdb

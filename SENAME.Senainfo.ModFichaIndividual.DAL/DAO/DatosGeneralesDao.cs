@@ -203,7 +203,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
                 using (var con = GetConnection())
                 {
                     con.Open();
-                    using (var cmd = new SqlCommand("FichaInd.GetListarNNA", con))
+                    using (var cmd = new SqlCommand("[FichaInd].[GetListarNNA_Buscador]", con))
                     {
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
 

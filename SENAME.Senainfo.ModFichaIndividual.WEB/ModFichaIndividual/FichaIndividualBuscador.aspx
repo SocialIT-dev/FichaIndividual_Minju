@@ -11,11 +11,18 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../Content/bootstrap.min.css">
     <link rel="stylesheet" href="../Content/css/fichaIndividual.css" />
-    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
-    <!-- Java Script -->
-
     <link href="../Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <!-- Java Script -->
+   <%-- <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>--%>
+    <script type='text/javascript' src="../Scripts/jquery_1.8.3.min.js"></script>
+    <%--<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--%>
+    <script type='text/javascript' src="../Scripts/jquery_1.12.4.min.js"></script>
+  <%--  <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+    <script type='text/javascript' src="../Scripts/bootstrap_3.3.7.min.js"></script>
+    <script type='text/javascript' src="../Scripts/sweetalert2/sweetalert2.all.min.js"></script>
+    <script type='text/javascript' src="../Scripts/fichaIndividual.js"></script>
+    <script type='text/javascript' src="../Scripts/ficha_Individual/FI_Buscador.js"></script>
+
 
 </head>
 <body>
@@ -124,6 +131,7 @@
 
                     <div class="col-xs-12 col-md-9 mytop1 color-word-form">
                         <input
+                            type="number"
                             class="form-control"
                             id="txtCodnino" />
                     </div>
@@ -178,11 +186,9 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-md-12  mytop1 mensajeform" id="divMsjError">
-                        <p class="mrlauto" id="lblMensaje" style="margin-top: 4px !important; margin-bottom: 4px !important; text-align:center;">
-                            Ingrese al menos uno de los valores anteriores
+                    <div class="col-xs-12 col-md-12 mytop1 mensajeform" id="divMsjError">
+                        <p class="mrlauto" id="lblMensaje" style="margin-top: 4px !important; margin-bottom: 4px !important; text-align: center;">                            
                         </p>
-
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 diflex mytop1">
@@ -203,16 +209,8 @@
         </div>
     </div>
 
-
-    <script type='text/javascript' src="../Scripts/fichaIndividual.js"></script>
-	   <script type='text/javascript' src="../Scripts/ficha_Individual/FI_Buscador.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
     <!-- Importar Script-->
- <%--   <div id="divconfig" style="display: none;" onclick="InicializaKey();"></div>
+    <%--   <div id="divconfig" style="display: none;" onclick="InicializaKey();"></div>
     <script>
         function importarScript(nombre) {
             var s = document.createElement("script");
@@ -225,6 +223,5 @@
             //importarScript("scripts/ficha/reportes.js?" + d.getTime());   
         });
     </script>--%>
-
 </body>
 </html>
