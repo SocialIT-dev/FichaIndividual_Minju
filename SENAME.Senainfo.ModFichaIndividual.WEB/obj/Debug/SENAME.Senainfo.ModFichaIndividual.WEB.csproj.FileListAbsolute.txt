@@ -41,6 +41,7 @@ C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.Mo
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CopyComplete
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.pdb
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll.config
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.pdb
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\roslyn\csc.exe
@@ -83,4 +84,3 @@ E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CopyComplete
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.pdb
-E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll.config

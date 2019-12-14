@@ -96,6 +96,10 @@
     <Content Include="mod_FichaIndividual\Content\bootstrap-theme.css.map" />
     <Content Include="mod_FichaIndividual\FichaIndividual.aspx" />
     <Content Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx" />
+    <Content Include="mod_FichaIndividual\images\calendario.svg" />
+    <Content Include="mod_FichaIndividual\images\pdf.svg" />
+    <Content Include="mod_FichaIndividual\images\pdf_gray.svg" />
+    <Content Include="mod_FichaIndividual\images\volver.svg" />
     <Content Include="mod_FichaIndividual\Scripts\bootstrap_3.3.7.min.js" />
     <Content Include="mod_FichaIndividual\images\pregunta_12png.png" />
     <Content Include="mod_FichaIndividual\FichaIndividualBuscador.aspx" />

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BUSCADOR DE FICHA INDIVIDUAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
-    <script src="../js/jquery-3.2.1.min.js"></script>
+   <%-- <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
     <link href="../css/jquery-ui.css" rel="stylesheet" />
@@ -18,7 +18,14 @@
     <link href="../css/themes/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/jquery-confirm.min.css" rel="stylesheet" />
     <script src="../js/moment.min.js"></script>
-    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
+    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />--%>
+
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>

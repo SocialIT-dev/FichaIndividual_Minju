@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Proyecto Minju</title>
 
-  <script src="../js/jquery-3.2.1.min.js"></script>
+<%--  <script src="../js/jquery-3.2.1.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/jquery-ui.js"></script>
   <link href="../css/jquery-ui.css" rel="stylesheet" />
@@ -19,10 +19,18 @@
   <link href="../css/themes/bootstrap.min.css" rel="stylesheet" />
   <link href="../css/jquery-confirm.min.css" rel="stylesheet" />
   <script src="../js/moment.min.js"></script>
-  <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
+  <link href="../css/jquery.ui.theme.css" rel="stylesheet" />--%>
+  <script src="Scripts/jquery-3.2.1.min.js"></script>
+  <script src="Scripts/bootstrap.min.js"></script>
+  <link href="Content/bootstrap.min.css" rel="stylesheet" />
+  <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+  <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
   <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
   <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="Content/minju.css" />
+  <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
+  <script type='text/javascript' src="Scripts/Ficha_Individual/fichaIndividual.js"></script>
+  <script type='text/javascript' src="Scripts/Ficha_Individual/FI_Buscador.js"></script>
   <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
   <script type='text/javascript' src="Scripts/Ficha_Individual/fichaIndividual.js"></script>
   <script type="text/javascript" src="Scripts/js/minju.js"></script>
@@ -40,7 +48,7 @@
           <div class="btn-group mlficha">
             <button type="button" class="btn btn-primary mlficha botonw2 dropdown-toggle" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false" id="botonimprimir">
-              <img src="img/pdf.svg" style="margin-left: -10px; margin-right: 2rem;"> IMPRIMIR
+              <img src="images/pdf.svg" style="margin-left: -10px; margin-right: 2rem;"> IMPRIMIR
             </button>
             <div class="dropdown-menu"
               style="min-width: 280px; padding: 20px; text-align: center; border: 1px solid black;">
@@ -99,7 +107,7 @@
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 diflex mytop1">
           <a href="index.html" type="submit" class="btn btn-narj mlficha botonw2 textauto">
-            <img src="img/volver.svg" style="margin-left: -10px; margin-right: 2rem;">VOLVER
+            <img src="images/volver.svg" style="margin-left: -10px; margin-right: 2rem;"/>VOLVER
           </a>
         </div>
       </div>
@@ -112,13 +120,13 @@
           <p style="color: #0F69B4; font-weight: 600;">Rit</p>
         </div>
         <div class="col-xs-12 col-md-5 ">
-          <p class="inputficha">P-117-2013</p>
+          <p class="inputficha" id="txtRit"></p>
         </div>
         <div class="col-xs-12 col-md-1" style="margin-top: 8px;margin-top: .8rem;margin-bottom: .8rem;">
-          <p style="color: #0F69B4; font-weight: 600;">Otros</p>
+          <p style="color: #0F69B4; font-weight: 600;">Otros Rit</p>
         </div>
         <div class="col-xs-12 col-md-5 ">
-          <p class="inputficha">lorem1</p>
+          <p class="inputficha" id="txtOtrosRit"></p>
         </div>
       </div>
       <div class="row ntop1">
@@ -126,13 +134,13 @@
           <p style="color: #0F69B4; font-weight: 600;">Tribunal</p>
         </div>
         <div class="col-xs-12 col-md-5">
-          <p class="inputficha">Juzgado de Familia de Prueba</p>
+          <p class="inputficha" id="txtTribunal"></p>
         </div>
         <div class="col-xs-12 col-md-1" style="margin-top: 8px;margin-top: .8rem;margin-bottom: .8rem;">
           <p style="color: #0F69B4; font-weight: 600;">Tribunal</p>
         </div>
         <div class="col-xs-12 col-md-5">
-          <p class="inputficha">lorem1</p>
+          <p class="inputficha" id="txtOtroTribunal"></p>
         </div>
       </div>
     </div>
@@ -144,34 +152,26 @@
           <p>FECHA VISITA</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 colpfecha hcol">
-          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 5px;">
-            29/10/2013
-          </p>
+          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaVisita"></p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-2 colhoravisita hcol">
           <p>HORA VISITA</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 colphora hcol">
-          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 5px;">
-            11:11
-          </p>
+          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 5px;" id="txtHoraVisita"></p>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-2 coljuezvisita hcol diflex">
           <p>JUEZ VISITADOR</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 colpjuez hcol">
-          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 6px;">
-            ABC
-          </p>
+          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 6px;" id="txtJuezVisitador"></p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 colconsejero hcol">
           <p>CONSEJERO TÉCNICO</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 colptecnico hcol">
-          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 6px;">
-            Prueba
-          </p>
+          <p class="inputficha2" style="margin-top: 5px; margin-bottom: 6px;" id="txtConsejeroTecnico"></p>
         </div>
       </div>
     </div>
@@ -206,50 +206,38 @@
                       <p>NOMBRE DEL NIÑO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Jorge
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNombreNino"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">RUT</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidtop hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        14.412.121-4
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtRutNino"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">FILACIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        ABC
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFilacion"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">SEXO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        MASCULINO
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtSexoNino"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgenebot hcol diflex">
                       <p class="textauto">FECHA DE NACIMIENTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        20/10/2005
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaNacimientoNino"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">EDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        24
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtEdadNino"></p>
                     </div>
 
                     <!-- info nacionalidad niño -->
@@ -257,25 +245,19 @@
                       <p class="textauto">NACIONALIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 ntop2 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Venezolano
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNacionalidadNino"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 ntop2 colmidgene hcol diflex">
                       <p class="textauto">N. PASAPORTE</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 ntop2 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        149521021
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtPasaporteNino"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 ntop2 colmidgene hcol diflex">
                       <p class="textauto">COD. NIÑO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 ntop2 colcodnino hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        149521021
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtCodNino"></p>
                     </div>
 
                     <!-- infor proyecto -->
@@ -283,27 +265,21 @@
                       <p>NOMBRE DEL PROYECTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 ntop2 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        abc
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNombreProyecto"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 ntop2 colmidgene hcol diflex">
                       <p class="textauto">COMUNA DEL PROYECTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 ntop2 colgeneralesmidtop hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        providencia
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtCodProyecto"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgenebot hcol diflex">
                       <p class="textauto">TIPO DE PROYECTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Proyecto 1
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtTipoProyecto"></p>
                     </div>
 
                     <!-- infomadre -->
@@ -311,50 +287,38 @@
                       <p>NOMBRE DE LA MADRE</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Madre
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNombreMadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene ntop2 hcol diflex">
                       <p class="textauto">RUT</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidtop ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        14.412.121-4
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtRutMadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">DIRECCIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        jose antonio soffia
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtDireccionMadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">ESTADO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        asd
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtEstadoMadre"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgenebot hcol diflex">
                       <p class="textauto">NACIONALIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Chileno
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNacionalidadMadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">N. PASAPORTE</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        14541214
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtPasaporteMadre"></p>
                     </div>
 
                     <!-- info padre -->
@@ -362,50 +326,38 @@
                       <p class="textauto">NOMBRE DEL PADRE</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Padre
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNombrePadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene ntop2 hcol diflex">
                       <p class="textauto">RUT</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidtop ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        14.412.121-4
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtRutPadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">DIRECCIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        jose antonio soffia
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtDireccionPadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">ESTADO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        asd
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtEstadoPadre"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgenebot hcol diflex">
                       <p class="textauto">NACIONALIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Haitiano
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNacionalidadPadre"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
                       <p class="textauto">N. PASAPORTE</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        14541214
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtPasaportePadre"></p>
                     </div>
 
                     <!-- infor ingreso residencia -->
@@ -416,9 +368,7 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-7 ntop2 colcodnino hcol ">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Venezolano
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtComunaResidencia"></p>
                     </div>
 
                     <!-- info ayuda comunal -->
@@ -427,79 +377,61 @@
                       <p class="textauto">AYUDA COMUNAL</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Ayuda
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtAyudaComunal"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene ntop2 hcol diflex">
                       <p class="textauto">CUAL O CUALES?</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        este
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtCuales"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene  hcol diflex">
                       <p class="textauto">APOYO COMUNITARIO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmidtop hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Apoyo
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtApoyoComunitario"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene  hcol diflex">
                       <p class="textauto">CHILE SOLIDARIO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        solidario
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtChileSolidario"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">CHILE CRECE CONTIGO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        crece
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtChileCrece"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">FPS</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        FPS
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFps"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene  hcol diflex">
                       <p class="textauto">PUNTAJE</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        20
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtPuntaje"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene  hcol diflex">
                       <p class="textauto">FECHA APLICACIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        29/10/2010
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaAplicacion"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgenebot  hcol diflex">
                       <p class="textauto">ABRIENDO CAMINOS</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-9 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        No
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtAbriendoCaminos"></p>
                     </div>
 
                     <!-- otros -->
@@ -507,9 +439,7 @@
                       <p class="textauto">OTROS</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 ntop2 colcodnino hcol ">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; ">
-                        Otros
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; " id="txtOtros"></p>
                     </div>
 
                     <!-- observacion -->
@@ -517,9 +447,7 @@
                       <p class="textauto">OBSERVACIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 ntop2 colcodnino hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; ">
-                        Observando
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; " id="txtObsGenerales"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 ntop2" style="padding-left: 0px;">
@@ -539,7 +467,7 @@
                     </div>
 
                     <p style="color: #666363;">
-                  <img src="img/pdf_gray.svg" >
+                  <img src="images/pdf_gray.svg" />
               ANTECEDENTES GENERALES Provenientes del sistema SENAINFO </p>
                 </div>
                 </div>
@@ -577,9 +505,7 @@
                       <p>FECHA DE INGRESO EFECTIVO RESIDENCIA ACTUAL</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        10/01/2008
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaIngresoActual"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colmidgene hcol diflex">
                       <p class="textauto">
@@ -587,43 +513,34 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colgeneralesmidtop hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        10/01/2008
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaPrimerIngreso"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colmidgene hcol diflex">
                       <p class="textauto">FECHA DE ÚLTIMA MEDIDA</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        10/01/2008
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaUltimaMedida"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">CLASE DE LA MEDIDA</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtClaseMedida"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-4 colmidgenebot hcol diflex">
                       <p class="textauto">DURACIÓN DE LA ÚLTIMA MEDIDA</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        20 dias
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtDuracionMedida"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">CAUSAL DE INGRESO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        9
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtCausalIngreso"></p>
                     </div>
+                     <!-- ACA AGREGAR BOTON VER DETALLE -->
 
                     <!-- Requirente de medida de proteccion -->
                     <div class="col-xs-12 col-sm-12 col-md-6 ntop2 nt3 colnacionalidad hcol diflex">
@@ -632,9 +549,7 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 ntop2 colcodnino hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        Se Desconoce
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtRequirente"></p>
                     </div>
 
                     <!-- Hermanos en sistema -->
@@ -642,9 +557,7 @@
                       <p>HERMANOS EN SISTEMA RESIDENCIAL</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 colgeneralesmidtop ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        5
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtHnosEnSistema"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-7 colmidgene  hcol diflex">
                       <p class="textauto">
@@ -652,17 +565,13 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 colgeneralesmid  hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        14
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtHnosFueraSistema"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-7 colmidgene hcol diflex">
                       <p class="textauto">HERMANOS EN SISTEMA RESIDENCIAL</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        1
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtHnosEnSistemaR"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-7 colmidgene hcol diflex">
@@ -672,18 +581,14 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        1
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtEscuchado"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-7 colmidgene hcol diflex">
                       <p class="textauto">FECHA ÚLTIMA ENTREVISTA</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaUltimaEntrevista"></p>
                     </div>
 
                     <!-- observacion II -->
@@ -691,9 +596,7 @@
                       <p class="textauto">OBSERVACIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        SIN OBSERVACIONES
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtObsProcesales"></p>
                     </div>
 
                     <!-- datos obtenidos -->
@@ -745,17 +648,13 @@
                       <p>INSCRITO EN CONSULTORIO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        10/01/2008
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtInscritoConsultorio"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">FECHA ÚLTIMO CONTROL</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidtop hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        10/01/2008
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtFechaUltControl"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colmidgene hcol diflex">
                       <p class="textauto">
@@ -763,26 +662,20 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtDiagnostico"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">ENFERMEDAD CRONICA</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtCronica"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">RECIBE TRATAMIENTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        20 dias
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtTratamiento"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colmidgenebot hcol diflex">
                       <p class="textauto">
@@ -790,9 +683,7 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        9
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtSaludMental"></p>
                     </div>
 
                     <!--  diagnostico y discapacidad-->
@@ -800,9 +691,7 @@
                       <p>FUE DIAGNOSTICADO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmid ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        SI
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtDiagnosticado"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 colmidgene ntop2 hcol diflex">
                       <p class="textauto">
@@ -810,62 +699,48 @@
                       </p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidtop ntop2 hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        SI
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtTratamientoDiagnostico"></p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">TIENE DISCAPACIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        SI
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="TieneDiscapacidad"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-5 colmidgene hcol diflex">
                       <p class="textauto">QUIEN REALIZA EL TRATAMIENTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtTratadoPor"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgenebot hcol diflex">
                       <p class="textauto">RECIBE TRATAMIENTO</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtTratamientoDiscapacidad"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">REGISTRO DE DISCAPACIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtRegistroDiscapacidad"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgenebot hcol diflex">
                       <p class="textauto">TIPO DE DISCAPACIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidmid hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtTipoDiscapacidad"></p>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                       <p class="textauto">NIVEL DE DISCAPACIDAD</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmbot hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        SIN OBSERVACIONES
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtNivelDiscapacidad"></p>
                     </div>
 
                     <!-- observacion III -->
@@ -873,9 +748,7 @@
                       <p class="textauto">OBSERVACIÓN</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 ntop2 colcodnino hcol">
-                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;">
-                        IDK
-                      </p>
+                      <p class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px;" id="txtObsDiscapacidad"></p>
                     </div>
 
                     <!-- datos obtenidos -->
@@ -959,7 +832,7 @@
 
                           <button type="button" class="btn btn-narj botondetallesform" data-toggle="modal"
                             data-target="#detalles_asistencia">
-                            <p class="botondetalles"><img src="img/calendario.svg"
+                            <p class="botondetalles"><img src="images/calendario.svg"
                                 style="margin-left: -10px; margin-bottom: 5px; margin-right:.5rem;">VER DETALLES</p>
                           </button>
 
@@ -1418,7 +1291,7 @@
 
                           <button type="button" class="btn btn-narj botondetallesform" data-toggle="modal"
                             data-target="#detalles1">
-                            <p class="botondetalles"><img src="img/calendario.svg"
+                            <p class="botondetalles"><img src="images/calendario.svg"
                                 style="margin-left: -10px; margin-bottom: 5px; margin-right:.5rem;">VER DETALLES</p>
                           </button>
 
@@ -1600,7 +1473,7 @@
 
                           <button type="button" class="btn btn-narj botondetallesform" data-toggle="modal"
                             data-target="#detalles2">
-                            <p class="botondetalles"><img src="img/calendario.svg"
+                            <p class="botondetalles"><img src="images/calendario.svg"
                                 style="margin-left: -10px; margin-bottom: 5px; margin-right:.5rem;">VER DETALLES</p>
                           </button>
 

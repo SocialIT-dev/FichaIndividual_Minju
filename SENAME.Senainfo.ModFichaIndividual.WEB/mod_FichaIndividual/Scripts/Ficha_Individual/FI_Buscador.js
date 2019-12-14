@@ -110,7 +110,7 @@ function CargaDatosInstitucionesUsuario() {
         proyecto.append("<option value='0'>Seleccione un Proyecto</option>");
 
         if (r.d[0] != null)
-            if ((r.d[0].error) == "") {
+            if ((r.d[0].Error) == "") {
                 if (r.d != "") {
 
                     $.each(r.d,
@@ -130,13 +130,12 @@ function CargaDatosInstitucionesUsuario() {
                 document.getElementById("cmbInstitucion").selectedIndex = 0;
                 document.getElementById("cmbInstitucion").disabled = true;
 
-                DesplegarExcepcionCriticaApp(r.d[0].error);
+                DesplegarExcepcionCriticaApp(r.d[0].Error);
             }
     });
 }
 
 function CargaProyectosInstitucion(codigoInstitucion) {
-    //alert(codigoInstitucion + " - " + IdUsuarioActualizacion);
     document.getElementById("cmbProyecto").disabled = false;
     $.ajax({
         type: "POST",
