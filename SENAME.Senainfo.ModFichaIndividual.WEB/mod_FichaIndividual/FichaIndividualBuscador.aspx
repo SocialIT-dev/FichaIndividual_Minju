@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaIndividualBuscador.aspx.cs" Inherits="SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual.FichaIndividualBuscador" %>
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>--%>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -32,16 +34,28 @@
     <script type='text/javascript' src="Scripts/Ficha_Individual/fichaIndividual.js"></script>
     <script type='text/javascript' src="Scripts/Ficha_Individual/FI_Buscador.js"></script>
 
+    <%--<style type="text/css">
+        .bd-example-modal-lg .modal-dialog{
+        display: table;
+        position: relative;
+        margin: 0 auto;
+        top: calc(50% - 24px);
+        }
+  
+        .bd-example-modal-lg .modal-dialog .modal-content{
+        background-color: transparent;
+        border: none;
+     }
+    </style>--%>
 </head>
 <body>
 
     <!-- estructura formulario principal -->
     <div class="container-fluid bgcontainerfluid">
         <div class="container ctop">
+        <h2 style="color: #0F69B4; margin-top: 10px;">Buscador de Ficha Individual</h2>
             <div class="row yellow-border">
-
-                <form id="forminju" runat="server">
-
+                <form id="forminju" runat="server">                    
                     <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
                     <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
                     <!-- Campos Ocultos -->
@@ -213,6 +227,11 @@
                 <div id="FichaIndividualResultadosBusqueda" class="mytop1y">
                 </div>
 
+            </div>
+        </div>
+       <div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+               <img src="images/loading.gif" style="width:50%; display:block; margin:auto; "/>
             </div>
         </div>
     </div>

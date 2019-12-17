@@ -41,6 +41,8 @@ C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.Mo
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CopyComplete
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 C:\Users\Juan carlos Peña\source\repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.pdb
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csprojAssemblyReference.cache
+E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CoreCompileInputs.cache
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll.config
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.WEB.pdb
@@ -79,8 +81,6 @@ E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.BLL.pdb
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\SENAME.Senainfo.ModFichaIndividual.DAL.pdb
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\bin\Newtonsoft.Json.xml
-E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csprojAssemblyReference.cache
-E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CoreCompileInputs.cache
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.csproj.CopyComplete
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.dll
 E:\Source\Repos\FichaIndividual_Minju\SENAME.Senainfo.ModFichaIndividual.WEB\obj\Debug\SENAME.Senainfo.ModFichaIndividual.WEB.pdb

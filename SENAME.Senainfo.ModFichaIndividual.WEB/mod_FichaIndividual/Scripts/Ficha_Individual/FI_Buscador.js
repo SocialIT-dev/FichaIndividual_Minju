@@ -15,7 +15,8 @@ function CargaInicial() {
     CargaDatosInstitucionesUsuario();
 	$("#divMsjError").hide();
 
-	$('#btnBuscarFicha').on('click', function () {        
+    $('#btnBuscarFicha').on('click', function () {   
+        $('.modal').modal('show');
         BuscarFicha();
     });
 
@@ -57,6 +58,7 @@ function BuscarFicha() {
     if (institucion == 0 && proyecto == 0 && rutnino.length == 0 && nombnino.length == 0 && apellidonino.length == 0) {
 		//alert("Seleccione al menos un valor para realizar la busqueda");
         $("#lblMensaje").text("Ingrese al menos uno de los valores anteriores");
+        $('.modal').modal('hide');
 		$("#divMsjError").show();
     }
 	else {
@@ -103,7 +105,7 @@ function CargaDatosInstitucionesUsuario() {
 
         var institucion = $("#cmbInstitucion");
         InicializaCombo("#cmbInstitucion");
-        institucion.append("<option value='0'>Seleccione una Institucion</option>");
+        institucion.append("<option value='0'>Seleccione una Institución</option>");
 
         var proyecto = $("#cmbProyecto");
         InicializaCombo("#cmbProyecto");
@@ -203,18 +205,21 @@ function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino
                             $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Nombres + "'></input>");
                             $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Run o Nº Pasaporte</p> </div >");
                             $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Rut + "'></input>");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary'>Ver información </button>");
+                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary' onclick='AbrirFicha(" + this.CodNino + "," + this.CodProyecto + ")'>Ver información </button>");
                             $("#FichaIndividualResultadosBusqueda").append("</div>");
                         }
                     );
                 }
+                $('.modal').modal('hide');
             }
             else {
+                $('.modal').modal('hide');
                 $("#lblMensaje").text("No se han encontrado datos para la búsqueda");
                 $("#divMsjError").show();
             }
 		},
-		error: function (r) {
+        error: function (r) {
+            $('.modal').modal('hide');
 			DesplegarExcepcionCriticaApp(r.responseText);
 		}
 	});
@@ -312,6 +317,8 @@ function DesplegarExcepcionCriticaApp(responseText) {
     //.substring(0, 400) + 
 }
 
-
-
 //******************************************** Fin Funciones Miscelaneas *****************************//
+
+function AbrirFicha(codnino, codproyecto) {
+    window.location.replace('FichaIndividual.aspx?codnino=' + codnino + '&codproy=' + codproyecto);
+}

@@ -4,6 +4,10 @@ using SENAME.Senainfo.ModFichaIndividual.BLL.DTO;
 using SENAME.Senainfo.ModFichaIndividual.BLL.Impl;
 using System.Web;
 using System.Web.Services;
+using System.Text;
+using System.Web.Security;
+using System.Security.Cryptography;
+using System.Data;
 
 namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
 {
@@ -76,6 +80,138 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
             return result;
         }
 
-      
+        #region ExisteToken
+        public static bool existetoken(string token)
+        {
+            try
+            {
+                //DataTable listatokens = ((DataSet)npl).Tables[0];
+                //((DataSet)HttpContext.Current.Session["tokens"]).Tables[0];
+                DataTable listatokens = ((DataSet)HttpContext.Current.Session["tokens"]).Tables[0];
+                if (token.Trim() != string.Empty && listatokens.Rows.Count > 0)
+                {
+                    //return true;
+                    return (listatokens.Select("TokenCadena = '" + token.Trim() + "'").Length != 0);
+                }
+
+                //return (listatokens.Select("TokenCadena = '" + token.Trim() +"'").Length != 0);
+
+                //for (int i = 0; i < listatokens.Rows.Count; i++)
+                //{
+                //    if (token.Trim() == listatokens.Rows[i][1].ToString().Trim())
+                //    {
+                //        return true;
+                //    }
+
+                // }
+            }
+            catch { }
+            return false;
+        }
+        #endregion
+
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        public static string Base64Decode(string encodedString)
+        {
+            byte[] data = Convert.FromBase64String(encodedString);
+            return Encoding.UTF8.GetString(data);
+
+            //var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            //return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        /*public static string encriptaContrasena(string InContrasena)
+        {
+            byte[] hash = new SHA1CryptoServiceProvider().ComputeHash(Encoding.Unicode.GetBytes(InContrasena));
+            string Contrasena = "";
+            for (int index = 0; index < hash.Length; ++index)
+                Contrasena += hash.GetValue(index).ToString();
+            return Contrasena;
+        }*/
+        public static string EncriptarContrasena(string login, string contrasena)
+        {
+            List<byte> listBytes;
+            StringBuilder sbResult;
+            string username = login.ToLower();
+
+            listBytes = new List<byte>();
+
+            listBytes.AddRange(new SHA1CryptoServiceProvider().ComputeHash(Encoding.Unicode.GetBytes(contrasena)));
+            /*if (username.Contains("@") == false)
+            {
+                listBytes.AddRange(new SHA1CryptoServiceProvider().ComputeHash(Encoding.Unicode.GetBytes(contrasena)));
+            }
+            else
+            {
+                username = username.Substring(username.Trim().Length - 1, 1) + username;
+
+                listBytes.AddRange(new SHA1CryptoServiceProvider().ComputeHash(Encoding.Unicode.GetBytes(username)));
+                listBytes.AddRange(new SHA1CryptoServiceProvider().ComputeHash(Encoding.Unicode.GetBytes(contrasena)));
+            }*/
+
+            sbResult = new StringBuilder();
+            foreach (byte elemento in listBytes)
+                sbResult.Append(elemento.ToString());
+
+            return sbResult.ToString();
+        }
+
+        #region Validacion Usuario
+        //public static bool validatetoken(string tkn, object npl)
+        //{
+        //    try
+        //    {
+        //        DataTable neopermissionlist = ((DataSet)npl).Tables[0];
+        //        if (tkn.Trim() == string.Empty && neopermissionlist.Rows.Count > 0)
+        //        {
+        //            return true;
+        //        }
+
+        //        for (int i = 0; i < neopermissionlist.Rows.Count; i++)
+        //        {
+        //            if (tkn.Trim() == neopermissionlist.Rows[i][1].ToString().Trim())
+        //            {
+        //                return true;
+        //            }
+
+        //        }
+        //    }
+        //    catch { }
+        //    return false;
+        //}
+        #endregion
+
+        #region window.logout
+        public static void logout()
+        {
+            try
+            {
+                FormsAuthentication.SignOut();
+
+                HttpContext.Current.Session.Clear();
+
+                HttpContext.Current.Session.Remove("tokens");
+                HttpContext.Current.Session.Remove("IdUsuario");
+                HttpContext.Current.Session.Remove("Usuario");
+
+                HttpContext.Current.Session.Remove("NNANombres");
+                HttpContext.Current.Session.Remove("NNAApellidoPaterno");
+                HttpContext.Current.Session.Remove("NNAApellidoMaterno");
+                HttpContext.Current.Session.Remove("NNACodProyecto");
+                HttpContext.Current.Session.Remove("NNACodInstitucion");
+                HttpContext.Current.Session.Remove("NNASexo");
+                HttpContext.Current.Session.Remove("NNARutNino");
+                HttpContext.Current.Session.Remove("NNACodNino");
+                HttpContext.Current.Session.Remove("NNAFechaNacimiento");
+            }
+            catch { }
+        }
+        #endregion
     }
+
 }

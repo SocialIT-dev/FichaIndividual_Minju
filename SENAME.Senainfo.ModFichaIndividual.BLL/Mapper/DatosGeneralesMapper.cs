@@ -26,7 +26,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 					dto.ApellidoMaterno = dr["Apellido_Materno"].ToString();
 					dto.CodNino = (int)dr["CodNino"];
 					dto.Sexo = dr["Sexo"].ToString();
-				}
+                    dto.CodProyecto = dr["codproyecto"].ToString();
+                }
 				list.Add(dto);
 			}
 			return list;
@@ -131,7 +132,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
                     dto.SexoMenor = dr["SEXO_MENOR"].ToString();
                     dto.Nacionalidad = dr["NACIONALIDAD"].ToString();
                     dto.Pasaporte = dr["PASAPORTE"].ToString();
-                    dto.CodNino = dr["CODNINO"].ToString();
+                    dto.CodNino = dr["COD_NINO"].ToString();
                     dto.NombreProyecto = dr["NOMBRE_PROYECTO"].ToString();
                     dto.ComunaProyecto = dr["COMUNA_PROYECTO"].ToString();
                     dto.TipoProyecto = dr["TIPO_PROYECTO"].ToString();

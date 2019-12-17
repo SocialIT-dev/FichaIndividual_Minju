@@ -17,6 +17,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public int CodNino { get; set; }
         public string Sexo { get; set; }
         public string Error { get; set; }
+        public string CodProyecto { get; set; }
     }
 
     public class ResultadoOperacionDto
