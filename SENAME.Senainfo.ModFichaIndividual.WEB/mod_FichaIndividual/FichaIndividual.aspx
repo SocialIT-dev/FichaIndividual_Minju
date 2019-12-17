@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaIndividual.aspx.cs" Inherits="SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual.FichaIndividual" %>
 
-<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>--%>
-<%--<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>--%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,22 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Proyecto Minju</title>
 
-    <%--  <script src="../js/jquery-3.2.1.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/jquery-ui.js"></script>
-  <link href="../css/jquery-ui.css" rel="stylesheet" />
-  <link href="../css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
-  <link href="../css/theme.css" rel="stylesheet" />
-  <link href="../css/themes/bootstrap.min.css" rel="stylesheet" />
-  <link href="../css/jquery-confirm.min.css" rel="stylesheet" />
-  <script src="../js/moment.min.js"></script>
-  <link href="../css/jquery.ui.theme.css" rel="stylesheet" />--%>
-    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <link href="../css/jquery-ui.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../css/theme.css" rel="stylesheet" />
+    <link href="../css/themes/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/jquery-confirm.min.css" rel="stylesheet" />
+    <script src="../js/moment.min.js"></script>
+    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
+
+    <%--    <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
 
     <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
@@ -40,7 +41,7 @@
     <div class="container-fluid" style="background: #F8F8F8;">
         <form id="forminju" runat="server">
             <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-            <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
+            <uc2:menu_colgante runat="server" ID="menu_colgante" />
 
             <div class="container mytop1">
                 <asp:HiddenField ID="idusuario_conect" runat="server" />
@@ -63,37 +64,48 @@
                                 <div class="checkbox" style="text-align: left; font-size: 9px;">
                                     <label for="antecedentes" class="ntop1">
                                         <input type="checkbox" name="antecedentes" />I. ANTECEDENTES GENERALES DEL NIÑO, NIÑA O ADOLESCENTE
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes2" class="ntop1">
                                         <input type="checkbox" name="antecedentes2" />II. ANTECEDENTES PROCESALES
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes3" class="ntop1">
                                         <input type="checkbox" name="antecedentes3" />III. ANTECEDENTES DE SALUD
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes4" class="ntop1">
                                         <input type="checkbox" name="antecedentes4" />IV. ANTECEDENTES ESCOLARES
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes5" class="ntop1">
                                         <input type="checkbox" name="antecedentes5" />V. ANTECEDENTES DE COSUMO
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes6" class="ntop1">
                                         <input type="checkbox" name="antecedentes6" />VI. ANTECEDENTES DE COSUMO
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes7" class="ntop1">
                                         <input type="checkbox" name="antecedentes7" />VII. VISITAS
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes8" class="ntop1">
                                         <input type="checkbox" name="antecedentes8" />VIII. PROCESO DE INVTERVENCIÓN
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes9" class="ntop1">
                                         <input type="checkbox" name="antecedentes9" />SUGERENCIAS AL TRIBUNAL DE ORIGEN
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes10" class="ntop1">
                                         <input type="checkbox" name="antecedentes10" />SUGERENCIAS A SENAME
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <label for="antecedentes11" class="ntop1">
                                         <input type="checkbox" name="antecedentes11" />Todos los documentos
-                                    </label><br />
+                                    </label>
+                                    <br />
                                     <div class="diflex">
                                         <button type="submit" class="btn btn-primary mrlauto botonw2">
                                             IMPRIMIR</button>.
@@ -123,7 +135,7 @@
                         <p style="color: #0F69B4; font-weight: 600;">Otros Rit</p>
                     </div>
                     <div class="col-xs-12 col-md-5 ">
-                        <input type="text" class="inputficha" style="width: 100%;" id="txtOtrosRit" runat="server" readonly="true"  />
+                        <input type="text" class="inputficha" style="width: 100%;" id="txtOtrosRit" runat="server" readonly="true" />
                     </div>
                 </div>
                 <div class="row ntop1">
@@ -569,7 +581,7 @@
                                                                             <input type="checkbox" id="causal5" disabled="disabled" runat="server" />Consumo Droga del adulto a cargo
                                                                         </label>
                                                                         <br />
-                                                                         <label for="causal6" class="ntop1">
+                                                                        <label for="causal6" class="ntop1">
                                                                             <input type="checkbox" id="causal6" disabled="disabled" runat="server" />Consumo Alcohol del adulto a cargo
                                                                         </label>
                                                                         <br />
