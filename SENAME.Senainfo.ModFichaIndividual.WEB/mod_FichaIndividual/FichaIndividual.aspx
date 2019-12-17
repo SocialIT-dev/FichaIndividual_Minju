@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>el osito misha
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,48 +62,38 @@
                                 <p>Secciones a Imprimir</p>
                                 <div class="checkbox" style="text-align: left; font-size: 9px;">
                                     <label for="antecedentes" class="ntop1">
-                                        <input type="checkbox" name="antecedentes" />I. ANTECEDENTES
-                  GENERALES DEL NIÑO, NIÑA O ADOLESCENTE
-                                    </label>
+                                        <input type="checkbox" name="antecedentes" />I. ANTECEDENTES GENERALES DEL NIÑO, NIÑA O ADOLESCENTE
+                                    </label><br />
                                     <label for="antecedentes2" class="ntop1">
-                                        <input type="checkbox" name="antecedentes2" />II.
-                  ANTECEDENTES PROCESALES
-                                    </label>
+                                        <input type="checkbox" name="antecedentes2" />II. ANTECEDENTES PROCESALES
+                                    </label><br />
                                     <label for="antecedentes3" class="ntop1">
-                                        <input type="checkbox" name="antecedentes3" />III.
-                  ANTECEDENTES DE SALUD
-                                    </label>
+                                        <input type="checkbox" name="antecedentes3" />III. ANTECEDENTES DE SALUD
+                                    </label><br />
                                     <label for="antecedentes4" class="ntop1">
-                                        <input type="checkbox" name="antecedentes4" />IV.
-                  ANTECEDENTES ESCOLARES
-                                    </label>
+                                        <input type="checkbox" name="antecedentes4" />IV. ANTECEDENTES ESCOLARES
+                                    </label><br />
                                     <label for="antecedentes5" class="ntop1">
-                                        <input type="checkbox" name="antecedentes5" />V.
-                  ANTECEDENTES DE COSUMO
-                                    </label>
+                                        <input type="checkbox" name="antecedentes5" />V. ANTECEDENTES DE COSUMO
+                                    </label><br />
                                     <label for="antecedentes6" class="ntop1">
-                                        <input type="checkbox" name="antecedentes6" />VI.
-                  ANTECEDENTES DE COSUMO
-                                    </label>
+                                        <input type="checkbox" name="antecedentes6" />VI. ANTECEDENTES DE COSUMO
+                                    </label><br />
                                     <label for="antecedentes7" class="ntop1">
                                         <input type="checkbox" name="antecedentes7" />VII. VISITAS
-                                    </label>
+                                    </label><br />
                                     <label for="antecedentes8" class="ntop1">
-                                        <input type="checkbox" name="antecedentes8" />VIII. PROCESO
-                  DE INVTERVENCIÓN
-                                    </label>
+                                        <input type="checkbox" name="antecedentes8" />VIII. PROCESO DE INVTERVENCIÓN
+                                    </label><br />
                                     <label for="antecedentes9" class="ntop1">
-                                        <input type="checkbox" name="antecedentes9" />SUGERENCIAS AL
-                  TRIBUNAL DE ORIGEN
-                                    </label>
+                                        <input type="checkbox" name="antecedentes9" />SUGERENCIAS AL TRIBUNAL DE ORIGEN
+                                    </label><br />
                                     <label for="antecedentes10" class="ntop1">
-                                        <input type="checkbox" name="antecedentes10" />SUGERENCIAS A
-                  SENAME
-                                    </label>
+                                        <input type="checkbox" name="antecedentes10" />SUGERENCIAS A SENAME
+                                    </label><br />
                                     <label for="antecedentes11" class="ntop1">
-                                        <input type="checkbox" name="antecedentes11" />Todos los
-                  documentos
-                                    </label>
+                                        <input type="checkbox" name="antecedentes11" />Todos los documentos
+                                    </label><br />
                                     <div class="diflex">
                                         <button type="submit" class="btn btn-primary mrlauto botonw2">
                                             IMPRIMIR</button>.
@@ -127,13 +117,13 @@
                         <p style="color: #0F69B4; font-weight: 600;">Rit</p>
                     </div>
                     <div class="col-xs-12 col-md-5 ">
-                        <p class="inputficha" id="txtRit" runat="server"></p>
+                        <input type="text" class="inputficha" style="width: 100%;" id="txtRit" runat="server" readonly="true" />
                     </div>
                     <div class="col-xs-12 col-md-1" style="margin-top: 8px; margin-top: .8rem; margin-bottom: .8rem;">
                         <p style="color: #0F69B4; font-weight: 600;">Otros Rit</p>
                     </div>
                     <div class="col-xs-12 col-md-5 ">
-                        <p class="inputficha" id="txtOtrosRit" runat="server"></p>
+                        <input type="text" class="inputficha" style="width: 100%;" id="txtOtrosRit" runat="server" readonly="true"  />
                     </div>
                 </div>
                 <div class="row ntop1">
@@ -141,13 +131,13 @@
                         <p style="color: #0F69B4; font-weight: 600;">Tribunal</p>
                     </div>
                     <div class="col-xs-12 col-md-5">
-                        <p class="inputficha" id="txtTribunal" runat="server"></p>
+                        <input type="text" class="inputficha" style="width: 100%;" id="txtTribunal" runat="server" readonly="true" />
                     </div>
                     <div class="col-xs-12 col-md-1" style="margin-top: 8px; margin-top: .8rem; margin-bottom: .8rem;">
                         <p style="color: #0F69B4; font-weight: 600;">Tribunal</p>
                     </div>
                     <div class="col-xs-12 col-md-5">
-                        <p class="inputficha" id="txtOtroTribunal" runat="server"></p>
+                        <input type="text" class="inputficha" style="width: 100%;" id="txtOtroTribunal" runat="server" readonly="true" />
                     </div>
                 </div>
             </div>
@@ -222,7 +212,7 @@
                                                 <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtRutNino" runat="server" readonly="true" />
                                             </div>
                                             <div class="col-xs-12 col-sm-12 col-md-2 colmidgene hcol diflex">
-                                                <p class="textauto">FILACIÓN</p>
+                                                <p class="textauto">FILIACIÓN</p>
                                             </div>
                                             <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmid hcol">
                                                 <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtFilacion" runat="server" readonly="true" />
@@ -542,19 +532,82 @@
                                             <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
                                                 <p class="textauto">CAUSAL DE INGRESO</p>
                                             </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidmbot hcol">
-                                                <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 98%;" id="txtCausalIngreso" runat="server" readonly="true" />
+                                            <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidmid hcol">
+                                                <div class="input-group hcol">
+                                                    <div class="input-group-btn">
+                                                        <div class="btn-group mlficha">
+                                                            <button type="button" class="btn btn-narj botondetallesform dropdown-toggle" data-toggle="dropdown"
+                                                                aria-haspopup="true" aria-expanded="false" id="btnDetalleCausal">
+                                                                <p class="botondetalles">
+                                                                    <img src="images/calendario.svg"
+                                                                        style="margin-left: -10px; margin-bottom: 5px; margin-right: .5rem;" />
+                                                                    VER DETALLE
+                                                                </p>
+                                                            </button>
+                                                            <div class="dropdown-menu"
+                                                                style="min-width: 280px; padding: 20px; text-align: center; border: 1px solid black;">
+                                                                <div class="row">
+                                                                    <p>Causales de Ingreso</p>
+                                                                    <div class="checkbox" style="text-align: left; font-size: 9px;">
+                                                                        <label for="causal1" class="ntop1">
+                                                                            <input type="checkbox" id="causal1" disabled="disabled" runat="server" />Maltrato y/o violencia
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal2" class="ntop1">
+                                                                            <input type="checkbox" id="causal2" disabled="disabled" runat="server" />Transgresión en la esfera de la sexualidad
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal3" class="ntop1">
+                                                                            <input type="checkbox" id="causal3" disabled="disabled" runat="server" />Explotación sexual comercial infantil ESCNNA
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal4" class="ntop1">
+                                                                            <input type="checkbox" id="causal4" disabled="disabled" runat="server" />Abandono
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal5" class="ntop1">
+                                                                            <input type="checkbox" id="causal5" disabled="disabled" runat="server" />Consumo Droga del adulto a cargo
+                                                                        </label>
+                                                                        <br />
+                                                                         <label for="causal6" class="ntop1">
+                                                                            <input type="checkbox" id="causal6" disabled="disabled" runat="server" />Consumo Alcohol del adulto a cargo
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal7" class="ntop1">
+                                                                            <input type="checkbox" id="causal7" disabled="disabled" runat="server" />Falta de habilidades parentales
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal8" class="ntop1">
+                                                                            <input type="checkbox" id="causal8" disabled="disabled" runat="server" />Situación de Calle
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal9" class="ntop1">
+                                                                            <input type="checkbox" id="causal9" disabled="disabled" runat="server" />Negligencia Grave
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal10" class="ntop1">
+                                                                            <input type="checkbox" id="causal10" disabled="disabled" runat="server" />Trastornos de salud inhabilitantes del adulto a cargo
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal11" class="ntop1">
+                                                                            <input type="checkbox" id="causal11" disabled="disabled" runat="server" />Ser testigo de VIF
+                                                                        </label>
+                                                                        <br />
+                                                                        <label for="causal12" class="ntop1">
+                                                                            <input type="checkbox" id="causal12" disabled="disabled" runat="server" />Peores formas de trabajo infantil (PFTI)
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!-- ACA AGREGAR BOTON VER DETALLE -->
+
                                             <!-- Button trigger modal -->
-                                            <div class="input-group-btn ">
-                                                <button type="button" class="btn btn-narj botondetallesform" id="btnDetalleCausal" data-toggle="modal" data-target="#detalles_asistencia">
-                                                    <p class="botondetalles pull-right">
-                                                        <img src="images/calendario.svg"
-                                                            style="margin-left: -10px; margin-bottom: 5px; margin-right: .5rem;" />VER MÁS
-                                                    </p>
-                                                </button>
-                                            </div>
+
                                             <!-- Requirente de medida de proteccion -->
                                             <div class="col-xs-12 col-sm-12 col-md-6 ntop2 nt3 colnacionalidad hcol diflex">
                                                 <p class="textauto">

@@ -90,7 +90,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
             _antecedentesProcesalesPJUDDao = new AntecedentesProcesalesPJUDDao();
         }
 
-        public List<DTO.AntecedentesProcesalesPJUDDto> ObtenerAntecedentesProcesalesPJUD(string codNino)
+        public DTO.AntecedentesProcesalesPJUDDto ObtenerAntecedentesProcesalesPJUD(string codNino)
         {
             var result = _antecedentesProcesalesPJUDDao.ObtenerAntecedentesProcesalesPJUD(codNino);
             return AntecedentesProcesalesPJUDMapper.ToDto(result);

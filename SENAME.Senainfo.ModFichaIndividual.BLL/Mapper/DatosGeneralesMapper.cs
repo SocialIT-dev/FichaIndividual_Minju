@@ -124,10 +124,18 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
                 if (dto.Error == "")
                 {
+                    dto.Rit = dr["RIT"].ToString();
+                    dto.OtrosRit = dr["OTROS_RIT"].ToString();
+                    dto.Tribunal = dr["GLS_TRIBUNAL"].ToString();
+                    dto.OtroTribunal = dr["GLS_OTRO_TRIBUNAL"].ToString();
+                    dto.FechaVisita = (dr["FEC_VISITA"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FEC_VISITA"].ToString());
+                    dto.HoraVisita = dr["HORA_VISITA"].ToString();
+                    dto.JuezVisitador = dr["JUEZ_VISITADOR"].ToString();
+                    dto.ConsejeroTecnico = dr["CONSEJO_TECNICO"].ToString();
                     dto.NombreMenor = dr["NOMBRE_MENOR"].ToString();
                     dto.Rut = dr["Rut"].ToString();
                     dto.Filiacion = dr["Filiacion"].ToString();
-                    dto.FechaNacimiento = DateTime.Parse(dr["FEC_NACIMIENTO"].ToString());
+                    dto.FechaNacimiento = (dr["FEC_NACIMIENTO"].ToString() == "01-01-1900 0:00:00" ? "Sin dato": dr["FEC_NACIMIENTO"].ToString());
                     dto.EdadMenor = dr["EDAD_MENOR"].ToString();
                     dto.SexoMenor = dr["SEXO_MENOR"].ToString();
                     dto.Nacionalidad = dr["NACIONALIDAD"].ToString();
@@ -156,11 +164,13 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
                     dto.ChileCrece = dr["CHILE_CRECE"].ToString();
                     dto.Fps = dr["FPS"].ToString();
                     dto.Puntaje = dr["PUNTAJE"].ToString();
-                    dto.FechaAplicacion = DateTime.Parse(dr["FECHA_APLICACION"].ToString());
+                    dto.FechaAplicacion = (dr["FECHA_APLICACION"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FECHA_APLICACION"].ToString() );
                     dto.AbriendoCaminos = dr["ABRIENDO_CAMINOS"].ToString();
                     dto.ObservMenor = dr["OBSERV_MENOR"].ToString();
                     dto.ApoyoComunitario = dr["APOYO_COMUNITARIO"].ToString();
+                    dto.OtrosMenor = dr["GLS_OTROS"].ToString(); 
                     dto.CitaAudiencia = dr["CITA_AUDIENCIA"].ToString();
+                    dto.AudienciaInmediata = (dr["AUDIENCIA_INMEDIATA"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["AUDIENCIA_INMEDIATA"].ToString());
                     dto.SugerenciasAlTribunal = dr["SUGERENCIAS_TRIBUNAL"].ToString();
                     dto.SugerenciasAlSename = dr["SUGERENCIAS_SENAME"].ToString();
                     //dto.CodTribunal = (int)dr["CodTribunal"];
@@ -172,34 +182,33 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
     public class AntecedentesProcesalesPJUDMapper
     {
-        public static List<AntecedentesProcesalesPJUDDto> ToDto(DataTable dt)
+        public static AntecedentesProcesalesPJUDDto ToDto(DataTable dt)
         {
-            var list = new List<AntecedentesProcesalesPJUDDto>();
-            
+            var dto = new AntecedentesProcesalesPJUDDto();
+
             foreach (DataRow dr in dt.Rows)
             {
-                var dto = new AntecedentesProcesalesPJUDDto();
+                dto = new AntecedentesProcesalesPJUDDto();
                 dto.Error = dr["Error"].ToString();
 
                 if (dto.Error == "")
                 {
-                    dto.FecIngresoEfectiva = DateTime.Parse(dr["FEC_INGESO_EFECTIVA"].ToString());
-                    dto.FecIngresoSistema = DateTime.Parse(dr["FEC_INGESO_SISTEMA"].ToString());
-                    dto.FecUltMedida = DateTime.Parse(dr["FEC_ULT_MEDIDA"].ToString());
+                    dto.FecIngresoEfectiva = (dr["FEC_INGRESO_EFECTIVA"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FEC_INGRESO_EFECTIVA"].ToString());
+                    dto.FecIngresoSistema = (dr["FEC_INGRESO_SISTEMA"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FEC_INGRESO_SISTEMA"].ToString());
+                    dto.FecUltMedida = (dr["FEC_ULT_MEDIDA"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FEC_ULT_MEDIDA"].ToString());
                     dto.ClaseMedida = dr["CLASE_MEDIDA"].ToString();
-                    dto.DuracionUltMedida = DateTime.Parse(dr["FEC_ULT_MEDIDA"].ToString());
+                    dto.DuracionUltMedida = dr["FEC_ULT_MEDIDA"].ToString();
                     dto.CausalIngreso = dr["CAUSAL_INGRESO"].ToString();
                     dto.RequitenteMedidaProteccion = dr["REQUITENTE_MEDIDA_PROTECCION"].ToString();
                     dto.HnosResidencia = dr["HNOS_RESIDENCIA"].ToString();
                     dto.HermanoFueraSis = dr["HERMANO_FUERA_SIS"].ToString();
                     dto.HermanoSis = dr["HERMANO_SIS"].ToString();
-                    dto.NiñoEscuchadoPorElJuez = dr["NIÑO_ESCUCHADOPOR_EL_JUEZ"].ToString();
-                    dto.FecUltimaEntrevista = DateTime.Parse(dr["FEC_ULTIMA_ENTREVISTA"].ToString());
+                    dto.NiñoEscuchadoPorElJuez = dr["NNA_ESCUCHADO_POR_ELJUEZ"].ToString();
+                    dto.FecUltimaEntrevista = (dr["FEC_ULTIMA_ENTREVISTA"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FEC_ULTIMA_ENTREVISTA"].ToString());
                     dto.ObservProcesal = dr["OBSERV_PROCESAL"].ToString();
                 }
-                list.Add(dto);
             }
-            return list;
+            return dto;
 
         }
     }

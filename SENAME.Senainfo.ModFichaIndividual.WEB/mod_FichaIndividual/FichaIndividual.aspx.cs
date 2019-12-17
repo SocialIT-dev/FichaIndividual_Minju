@@ -56,25 +56,30 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
             tokensUsr.Value = tokenslist;
             var Cod_Nino = Request.QueryString["codnino"];
             var Cod_Proy = Request.QueryString["codproy"];
-            CargarDatos(Cod_Nino, Cod_Proy);
+            CargarDatosGenerales(Cod_Nino, Cod_Proy);
+            CargarDatosProcesales(Cod_Nino);
         }
 
-        private void CargarDatos(string codNino, string codProyecto)
+        private void CargarDatosGenerales(string codNino, string codProyecto)
         {
             var  _antecedentesGeneralesPJUDImpl = new BLL.Impl.AntecedentesGeneralesPJUDImpl();
             var datosGeneralesDTO = _antecedentesGeneralesPJUDImpl.ObtenerAntecedentesGenerales(codNino, Int32.Parse(codProyecto));
             if(datosGeneralesDTO != null)
             {
                 /****************** Antecedentes generales **********************/
-                this.txtFechaVisita.Value = DateTime.Now.ToString("dd/MM/yyyy");
-                this.txtHoraVisita.Value = "";
-                this.txtJuezVisitador.Value = "";
-                this.txtConsejeroTecnico.Value = "";
+                this.txtRit.Value = datosGeneralesDTO.Rit;
+                this.txtOtrosRit.Value = datosGeneralesDTO.OtrosRit;
+                this.txtTribunal.Value = datosGeneralesDTO.Tribunal;
+                this.txtOtroTribunal.Value = datosGeneralesDTO.OtroTribunal;
+                this.txtFechaVisita.Value = datosGeneralesDTO.FechaVisita;
+                this.txtHoraVisita.Value = datosGeneralesDTO.HoraVisita;
+                this.txtJuezVisitador.Value = datosGeneralesDTO.JuezVisitador;
+                this.txtConsejeroTecnico.Value = datosGeneralesDTO.ConsejeroTecnico;
                 this.txtNombreNino.Value = datosGeneralesDTO.NombreMenor;
                 this.txtRutNino.Value = datosGeneralesDTO.Rut;
                 this.txtFilacion.Value = datosGeneralesDTO.Filiacion;
                 this.txtSexoNino.Value = datosGeneralesDTO.SexoMenor;
-                this.txtFechaNacimientoNino.Value = datosGeneralesDTO.FechaNacimiento.ToString("dd/MM/yyyy");
+                this.txtFechaNacimientoNino.Value = datosGeneralesDTO.FechaNacimiento;
                 this.txtEdadNino.Value = datosGeneralesDTO.EdadMenor;
                 this.txtNacionalidadNino.Value = datosGeneralesDTO.Nacionalidad;
                 this.txtPasaporteNino.Value = datosGeneralesDTO.Pasaporte;
@@ -102,12 +107,95 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 this.txtChileCrece.Value = datosGeneralesDTO.ChileCrece;
                 this.txtFps.Value = datosGeneralesDTO.Fps;
                 this.txtPuntaje.Value = datosGeneralesDTO.Puntaje;
-                this.txtFechaAplicacion.Value = datosGeneralesDTO.FechaAplicacion.ToString("dd/MM/yyyy");
+                this.txtFechaAplicacion.Value = datosGeneralesDTO.FechaAplicacion;
                 this.txtAbriendoCaminos.Value = datosGeneralesDTO.AbriendoCaminos;
-               // this.txtOtros.Value=datosGeneralesDTO.AbriendoCaminos  -- OTROS no aparece
+                this.txtOtros.Value = datosGeneralesDTO.OtrosMenor;
                 this.txtObsGenerales.Value = datosGeneralesDTO.ObservMenor;
-
+                this.txtCitaAudiencia.Value = datosGeneralesDTO.CitaAudiencia;
+                this.txtAudienciaInmediata.Value = datosGeneralesDTO.AudienciaInmediata;
+                this.txtObservSugTribunal.Value = datosGeneralesDTO.SugerenciasAlTribunal;
+                this.txtObservSugSename.Value = datosGeneralesDTO.SugerenciasAlSename;
             }
+        }
+
+        private void CargarDatosProcesales(string codNino)
+        {
+            var _antecedentesProcesalesPJUDImpl = new BLL.Impl.AntecedentesProcesalesPJUDImpl();
+            var datosProcesalesDTO = _antecedentesProcesalesPJUDImpl.ObtenerAntecedentesProcesalesPJUD(codNino);
+            if (datosProcesalesDTO != null)
+            {
+                /****************** Antecedentes generales **********************/
+                this.txtFechaIngresoActual.Value = datosProcesalesDTO.FecIngresoEfectiva;
+                this.txtFechaPrimerIngreso.Value = datosProcesalesDTO.FecIngresoSistema;
+                this.txtFechaUltimaMedida.Value = datosProcesalesDTO.FecUltMedida;
+                this.txtClaseMedida.Value = datosProcesalesDTO.ClaseMedida;
+                this.txtDuracionMedida.Value = datosProcesalesDTO.DuracionUltMedida;
+                this.txtRequirente.Value = datosProcesalesDTO.RequitenteMedidaProteccion;
+                this.txtHnosEnSistema.Value = datosProcesalesDTO.HermanoSis;
+                this.txtHnosFueraSistema.Value = datosProcesalesDTO.HermanoFueraSis;
+                this.txtHnosEnSistemaR.Value = datosProcesalesDTO.HnosResidencia;
+                this.txtEscuchado.Value = datosProcesalesDTO.NiñoEscuchadoPorElJuez;
+                this.txtFechaUltimaEntrevista.Value = datosProcesalesDTO.FecUltimaEntrevista;
+                this.txtObsProcesales.Value = datosProcesalesDTO.ObservProcesal;
+                CargarCausales(datosProcesalesDTO.CausalIngreso);
+            }
+        }
+
+        private void CargarCausales(string causal)
+        {
+            var listaCausales = ListarCausales(causal);
+            foreach(string causalObj in listaCausales)
+            {
+                switch (causalObj)
+                {
+                    case "1": // Maltrato
+                        this.causal1.Checked = true;
+                        break;
+                    case "2": // Transgresión
+                        this.causal2.Checked = true;
+                        break;
+                    case "3": // Explotación
+                        this.causal3.Checked = true;
+                        break;
+                    case "4": // Abandono
+                        this.causal4.Checked = true;
+                        break;               
+                    case "01": // Consumo Droga
+                        this.causal5.Checked = true;
+                        break;
+                    case "02": // Consumo Alcohol
+                        this.causal6.Checked = true;
+                        break;
+                    case "03": // Falta Habilidades
+                        this.causal7.Checked = true;
+                        break;
+                    case "04": // Situación de calle
+                        this.causal8.Checked = true;
+                        break;
+                    case "05": // Negligencia
+                        this.causal9.Checked = true;
+                        break;
+                    case "06": // Trastornos Salud
+                        this.causal10.Checked = true;
+                        break;
+                    case "07": // Testigo VIF
+                        this.causal11.Checked = true;
+                        break;
+                    case "08": // PFTI
+                        this.causal12.Checked = true;
+                        break;
+                }
+            }
+        }
+
+        private List<string> ListarCausales(string causales)
+        {
+            var lstCausales = new List<string>();
+            if (causales != null && causales != string.Empty)
+            {
+                lstCausales = causales.Split('#').ToList();
+            }
+            return lstCausales;
         }
 
         #region ExisteToken

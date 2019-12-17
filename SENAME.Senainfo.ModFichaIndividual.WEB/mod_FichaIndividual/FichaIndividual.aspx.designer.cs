@@ -46,7 +46,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtRit;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtRit;
         
         /// <summary>
         /// Control txtOtrosRit.
@@ -55,7 +55,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtOtrosRit;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOtrosRit;
         
         /// <summary>
         /// Control txtTribunal.
@@ -64,7 +64,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtTribunal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTribunal;
         
         /// <summary>
         /// Control txtOtroTribunal.
@@ -73,7 +73,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtOtroTribunal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOtroTribunal;
         
         /// <summary>
         /// Control txtFechaVisita.
@@ -481,13 +481,112 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtDuracionMedida;
         
         /// <summary>
-        /// Control txtCausalIngreso.
+        /// Control causal1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCausalIngreso;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal1;
+        
+        /// <summary>
+        /// Control causal2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal2;
+        
+        /// <summary>
+        /// Control causal3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal3;
+        
+        /// <summary>
+        /// Control causal4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal4;
+        
+        /// <summary>
+        /// Control causal5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal5;
+        
+        /// <summary>
+        /// Control causal6.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal6;
+        
+        /// <summary>
+        /// Control causal7.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal7;
+        
+        /// <summary>
+        /// Control causal8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal8;
+        
+        /// <summary>
+        /// Control causal9.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal9;
+        
+        /// <summary>
+        /// Control causal10.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal10;
+        
+        /// <summary>
+        /// Control causal11.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal11;
+        
+        /// <summary>
+        /// Control causal12.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox causal12;
         
         /// <summary>
         /// Control txtRequirente.

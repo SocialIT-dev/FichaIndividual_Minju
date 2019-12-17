@@ -68,10 +68,18 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
 
     public class AntecedentesGeneralesPJUDDto
     {
+        public string Rit { get; set; }
+        public string OtrosRit { get; set; }
+        public string Tribunal { get; set; }
+        public string OtroTribunal { get; set; }
+        public string FechaVisita { get; set; }
+        public string HoraVisita { get; set; }
+        public string JuezVisitador { get; set; }
+        public string ConsejeroTecnico { get; set; }
         public string NombreMenor { get; set; }
         public string Rut { get; set; }
         public string Filiacion { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+        public string FechaNacimiento { get; set; }
         public string EdadMenor { get; set; }
         public string SexoMenor { get; set; }
         public string Nacionalidad { get; set; }
@@ -100,11 +108,13 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string ChileCrece { get; set; }
         public string Fps { get; set; }
         public string Puntaje { get; set; }
-        public DateTime FechaAplicacion { get; set; }
+        public string FechaAplicacion { get; set; }
         public string AbriendoCaminos { get; set; }
         public string ObservMenor { get; set; }
+        public string OtrosMenor { get; set; }
         // public string ApoyoComunitario { get; set; }
         public string CitaAudiencia { get; set; }
+        public string AudienciaInmediata { get; set; }
         public string SugerenciasAlTribunal { get; set; }
         public string SugerenciasAlSename { get; set; }
         public string Error { get; set; }
@@ -112,18 +122,18 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
 
     public class AntecedentesProcesalesPJUDDto
     {
-        public DateTime FecIngresoEfectiva { get; set; } 
-        public DateTime FecIngresoSistema { get; set; }
-        public DateTime FecUltMedida { get; set; }
+        public string FecIngresoEfectiva { get; set; } 
+        public string FecIngresoSistema { get; set; }
+        public string FecUltMedida { get; set; }
         public string ClaseMedida { get; set; }
-        public DateTime DuracionUltMedida { get; set; }
+        public string DuracionUltMedida { get; set; }
         public string CausalIngreso { get; set; }
         public string RequitenteMedidaProteccion { get; set; }
         public string HnosResidencia { get; set; }
         public string HermanoFueraSis { get; set; }
         public string HermanoSis { get; set; }
         public string NiñoEscuchadoPorElJuez { get; set; }
-        public DateTime FecUltimaEntrevista { get; set; }
+        public string FecUltimaEntrevista { get; set; }
         public string ObservProcesal { get; set; }
         public string Error { get; set; }
     }
