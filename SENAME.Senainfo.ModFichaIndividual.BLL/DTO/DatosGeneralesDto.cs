@@ -5,6 +5,8 @@ using System.Text;
 
 namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
 {
+    #region buscador
+
     public class NiñosVigentesDto
     {
         public string Rut { get; set; }
@@ -66,6 +68,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string Error { get; set; }
     }
 
+    #endregion
+
+    #region Antecedentes Generales 
+
     public class AntecedentesGeneralesPJUDDto
     {
         public string Rit { get; set; }
@@ -120,6 +126,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string Error { get; set; }
     }
 
+    #endregion
+
+    #region Antecedentes Procesales 
+
     public class AntecedentesProcesalesPJUDDto
     {
         public string FecIngresoEfectiva { get; set; } 
@@ -138,4 +148,152 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string Error { get; set; }
     }
 
+    #endregion
+
+    #region Antecedentes de Salud
+
+    public class AntecedentesSaludDto
+    {
+        public string InscritoConsultorio { get; set; }
+        public string FechaUltimoControl { get; set; }
+        public string EnfermedadCronicaDiagnosticada { get; set; }
+        public string EnferemedadCronica { get; set; }
+        public string RecibeTratamiento { get; set; }
+        public string ProblemaSaludMental { get; set; }
+        public string Diagnosticado { get; set; }
+        public string TratamientoDiagnostico { get; set; }
+        public string TieneDiscapacidad { get; set; }
+        public string TratadoPor { get; set; }
+        public string RecibeTratamientoDis { get; set; }
+        public string RegistroDiscapacidad { get; set; }
+        public string TipoDiscapacidad { get; set; }
+        public string NivelDiscapacidad { get; set; }
+        public string Observacion { get; set; }
+    }
+
+    #endregion
+
+    #region Antecedentes Escolares
+
+    public class AntecedentesEscolaresDto
+    {
+        public string CursoActual { get; set; }
+        public string UltimoCursoAprobado { get; set; }
+        public string AnioUltimoCursoAprobado { get; set; }
+        public string AsistenciaEscolar { get; set; }
+        public string RazonInasistencia { get; set; }
+        public string PresentaRetraso { get; set; }
+        public string NivelDiferencial { get; set; }
+        public string Observacion { get; set; }
+    }
+
+    #endregion
+
+    #region Antecedentes de Consumo
+
+    public class AntecedentesConsumoDto
+    {
+        public string ConsumeDrogas { get; set; }
+        public string TipoDroga { get; set; }
+        public string TipoConsumo { get; set; }
+        public string TieneEvaluacion { get; set; }
+        public string TieneTratamiento { get; set; }
+        public string TieneRehabilitacion { get; set; }
+        public string InstitucionTratamiento { get; set; }
+        public string ConclusionUltimoInforme { get; set; }
+        public string Observacion { get; set; }
+    }
+
+    #endregion
+
+    #region Situación Familiar
+
+    public class SituacionFamiliarDto
+    {
+        public string ExisteTrabajoEgreso { get; set; }
+        public string TrabajoDesde { get; set; }
+        public string Comuna { get; set; }
+        public string QuienRealizaTrabajo { get; set; }
+        public string Observacion { get; set; }
+    }
+
+    #endregion
+
+    #region Antecedentes Visitas 
+
+    public class AntecedentesVisitasSenameDto
+    {
+        public string RecibeVisitas { get; set; }
+        public string QuienVisita { get; set; }
+        public string CantidadVisitas { get; set; }
+        public string SalidaPernoctacion { get; set; }
+        public string QuienPernoctacion { get; set; }
+        public string CantidadPernoctacion { get; set; }
+        public DetalleAnualDto DetalleVisitas { get; set; }
+        public DetalleAnualDto DetallePertoctacion { get; set; }
+    }
+
+    public class DetalleAnualDto
+    {
+        public int Enero { get; set; }
+        public int Febrero { get; set; }
+        public int Marzo { get; set; }
+        public int Abril { get; set; }
+        public int Mayo { get; set; }
+        public int Junio { get; set; }
+        public int Julio { get; set; }
+        public int Agosto { get; set; }
+        public int Septiembre { get; set; }
+        public int Octubre { get; set; }
+        public int Noviembre { get; set; }
+        public int Diciembre { get; set; }
+    }
+
+    #endregion
+
+    #region Proceso Intervención
+
+    public class ProcesoIntervencionDto
+    {
+        public string EvaluacionDiagnosticada { get; set; }
+        public string ConclusionDiagnostico { get; set; }
+        public string ObjetivoPlan { get; set; }
+        public string PosibilidadRestitucion { get; set; }
+        public string FechaUntimoInforme { get; set; }
+        public string ConclusionInforme { get; set; }
+        public string IntervencionEspecializada { get; set; }
+        public string InterventorEspecialista { get; set; }
+        public List<MaltratoIntraResidencialDto> MaltratoResidencialLista { get; set; }
+        public List<CasoAgresorDto> CasoAgresorLista { get; set; }
+        public List<MedidaImplementadaDto> MedidaImplementadaLista { get; set; }
+    }
+
+    public class MaltratoIntraResidencialDto
+    {
+        public string NumeroCaso { get; set; }
+        public string Circular { get; set; }
+        public string CodProyecto { get; set; }
+        public string NombreProyecto { get; set; }
+        public string Lugar { get; set; }
+        public string TipoVulneracion { get; set; }
+        public string TipoInvolucrado { get; set; }
+    }
+
+    public class CasoAgresorDto
+    {
+        public string NumeroCaso { get; set; }
+        public string TipoInvolucrado { get; set; }
+        public string TipoAgredido { get; set; }
+        public string TipoRelacion { get; set; }
+        public string CantidadInvolucrados { get; set; }
+    }
+
+    public class MedidaImplementadaDto
+    {
+        public string NumeroCaso { get; set; }
+        public string MedidaImplementada { get; set; }
+        public string TipoInvolucrado { get; set; }
+    }
+
+    #endregion
 }

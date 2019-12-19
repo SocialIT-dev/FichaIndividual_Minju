@@ -26,7 +26,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
             }
             else
             {
-                if (!windowFR.existetoken("61471B04-7513-468F-A9E6-EB545E4C04FE"))
+                if (!existetoken("61471B04-7513-468F-A9E6-EB545E4C04FE"))
                 {
                     Response.Redirect("~/logout.aspx");
                 }
