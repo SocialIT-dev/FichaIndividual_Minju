@@ -37,16 +37,27 @@ function BuscarFicha() {
 	var rutnino = $("#txtRutnino").val(); // document.getElementById("txtRutnino").value;
 	var codnino = $("#txtCodnino").val();
 	var nombnino = $("#txtNombnino").val(); // document.getElementById("txtNombnino").value;
-	var apellidonino = $("#txtApellidopatnino").val(); // document.getElementById("txtApellidopatnino").value;
-	if ($("#cmbInstitucion").val() == "") {
-		institucion = 0;
+    var apellidonino = $("#txtApellidopatnino").val(); // document.getElementById("txtApellidopatnino").value;
+    var contadorFiltro = 5;
+	if ($("#cmbInstitucion").val() == "0") {
+        institucion = 0;
+        contadorFiltro--;
 	}
-	if ($("#cmbProyecto").val() == "") {
-		proyecto = 0;
+	if ($("#cmbProyecto").val() == "0") {
+        proyecto = 0;
+        contadorFiltro--;
 	}
 	if ($("#txtCodnino").val() == "") {
-		codnino = 0;
-	}
+        codnino = 0;
+        contadorFiltro--;
+    }
+    if ($("#txtNombnino").val() == "") {
+        contadorFiltro--;
+    }
+    if ($("#txtApellidopatnino").val() == "") {
+        contadorFiltro--;
+    }
+
 	var sexonino = "";
 	if ($("#optFemenino").is(':checked')) {
 		sexonino = "F";
@@ -55,11 +66,10 @@ function BuscarFicha() {
 		sexonino = "M";
 	}
   
-    if (institucion == 0 && proyecto == 0 && rutnino.length == 0 && nombnino.length == 0 && apellidonino.length == 0) {
-		//alert("Seleccione al menos un valor para realizar la busqueda");
-        $("#lblMensaje").text("Ingrese al menos uno de los valores anteriores");
+    if (contadorFiltro < 2) {
+        $("#lblMensaje").text("Ingrese al menos dos de los valores anteriores");
         $('.modal').modal('hide');
-		$("#divMsjError").show();
+        $("#divMsjError").show();
     }
 	else {
 		$("#divMsjError").hide();

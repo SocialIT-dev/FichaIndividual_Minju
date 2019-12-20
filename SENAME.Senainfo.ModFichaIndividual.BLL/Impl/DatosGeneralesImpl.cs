@@ -96,4 +96,46 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
             return AntecedentesProcesalesPJUDMapper.ToDto(result);
         }
     }
+
+    public class DetalleAnualImpl : IDetalleAnual
+    {
+        private readonly DetalleAnualDao _detalleAnualDao;
+
+        public DetalleAnualImpl()
+        {
+            _detalleAnualDao = new DetalleAnualDao();
+        }
+
+        public DTO.DetalleAnualDto ObtenerDetalleAnualVisita(string Usuario, string Anio, int CodProyecto, int CodNino)
+        {
+            var result = _detalleAnualDao.ObtenerDetalleAnualVisita(Usuario, Anio, CodProyecto, CodNino);
+            return DetalleAnualMapper.ToDto(result);
+        }
+
+        public DTO.DetalleAnualDto ObtenerDetalleAnualPernoctacion(string Usuario, string Anio, int CodProyecto, int CodNino)
+        {
+            var result = _detalleAnualDao.ObtenerDetalleAnualPernoctacion(Usuario, Anio, CodProyecto, CodNino);
+            return DetalleAnualMapper.ToDto(result);
+        }
+    }
+
+    public class AntecedentesVisitasSenameImpl : IAntecedentesVisitasSename
+    {
+        private readonly AntecedentesVisitasSenameDao _antecedentesVisitaSenameDao;
+
+        public AntecedentesVisitasSenameImpl()
+        {
+            _antecedentesVisitaSenameDao = new AntecedentesVisitasSenameDao();
+        }
+
+        public DTO.AntecedentesVisitasSenameDto ObtenerAntecedentesVisita(int CodNino)
+        {
+            var result = _antecedentesVisitaSenameDao.ObtenerAntecedentesVisita(CodNino);
+            return AntecedentesVisitasSenameMapper.ToDto(result);
+        }
+
+    }
 }
+
+
+

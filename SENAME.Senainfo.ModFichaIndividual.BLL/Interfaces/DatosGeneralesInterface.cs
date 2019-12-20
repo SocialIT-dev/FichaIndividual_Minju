@@ -31,6 +31,16 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
         DTO.AntecedentesProcesalesPJUDDto ObtenerAntecedentesProcesalesPJUD(string codNino);
     }
 
+    public interface IDetalleAnual
+    {
+        DTO.DetalleAnualDto ObtenerDetalleAnualVisita(string Usuario, string Anio, int CodProyecto, int CodNino);
+        DTO.DetalleAnualDto ObtenerDetalleAnualPernoctacion(string Usuario, string Anio, int CodProyecto, int CodNino);
+    }
+
+    public interface IAntecedentesVisitasSename
+    {
+        DTO.AntecedentesVisitasSenameDto ObtenerAntecedentesVisita(int CodNino);
+    }
 }
 
 

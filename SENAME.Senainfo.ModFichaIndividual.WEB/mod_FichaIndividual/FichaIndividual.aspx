@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaIndividual.aspx.cs" Inherits="SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual.FichaIndividual" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
-<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>--%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Proyecto Minju</title>
 
-    <script src="../js/jquery-3.2.1.min.js"></script>
+    <%--<script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
     <link href="../css/jquery-ui.css" rel="stylesheet" />
@@ -21,13 +22,13 @@
     <link href="../css/themes/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/jquery-confirm.min.css" rel="stylesheet" />
     <script src="../js/moment.min.js"></script>
-    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
+    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />--%>
 
-    <%--    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
@@ -41,9 +42,11 @@
     <div class="container-fluid" style="background: #F8F8F8;">
         <form id="forminju" runat="server">
             <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-            <uc2:menu_colgante runat="server" ID="menu_colgante" />
+            <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
             <asp:HiddenField ID="idusuario_conect" runat="server" />
             <asp:HiddenField ID="tokensUsr" runat="server" />
+            <asp:HiddenField ID="hdnCodProyecto" runat="server" Value="" />
+            <asp:HiddenField ID="hdnCodNino" runat="server" Value="" />
         </form>
         <div class="container mytop1">
 
@@ -1011,7 +1014,7 @@
                                                                             </h6>
                                                                         </div>
                                                                         <div class="col-xs-6 col-sm-6 col-md-9 ntop2 hcol diflex ntop3" style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1; border-right: 1px solid #E1E1E1; border-radius: 0px 5px 5px 0px;">
-                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;">1
+                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;">
                                                                             </h6>
                                                                         </div>
                                                                     </div>
@@ -1284,10 +1287,16 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidtop hcol">
                                             <select class="form-control inputfichaante" id="ddlVisitante" runat="server"
-                                                style="height: 27px !important; font-size: 12px !important; margin-top: 3px;">
-                                                <%--<option>SERGIO</option>
-                        <option>FELIPE</option>
-                        <option>JAVIER</option>--%>
+                                                style="height: 27px !important; font-size: 12px !important; margin-top: 3px;"
+                                                onchange="RefrescarVisitas(this.value);">
+                                                <option value="Madre">Madre</option>
+                                                <option value="Padre">Padre</option>
+                                                <option value="Hermana">Hermana</option>
+                                                <option value="Hermano">Hermano</option>
+                                                <option value="Otro">Otro</option>
+                                                <option value="OtroMasculino">Otro Masculino</option>
+                                                <option value="OtroExtensaFemenino">Otro Extensa Femenino</option>
+                                                <option value="OtroExtensaMasculino">Otro Extensa Masculino</option>
                                             </select>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-4 colmidgenebot hcol diflex">
@@ -1295,7 +1304,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-8 colgeneralesmidmbot hcol">
                                             <div class="input-group hcol">
-                                                <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 98%;" id="txtCantindadVisitas" runat="server" readonly="true" />
+                                                <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 98%;" id="txtCantidadVisitas" runat="server" readonly="true" />
                                                 <div class="input-group-btn ">
                                                     <!-- Button trigger modal -->
 
@@ -1329,56 +1338,56 @@
                                                                             <h6 class="textauto">ENE</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>3</h6>
+                                                                            <h6><span id="txtEne">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">FEB</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-feb">
-                                                                            <h6>10</h6>
+                                                                            <h6><span id="txtFeb">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">MAR</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>7</h6>
+                                                                            <h6><span id="txtMar">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">ABR</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-abr">
-                                                                            <h6>5</h6>
+                                                                            <h6><span id="txtAbr">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">MAY</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>1</h6>
+                                                                            <h6><span id="txtMay">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">JUN</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-jun">
-                                                                            <h6>-</h6>
+                                                                            <h6><span id="txtJun">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">JUL</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>16</h6>
+                                                                            <h6><span id="txtJul">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">AGO</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-ago">
-                                                                            <h6>5</h6>
+                                                                            <h6><span id="txtAgo">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgenebot hcol diflex">
@@ -1386,14 +1395,14 @@
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2"
                                                                             style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1;">
-                                                                            <h6>-</h6>
+                                                                            <h6><span id="txtSep">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">OCT</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-oct">
-                                                                            <h6>8</h6>
+                                                                            <h6><span id="txtOct">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex col-nov1">
@@ -1401,14 +1410,14 @@
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2"
                                                                             style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1;">
-                                                                            <h6>5</h6>
+                                                                            <h6><span id="txtNov">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                             <h6 class="textauto">DIC</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-dic">
-                                                                            <h6>1</h6>
+                                                                            <h6><span id="txtDic">0</span></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-6 col-sm-6 col-md-3 hcol diflex ntop2 ntop3 col-total" style="background-color: #F59806 !important;">
@@ -1417,16 +1426,17 @@
                                                                         </div>
                                                                         <div class="col-xs-6 col-sm-6 col-md-9 ntop2 hcol diflex ntop3"
                                                                             style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1; border-right: 1px solid #E1E1E1; border-radius: 0px 5px 5px 0px;">
-                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;">1
+                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;">
+                                                                                <span id="txtTotalVisitas">0</span>
                                                                             </h6>
                                                                         </div>
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="modal-footer">
-                                                                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
-                                                                </div>
+<%--                                                                <div class="modal-footer">
+                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> 
+                                                                </div>--%>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1459,10 +1469,16 @@
 
                                         <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmidtop hcol ntop2">
                                             <select class="form-control inputfichaante" id="ddlPernoctacion" runat="server"
-                                                style="height: 27px !important; font-size: 12px !important; margin-top: 3px;">
-                                                <%--<option>SERGIO</option>
-                        <option>FELIPE</option>
-                        <option>JAVIER</option>--%>
+                                                style="height: 27px !important; font-size: 12px !important; margin-top: 3px;"
+                                                onchange="RefrescarPernoctacion(this.value);">
+                                                <option value="Madre">Madre</option>
+                                                <option value="Padre">Padre</option>
+                                                <option value="Hermana">Hermana</option>
+                                                <option value="Hermano">Hermano</option>
+                                                <option value="Otro">Otro</option>
+                                                <option value="OtroMasculino">Otro Masculino</option>
+                                                <option value="OtroExtensaFemenino">Otro Extensa Femenino</option>
+                                                <option value="OtroExtensaMasculino">Otro Extensa Masculino</option>
                                             </select>
                                         </div>
 
@@ -1506,56 +1522,56 @@
                                                                                 <h6 class="textauto">ENE</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                                <h6>3</h6>
+                                                                                <h6><span id="txtEneP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">FEB</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2 col-feb">
-                                                                                <h6>10</h6>
+                                                                                <h6><span id="txtFebP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">MAR</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                                <h6>7</h6>
+                                                                                <h6><span id="txtMarP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">ABR</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2 col-abr">
-                                                                                <h6>5</h6>
+                                                                                <h6><span id="txtAbrP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">MAY</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                                <h6>1</h6>
+                                                                                <h6><span id="txtMayP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">JUN</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2 col-jun">
-                                                                                <h6>-</h6>
+                                                                                <h6><span id="txtJunP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">JUL</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                                <h6>16</h6>
+                                                                                <h6><span id="txtJulP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">AGO</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2 col-ago">
-                                                                                <h6>5</h6>
+                                                                                <h6><span id="txtAgoP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgenebot hcol diflex">
@@ -1563,14 +1579,14 @@
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2"
                                                                                 style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1;">
-                                                                                <h6>-</h6>
+                                                                                <h6><span id="txtSepP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">OCT</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2 col-oct">
-                                                                                <h6>8</h6>
+                                                                                <h6><span id="txtOctP">0</span></h6>
                                                                             </div>
 
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex col-nov1">
@@ -1578,30 +1594,29 @@
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2"
                                                                                 style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1;">
-                                                                                <h6>5</h6>
+                                                                                <h6><span id="txtNovP">0</span></h6>
                                                                             </div>
-
                                                                             <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
                                                                                 <h6 class="textauto">DIC</h6>
                                                                             </div>
                                                                             <div class="col-xs-3 col-sm-3 col-md-2 col-dic">
-                                                                                <h6>1</h6>
+                                                                                <h6><span id="txtDicP">0</span></h6>
                                                                             </div>
-
                                                                             <div class="col-xs-6 col-sm-6 col-md-3 hcol diflex ntop2 ntop3 col-total" style="background-color: #F59806 !important;">
                                                                                 <h6 class="textauto" style="margin-left: auto; margin-right: auto;">TOTAL
                                                                                 </h6>
                                                                             </div>
                                                                             <div class="col-xs-6 col-sm-6 col-md-9 ntop2 hcol diflex ntop3"
                                                                                 style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1; border-right: 1px solid #E1E1E1; border-radius: 0px 5px 5px 0px;">
-                                                                                <h6 class="textauto" style="margin-left: auto; margin-right: auto;">1
+                                                                                <h6 class="textauto" style="margin-left: auto; margin-right: auto;">
+                                                                                    <span id="txtTotalPernoctacion">0</span>
                                                                                 </h6>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                </div>
+                                                            <%--    <div class="modal-footer">
+                                                                </div>--%>
                                                             </div>
                                                         </div>
                                                     </div>

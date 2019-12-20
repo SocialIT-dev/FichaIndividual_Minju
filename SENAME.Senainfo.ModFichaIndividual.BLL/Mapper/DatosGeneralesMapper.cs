@@ -212,4 +212,66 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
         }
     }
+
+    public class DetalleAnualMapper
+    {
+        public static DetalleAnualDto ToDto(DataTable dt)
+        {
+            var dto = new DetalleAnualDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new DetalleAnualDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.Anio = (dr["Ano"] != DBNull.Value ? Int32.Parse(dr["Ano"].ToString()) : 0);
+                    dto.Enero = (dr["01"] != DBNull.Value ? Int32.Parse(dr["01"].ToString()) : 0);
+                    dto.Febrero = (dr["02"] != DBNull.Value ? Int32.Parse(dr["02"].ToString()) : 0);
+                    dto.Marzo = (dr["03"] != DBNull.Value ? Int32.Parse(dr["03"].ToString()) : 0);
+                    dto.Abril = (dr["04"] != DBNull.Value ? Int32.Parse(dr["04"].ToString()) : 0);
+                    dto.Mayo = (dr["05"] != DBNull.Value ? Int32.Parse(dr["05"].ToString()) : 0);
+                    dto.Junio = (dr["06"] != DBNull.Value ? Int32.Parse(dr["06"].ToString()) : 0);
+                    dto.Julio = (dr["07"] != DBNull.Value ? Int32.Parse(dr["07"].ToString()) : 0);
+                    dto.Agosto = (dr["08"] != DBNull.Value ? Int32.Parse(dr["08"].ToString()) : 0);
+                    dto.Septiembre = (dr["09"] != DBNull.Value ? Int32.Parse(dr["09"].ToString()) : 0);
+                    dto.Octubre = (dr["10"] != DBNull.Value ? Int32.Parse(dr["10"].ToString()) : 0);
+                    dto.Noviembre = (dr["11"] != DBNull.Value ? Int32.Parse(dr["11"].ToString()) : 0);
+                    dto.Diciembre = (dr["12"] != DBNull.Value ? Int32.Parse(dr["12"].ToString()) : 0);
+                    dto.Total = dto.Enero + dto.Febrero + dto.Marzo + dto.Abril + dto.Mayo + dto.Junio + dto.Julio + dto.Agosto + dto.Septiembre + dto.Octubre + dto.Noviembre + dto.Diciembre;
+                }
+            }
+            return dto;
+        }
+    }
+
+    public class AntecedentesVisitasSenameMapper
+    {
+        public static AntecedentesVisitasSenameDto ToDto(DataTable dt)
+        {
+            var dto = new AntecedentesVisitasSenameDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new AntecedentesVisitasSenameDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.CodProyecto = dr["CodProyecto"].ToString();
+                    dto.FechaRegistro = (dr["FechaRegistro"] ==  DBNull.Value ? DateTime.MinValue : DateTime.Parse(dr["FechaRegistro"].ToString()));
+                    dto.IdUsuarioActualizacion = dr["IdUsuarioActualizacion"].ToString();
+                    dto.FechaActualizacion = (dr["FechaActualizacion"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(dr["FechaActualizacion"].ToString()));
+                    dto.RecibeVisitas = bool.Parse(dr["RecibeVisitas"].ToString());
+                    dto.SinVisitas = bool.Parse(dr["SinVisitas"].ToString());
+                    dto.SalidaPernoctacion = bool.Parse(dr["SalidasPernoctacion"].ToString());
+                    dto.FechaHasta = (dr["FechaHasta"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(dr["FechaHasta"].ToString()));
+                }
+            }
+            return dto;
+        }
+    }
+
+   
 }

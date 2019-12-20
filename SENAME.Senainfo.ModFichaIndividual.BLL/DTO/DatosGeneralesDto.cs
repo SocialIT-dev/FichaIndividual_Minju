@@ -169,6 +169,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string TipoDiscapacidad { get; set; }
         public string NivelDiscapacidad { get; set; }
         public string Observacion { get; set; }
+        public string Error { get; set; }
     }
 
     #endregion
@@ -185,6 +186,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string PresentaRetraso { get; set; }
         public string NivelDiferencial { get; set; }
         public string Observacion { get; set; }
+        public string Error { get; set; }
     }
 
     #endregion
@@ -215,6 +217,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string Comuna { get; set; }
         public string QuienRealizaTrabajo { get; set; }
         public string Observacion { get; set; }
+        public string Error { get; set; }
     }
 
     #endregion
@@ -223,14 +226,15 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
 
     public class AntecedentesVisitasSenameDto
     {
-        public string RecibeVisitas { get; set; }
-        public string QuienVisita { get; set; }
-        public string CantidadVisitas { get; set; }
-        public string SalidaPernoctacion { get; set; }
-        public string QuienPernoctacion { get; set; }
-        public string CantidadPernoctacion { get; set; }
-        public DetalleAnualDto DetalleVisitas { get; set; }
-        public DetalleAnualDto DetallePertoctacion { get; set; }
+        public string CodProyecto { get; set; }
+        public DateTime FechaRegistro { get; set; }
+        public string IdUsuarioActualizacion { get; set; }
+        public DateTime FechaActualizacion { get; set; }
+        public bool RecibeVisitas { get; set; }
+        public bool SinVisitas { get; set; }
+        public bool SalidaPernoctacion { get; set; }
+        public DateTime FechaHasta { get; set; }
+        public string Error { get; set; }
     }
 
     public class DetalleAnualDto
@@ -247,6 +251,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public int Octubre { get; set; }
         public int Noviembre { get; set; }
         public int Diciembre { get; set; }
+        public int Anio { get; set; }
+        public string CodProyecto { get; set; }
+        public int Total { get; set; }
+        public string Error { get; set; }
     }
 
     #endregion
@@ -266,6 +274,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public List<MaltratoIntraResidencialDto> MaltratoResidencialLista { get; set; }
         public List<CasoAgresorDto> CasoAgresorLista { get; set; }
         public List<MedidaImplementadaDto> MedidaImplementadaLista { get; set; }
+        public string Error { get; set; }
     }
 
     public class MaltratoIntraResidencialDto
@@ -277,6 +286,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string Lugar { get; set; }
         public string TipoVulneracion { get; set; }
         public string TipoInvolucrado { get; set; }
+        public string Error { get; set; }
     }
 
     public class CasoAgresorDto
@@ -286,6 +296,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string TipoAgredido { get; set; }
         public string TipoRelacion { get; set; }
         public string CantidadInvolucrados { get; set; }
+        public string Error { get; set; }
     }
 
     public class MedidaImplementadaDto
@@ -293,6 +304,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string NumeroCaso { get; set; }
         public string MedidaImplementada { get; set; }
         public string TipoInvolucrado { get; set; }
+        public string Error { get; set; }
     }
 
     #endregion

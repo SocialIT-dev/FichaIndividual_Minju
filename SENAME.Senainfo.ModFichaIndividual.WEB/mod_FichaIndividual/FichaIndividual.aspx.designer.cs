@@ -22,15 +22,6 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         protected global::System.Web.UI.HtmlControls.HtmlForm forminju;
         
         /// <summary>
-        /// Control menu_colgante.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UserControl menu_colgante;
-        
-        /// <summary>
         /// Control idusuario_conect.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,24 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField tokensUsr;
+        
+        /// <summary>
+        /// Control hdnCodProyecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnCodProyecto;
+        
+        /// <summary>
+        /// Control hdnCodNino.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnCodNino;
         
         /// <summary>
         /// Control txtRit.
@@ -1012,13 +1021,13 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual {
         protected global::System.Web.UI.HtmlControls.HtmlSelect ddlVisitante;
         
         /// <summary>
-        /// Control txtCantindadVisitas.
+        /// Control txtCantidadVisitas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCantindadVisitas;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCantidadVisitas;
         
         /// <summary>
         /// Control txtSalidaPernoctacion.
