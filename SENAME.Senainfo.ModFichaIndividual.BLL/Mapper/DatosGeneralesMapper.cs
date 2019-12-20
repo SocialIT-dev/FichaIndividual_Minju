@@ -15,7 +15,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 			List<NiñosVigentesDto> list = new List<NiñosVigentesDto>();
 			foreach (DataRow dr in dt.Rows)
 			{
-				var dto = new NiñosVigentesDto();
+				var dto = 
+                    new NiñosVigentesDto();
 				dto.Error = dr["Error"].ToString();
 
 				if (dto.Error == "")
@@ -267,6 +268,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
                     dto.SinVisitas = bool.Parse(dr["SinVisitas"].ToString());
                     dto.SalidaPernoctacion = bool.Parse(dr["SalidasPernoctacion"].ToString());
                     dto.FechaHasta = (dr["FechaHasta"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(dr["FechaHasta"].ToString()));
+                    dto.FechaUltimaVisita = (dr["FechaUltimaVisita"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(dr["FechaUltimaVisita"].ToString()));
+                    dto.FechaUltimaPernoctacion = (dr["FechaUltimaPernoctacion"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(dr["FechaUltimaPernoctacion"].ToString()));
                 }
             }
             return dto;

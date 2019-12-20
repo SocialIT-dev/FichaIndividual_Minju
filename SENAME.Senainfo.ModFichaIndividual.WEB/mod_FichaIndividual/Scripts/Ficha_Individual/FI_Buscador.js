@@ -65,8 +65,8 @@ function BuscarFicha() {
 	if ($("#optMasculino").is(':checked')) {
 		sexonino = "M";
 	}
-  
-    if (contadorFiltro < 2) {
+  /** Exigir al menos dos criterios de búsqueda  **/
+    if (contadorFiltro < 2) { 
         $("#lblMensaje").text("Ingrese al menos dos de los valores anteriores");
         $('.modal').modal('hide');
         $("#divMsjError").show();
@@ -207,18 +207,25 @@ function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino
 
             if (r.d[0] != null) {
                 if (r.d != "") {
-                    $.each(r.d,
-                        function () {
-                            //$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='row padding' style='margin-bottom:5px;'>");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Nombres + "'></input>");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Run o Nº Pasaporte</p> </div >");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Rut + "'></input>");
-                            $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary' onclick='AbrirFicha(" + this.CodNino + "," + this.CodProyecto + ")'>Ver información </button>");
-                            $("#FichaIndividualResultadosBusqueda").append("</div>");
-                        }
-                    );
+                    if (r.d.length > 1000) {
+                        $('.modal').modal('hide');
+                        $("#lblMensaje").text("Hay más de 1.000 niños. Agregue más criterios de búsqueda para disminuir la muestra.");
+                        $("#divMsjError").show();
+                    }
+                    else {
+                        $.each(r.d,
+                            function () {
+                                //$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
+                                $("#FichaIndividualResultadosBusqueda").append("<div class='row padding' style='margin-bottom:5px;'>");
+                                $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >");
+                                $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Nombres + "'></input>");
+                                $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Run o Nº Pasaporte</p> </div >");
+                                $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Rut + "'></input>");
+                                $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary' onclick='AbrirFicha(" + this.CodNino + "," + this.CodProyecto + ")'>Ver información </button>");
+                                $("#FichaIndividualResultadosBusqueda").append("</div>");
+                            }
+                        );
+                    }
                 }
                 $('.modal').modal('hide');
             }
@@ -330,5 +337,6 @@ function DesplegarExcepcionCriticaApp(responseText) {
 //******************************************** Fin Funciones Miscelaneas *****************************//
 
 function AbrirFicha(codnino, codproyecto) {
+    $('.modal').modal('show');
     window.location.replace('FichaIndividual.aspx?codnino=' + codnino + '&codproy=' + codproyecto);
 }

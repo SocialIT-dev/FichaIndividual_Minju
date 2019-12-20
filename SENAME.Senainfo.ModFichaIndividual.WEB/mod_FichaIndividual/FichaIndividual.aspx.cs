@@ -212,6 +212,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 /****************** Antecedentes Visitas **********************/
                 this.txtRecibeVisitas.Value = (datosVisitasDTO.RecibeVisitas ? "Si" : "No");
                 this.txtSalidaPernoctacion.Value = (datosVisitasDTO.RecibeVisitas ? "Si" : "No");
+                hdnAnioVisita.Value = datosVisitasDTO.FechaUltimaVisita.Year.ToString();
+                hdnAnioPernocta.Value = datosVisitasDTO.FechaUltimaPernoctacion.Year.ToString();
             }
         }
 
@@ -225,11 +227,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
         }
 
         [WebMethod]
-        public static DTO.DetalleAnualDto ObtenerDetallePernoctacion(string tipo, string codproyecto, string codnino)
+        public static DTO.DetalleAnualDto ObtenerDetallePernoctacion(string anio, string tipo, string codproyecto, string codnino)
         {
             BLL.Impl.DetalleAnualImpl detalleAnuamImpl = new BLL.Impl.DetalleAnualImpl();
-            var anio = DateTime.Now.Year;
-            var result = detalleAnuamImpl.ObtenerDetalleAnualPernoctacion(tipo, anio.ToString(), Int32.Parse(codproyecto), Int32.Parse(codnino));
+            var result = detalleAnuamImpl.ObtenerDetalleAnualPernoctacion(tipo, anio, Int32.Parse(codproyecto), Int32.Parse(codnino));
             return result;
         }
 

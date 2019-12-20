@@ -47,6 +47,9 @@
             <asp:HiddenField ID="tokensUsr" runat="server" />
             <asp:HiddenField ID="hdnCodProyecto" runat="server" Value="" />
             <asp:HiddenField ID="hdnCodNino" runat="server" Value="" />
+            <asp:HiddenField ID="hdnAnioVisita" runat="server" Value="" />
+            <asp:HiddenField ID="hdnAnioPernocta" runat="server" Value="" />
+
         </form>
         <div class="container mytop1">
 
@@ -2045,6 +2048,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1" id="divLoading">
+            <div class="modal-dialog modal-sm">
+                <img src="images/loading.gif" style="width: 50%; display: block; margin: auto;" />
             </div>
         </div>
     </div>

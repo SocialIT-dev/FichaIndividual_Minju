@@ -29,6 +29,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
     public interface IAntecedentesProcesalesPJUD
     {
         DTO.AntecedentesProcesalesPJUDDto ObtenerAntecedentesProcesalesPJUD(string codNino);
+
     }
 
     public interface IDetalleAnual

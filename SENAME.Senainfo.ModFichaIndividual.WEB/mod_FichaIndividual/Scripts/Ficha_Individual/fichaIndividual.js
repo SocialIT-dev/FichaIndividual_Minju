@@ -11,10 +11,19 @@
     $("#botonimprimir").mouseover(function (event) {
         $("#botonimprimir").click();
     });
+    var rolVisita = $("#ddlVisitante").val();
+    var rolPernocta = $("#ddlPernoctacion").val();
+    setTimeout(function () {
+        RefrescarVisitas(rolVisita);
+        RefrescarPernoctacion(rolPernocta);
+    }, 200);
+    
 });
 
 function RefrescarVisitas(tipo) {
+    $('#divLoading').modal('show');
     var parametros = JSON.stringify({
+        'anio': $("#hdnAnioVisita").val(),
         'tipo': tipo,
         'codproyecto': $("#hdnCodProyecto").val(),
         'codnino': $("#hdnCodNino").val()
@@ -29,9 +38,11 @@ function RefrescarVisitas(tipo) {
             // Ajax OK !                   
         },
         error: function (r) {
+            $('#divLoading').modal('hide');
             DesplegarExcepcionCriticaApp(r.responseText);
         }
     }).then(function (r) {
+        $('#divLoading').modal('hide');
         if (r.d != null) {
             $("#txtEne").text(r.d.Enero);
             $("#txtFeb").text(r.d.Febrero);
@@ -52,7 +63,9 @@ function RefrescarVisitas(tipo) {
 }
 
 function RefrescarPernoctacion(tipo) {
+    $('#divLoading').modal('show');
     var parametros = JSON.stringify({
+        'anio': $("#hdnAnioPernocta").val(),
         'tipo': tipo,
         'codproyecto': $("#hdnCodProyecto").val(),
         'codnino': $("#hdnCodNino").val()
@@ -67,9 +80,11 @@ function RefrescarPernoctacion(tipo) {
             // Ajax OK !                   
         },
         error: function (r) {
+            $('#divLoading').modal('hide');
             DesplegarExcepcionCriticaApp(r.responseText);
         }
     }).then(function (r) {
+        $('#divLoading').modal('hide');
         if (r.d != null) {
             $("#txtEneP").text(r.d.Enero);
             $("#txtFebP").text(r.d.Febrero);

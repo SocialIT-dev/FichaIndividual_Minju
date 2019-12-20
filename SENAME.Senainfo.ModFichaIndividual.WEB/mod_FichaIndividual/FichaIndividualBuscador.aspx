@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
-    <script type='text/javascript' src="Scripts/Ficha_Individual/fichaIndividual.js"></script>
+<%--    <script type='text/javascript' src="Scripts/Ficha_Individual/fichaIndividual.js"></script>--%>
     <script type='text/javascript' src="Scripts/Ficha_Individual/FI_Buscador.js"></script>
 
 </head>

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B45FD48E-C4FD-44BF-82B9-FB1C96943695}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SENAME.Senainfo.ModFichaResidencial.WEB</RootNamespace>
+    <AssemblyName>SENAME.Senainfo.ModFichaResidencial.WEB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AJAXExtensionsToolbox">
+      <HintPath>..\lib\AJAXExtensionsToolbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SenainfoSdk.Kernel">
+      <HintPath>..\lib\SenainfoSdk.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="SenainfoSdk.UI">
+      <HintPath>..\lib\SenainfoSdk.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="SENAME.Senainfo.ModFichaIndividual.BLL">
+      <HintPath>..\SENAME.Senainfo.ModFichaIndividual.BLL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SENAME.Senainfo.ModFichaIndividual.DAL">
+      <HintPath>..\SENAME.Senainfo.ModFichaIndividual.DAL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mod_FichaIndividual\Content\bootstrap-theme.css" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap-theme.min.css" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap.css" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap.min.css" />
+    <Content Include="mod_FichaIndividual\Content\css\fichaIndividual.css" />
+    <Content Include="mod_FichaIndividual\Content\css\FI_Diseño.css" />
+    <Content Include="mod_FichaIndividual\Content\css\minju.css" />
+    <Content Include="mod_FichaIndividual\Content\css\Site.css" />
+    <Content Include="mod_FichaIndividual\FichaIndividual.aspx" />
+    <Content Include="mod_FichaIndividual\FichaIndividualBuscador.aspx" />
+    <Content Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx" />
+    <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="mod_FichaIndividual\images\calendario.svg" />
+    <Content Include="mod_FichaIndividual\images\loading.gif" />
+    <Content Include="mod_FichaIndividual\images\pdf.svg" />
+    <Content Include="mod_FichaIndividual\images\pdf_gray.svg" />
+    <Content Include="mod_FichaIndividual\images\pregunta_12png.png" />
+    <Content Include="mod_FichaIndividual\images\volver.svg" />
+    <Content Include="mod_FichaIndividual\Scripts\bootstrap.js" />
+    <Content Include="mod_FichaIndividual\Scripts\bootstrap.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\bootstrap_3.3.7.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\Ficha_Individual\fichaIndividual.js" />
+    <Content Include="mod_FichaIndividual\Scripts\Ficha_Individual\FI_Buscador.js" />
+    <Content Include="mod_FichaIndividual\Scripts\jquery-3.2.1.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\modernizr-2.8.3.js" />
+    <Content Include="mod_FichaIndividual\Scripts\sweetalert2\sweetalert2.all.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\sweetalert2\sweetalert2.css" />
+    <Content Include="mod_FichaIndividual\Scripts\sweetalert2\sweetalert2.js" />
+    <Content Include="mod_FichaIndividual\Scripts\sweetalert2\sweetalert2.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\sweetalert2\sweetalert2.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\DetailsView.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\Focus.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\GridView.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\Menu.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\SmartNav.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\TreeView.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\WebForms.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\WebParts.js" />
+    <Content Include="mod_FichaIndividual\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap-theme.css.map" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap-theme.min.css.map" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap.css.map" />
+    <Content Include="mod_FichaIndividual\Content\bootstrap.min.css.map" />
+    <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mod_FichaIndividual\FichaIndividual.aspx.cs">
+      <DependentUpon>FichaIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividual.aspx.designer.cs">
+      <DependentUpon>FichaIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividualBuscador.aspx.cs">
+      <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividualBuscador.aspx.designer.cs">
+      <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx.cs">
+      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx.designer.cs">
+      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53025</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:33333/ficharesidencial</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

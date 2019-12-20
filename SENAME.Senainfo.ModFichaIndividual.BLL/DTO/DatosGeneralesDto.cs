@@ -234,6 +234,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public bool SinVisitas { get; set; }
         public bool SalidaPernoctacion { get; set; }
         public DateTime FechaHasta { get; set; }
+        public DateTime FechaUltimaVisita { get; set; }
+        public DateTime FechaUltimaPernoctacion { get; set; }
         public string Error { get; set; }
     }
 
