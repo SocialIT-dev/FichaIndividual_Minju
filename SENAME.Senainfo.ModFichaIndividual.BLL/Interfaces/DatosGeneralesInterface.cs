@@ -42,6 +42,13 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
     {
         DTO.AntecedentesVisitasSenameDto ObtenerAntecedentesVisita(int CodNino);
     }
+
+    public interface IProcesoIntervencion
+    {
+        DTO.ProcesoIntervencionDto ObtenerProcesoIntervencion(int CodNino);
+    }
+
+
 }
 
 

@@ -63,6 +63,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
             CargarDatosGenerales(Cod_Nino, Cod_Proy);
             CargarDatosProcesales(Cod_Nino);
             CargarAntecedentesVisitas(Cod_Nino);
+            CargarProcesoIntervencion(Cod_Nino);
+
         }
 
         private void CargarDatosGenerales(string codNino, string codProyecto)
@@ -214,6 +216,23 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 this.txtSalidaPernoctacion.Value = (datosVisitasDTO.RecibeVisitas ? "Si" : "No");
                 hdnAnioVisita.Value = datosVisitasDTO.FechaUltimaVisita.Year.ToString();
                 hdnAnioPernocta.Value = datosVisitasDTO.FechaUltimaPernoctacion.Year.ToString();
+            }
+        }
+
+        private void CargarProcesoIntervencion(string codNino)
+        {
+            var _procesoIntervencionImpl = new BLL.Impl.ProcesoIntervencionImpl();
+            var datosProcesoDTO = _procesoIntervencionImpl.ObtenerProcesoIntervencion(Int32.Parse(codNino));
+            if (datosProcesoDTO != null)
+            {
+                this.txtEvalDiagnosticada.Value = datosProcesoDTO.EvaluacionDiagnosticada;
+                this.txtConclusionDiagnostico.Value = datosProcesoDTO.ConclusionDiagnostico;
+                this.txtObjetivoPlanInterv.Value = datosProcesoDTO.ObjetivoPlan;
+                this.txtRestituir.Value = datosProcesoDTO.PosibilidadRestitucion;
+                this.txtFechaUltimoInforme.Value = datosProcesoDTO.FechaUntimoInforme;
+                this.txtConclusionInforme.Value = datosProcesoDTO.ConclusionInforme;
+                this.txtIntervEpecializada.Value = datosProcesoDTO.IntervencionEspecializada;
+                this.txtRealizaIntervencion.Value = datosProcesoDTO.InterventorEspecialista;
             }
         }
 

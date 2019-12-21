@@ -276,5 +276,32 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
         }
     }
 
-   
+    public class ProcesoIntervencionMapper
+    {
+        public static ProcesoIntervencionDto ToDto(DataTable dt)
+        {
+            var dto = new ProcesoIntervencionDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new ProcesoIntervencionDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.EvaluacionDiagnosticada = dr["EvaluacionDiagnosticada"].ToString();
+                    dto.ConclusionDiagnostico = dr["ConclusionDiagnostico"].ToString();
+                    dto.ObjetivoPlan = dr["ObjetivoPlan"].ToString();
+                    dto.PosibilidadRestitucion = dr["PosibilidadRestitucion"].ToString();
+                    dto.FechaUntimoInforme = dr["FechaUltimoInforme"].ToString();
+                    dto.ConclusionInforme = dr["ConclusionInforme"].ToString();
+                    dto.IntervencionEspecializada = dr["TieneIntervencionEspecializada"].ToString();
+                    dto.InterventorEspecialista = dr["QuienRealizaIntervencion"].ToString();
+                }
+            }
+            return dto;
+        }
+    }
+
+
 }

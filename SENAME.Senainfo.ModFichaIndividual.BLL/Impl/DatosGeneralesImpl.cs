@@ -10,60 +10,60 @@ using SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces;
 
 namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 {
-	public class NiñosVigentesImpl : INiñosVigentes
-	{
-		private readonly NiñosVigentesDao _niñosVigentesDao;
+    public class NiñosVigentesImpl : INiñosVigentes
+    {
+        private readonly NiñosVigentesDao _niñosVigentesDao;
 
-		public NiñosVigentesImpl()
-		{
-			_niñosVigentesDao = new NiñosVigentesDao();
-		}
+        public NiñosVigentesImpl()
+        {
+            _niñosVigentesDao = new NiñosVigentesDao();
+        }
 
-		public List<NiñosVigentesDto> ObtenerNiñosVigentes(int? CodInstitucion, int? CodProyecto, string Rut, int? CodNino, string NombNino, string ApellPaterno, string SexoNino)
-		{
-			var result = _niñosVigentesDao.ObtenerNiñosVigentes(CodInstitucion, CodProyecto, Rut, CodNino, NombNino, ApellPaterno, SexoNino);
-			return NiñosVigentesMapper.ToDto(result);
-		}
-	}
+        public List<NiñosVigentesDto> ObtenerNiñosVigentes(int? CodInstitucion, int? CodProyecto, string Rut, int? CodNino, string NombNino, string ApellPaterno, string SexoNino)
+        {
+            var result = _niñosVigentesDao.ObtenerNiñosVigentes(CodInstitucion, CodProyecto, Rut, CodNino, NombNino, ApellPaterno, SexoNino);
+            return NiñosVigentesMapper.ToDto(result);
+        }
+    }
 
-	public class ProyectosUsuarioImpl : IProyectosUsuario
-	{
-		private readonly ProyectosUsuarioDao _proyectosUsuarioDao;
+    public class ProyectosUsuarioImpl : IProyectosUsuario
+    {
+        private readonly ProyectosUsuarioDao _proyectosUsuarioDao;
 
-		public ProyectosUsuarioImpl()
-		{
-			_proyectosUsuarioDao = new ProyectosUsuarioDao();
-		}
+        public ProyectosUsuarioImpl()
+        {
+            _proyectosUsuarioDao = new ProyectosUsuarioDao();
+        }
 
-		public List<ProyectosUsuarioDto> ObtenerProyectosUsuario(int? IdUsuario)
-		{
-			var result = _proyectosUsuarioDao.ObtenerProyectosUsuario(IdUsuario);
-			return ProyectosUsuarioMapper.ToDto(result);
-		}
+        public List<ProyectosUsuarioDto> ObtenerProyectosUsuario(int? IdUsuario)
+        {
+            var result = _proyectosUsuarioDao.ObtenerProyectosUsuario(IdUsuario);
+            return ProyectosUsuarioMapper.ToDto(result);
+        }
 
-		public List<ProyectosUsuarioDto> ObtenerProyectosXInstitucionYUsuario(int? IdUsuario, int? codigoInstitucion)
-		{
-			var result = _proyectosUsuarioDao.ProyectosXInstitucionYUsuario(IdUsuario, codigoInstitucion);
-			return ProyectosUsuarioMapper.ToDto(result);
-		}
+        public List<ProyectosUsuarioDto> ObtenerProyectosXInstitucionYUsuario(int? IdUsuario, int? codigoInstitucion)
+        {
+            var result = _proyectosUsuarioDao.ProyectosXInstitucionYUsuario(IdUsuario, codigoInstitucion);
+            return ProyectosUsuarioMapper.ToDto(result);
+        }
 
-	}
+    }
 
-	public class InstitucionesUsuarioImpl : IInstitucionesUsuario
-	{
-		private readonly InstitucionesUsuarioDao _institucionesUsuarioDao;
+    public class InstitucionesUsuarioImpl : IInstitucionesUsuario
+    {
+        private readonly InstitucionesUsuarioDao _institucionesUsuarioDao;
 
-		public InstitucionesUsuarioImpl()
-		{
-			_institucionesUsuarioDao = new InstitucionesUsuarioDao();
-		}
+        public InstitucionesUsuarioImpl()
+        {
+            _institucionesUsuarioDao = new InstitucionesUsuarioDao();
+        }
 
-		public List<InstitucionesUsuarioDto> ObtenerInstitucionesUsuario(int? IdUsuario)
-		{
-			var result = _institucionesUsuarioDao.ObtenerInstitucionesUsuario(IdUsuario);
-			return InstitucionesUsuarioMapper.ToDto(result);
-		}
-	}
+        public List<InstitucionesUsuarioDto> ObtenerInstitucionesUsuario(int? IdUsuario)
+        {
+            var result = _institucionesUsuarioDao.ObtenerInstitucionesUsuario(IdUsuario);
+            return InstitucionesUsuarioMapper.ToDto(result);
+        }
+    }
 
     public class AntecedentesGeneralesPJUDImpl : IAntecedentesGeneralesPJUD
     {
@@ -135,6 +135,24 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         }
 
     }
+
+    public class ProcesoIntervencionImpl : IProcesoIntervencion
+    {
+        private readonly ProcesoIntervencionDao _procesoIntervencionDao;
+
+        public ProcesoIntervencionImpl()
+        {
+            _procesoIntervencionDao = new ProcesoIntervencionDao();
+        }
+
+        public DTO.ProcesoIntervencionDto ObtenerProcesoIntervencion(int CodNino)
+        {
+            var result = _procesoIntervencionDao.ObtenerProcesoIntervencion(CodNino);
+            return ProcesoIntervencionMapper.ToDto(result);
+        }
+
+    }
+
 }
 
 

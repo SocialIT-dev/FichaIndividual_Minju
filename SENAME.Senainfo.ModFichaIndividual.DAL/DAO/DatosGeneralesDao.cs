@@ -435,6 +435,53 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
         }
     }
 
+    public class ProcesoIntervencionDao : Repository
+    {
+        public DataTable ObtenerProcesoIntervencion(int CodNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("[FichaInd].[GetProcesoIntervencion]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerProcesoIntervencion";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+
+
     #region Excepciones
 
     public class ControlExcepcion
