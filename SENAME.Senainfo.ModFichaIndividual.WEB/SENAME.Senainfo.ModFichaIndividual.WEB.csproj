@@ -65,17 +65,14 @@
     <Reference Include="Microsoft.CSharp">
       <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SenainfoSdk.Kernel">
       <HintPath>..\lib\SenainfoSdk.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="SenainfoSdk.UI">
       <HintPath>..\lib\SenainfoSdk.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="SENAME.Senainfo.ModFichaIndividual.BLL">
-      <HintPath>..\SENAME.Senainfo.ModFichaIndividual.BLL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.BLL.dll</HintPath>
-    </Reference>
-    <Reference Include="SENAME.Senainfo.ModFichaIndividual.DAL">
-      <HintPath>..\SENAME.Senainfo.ModFichaIndividual.DAL\bin\Debug\SENAME.Senainfo.ModFichaIndividual.DAL.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -115,6 +112,27 @@
     <Content Include="mod_FichaIndividual\Scripts\bootstrap.js" />
     <Content Include="mod_FichaIndividual\Scripts\bootstrap.min.js" />
     <Content Include="mod_FichaIndividual\Scripts\bootstrap_3.3.7.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.bootstrap.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.bootstrap.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.bootstrap4.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.bootstrap4.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.foundation.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.foundation.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.jqueryui.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.jqueryui.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.semanticui.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\dataTables.semanticui.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\jquery.dataTables.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\css\jquery.dataTables.min.css" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\images\sort_asc.png" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\images\sort_asc_disabled.png" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\images\sort_both.png" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\images\sort_desc.png" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\images\sort_desc_disabled.png" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\js\dataTables.bootstrap.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\js\dataTables.bootstrap4.min.js" />
+    <Content Include="mod_FichaIndividual\Scripts\Ficha_Individual\funcionesComunes.js" />
+    <Content Include="mod_FichaIndividual\Scripts\DataTables-1.10.20\js\jquery.dataTables.min.js" />
     <Content Include="mod_FichaIndividual\Scripts\Ficha_Individual\fichaIndividual.js" />
     <Content Include="mod_FichaIndividual\Scripts\Ficha_Individual\FI_Buscador.js" />
     <Content Include="mod_FichaIndividual\Scripts\jquery-3.2.1.min.js" />
@@ -153,6 +171,7 @@
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -192,6 +211,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SENAME.Senainfo.ModFichaIndividual.BLL\SENAME.Senainfo.ModFichaIndividual.BLL.csproj">
+      <Project>{9e43bf94-672c-40d1-a998-f8b687a4e1da}</Project>
+      <Name>SENAME.Senainfo.ModFichaIndividual.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SENAME.Senainfo.ModFichaIndividual.DAL\SENAME.Senainfo.ModFichaIndividual.DAL.csproj">
+      <Project>{e6b3a6d0-e2fe-46d6-8e66-1a049d66f253}</Project>
+      <Name>SENAME.Senainfo.ModFichaIndividual.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

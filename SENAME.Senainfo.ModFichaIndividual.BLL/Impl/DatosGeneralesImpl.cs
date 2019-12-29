@@ -10,6 +10,9 @@ using SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces;
 
 namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 {
+
+    #region Buscador
+
     public class NiñosVigentesImpl : INiñosVigentes
     {
         private readonly NiñosVigentesDao _niñosVigentesDao;
@@ -65,6 +68,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         }
     }
 
+    #endregion
+
+    #region Antecedentes Generales
+
     public class AntecedentesGeneralesPJUDImpl : IAntecedentesGeneralesPJUD
     {
         private readonly AntecedentesGeneralesPJUDDao _antecedentesGeneralesPJUDDao;
@@ -81,6 +88,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         }
     }
 
+    #endregion
+
+    #region Antecedentes Procesales
+
     public class AntecedentesProcesalesPJUDImpl : IAntecedentesProcesalesPJUD
     {
         private readonly AntecedentesProcesalesPJUDDao _antecedentesProcesalesPJUDDao;
@@ -96,6 +107,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
             return AntecedentesProcesalesPJUDMapper.ToDto(result);
         }
     }
+
+    #endregion
+
+    #region Detalle Visitas
 
     public class DetalleAnualImpl : IDetalleAnual
     {
@@ -136,6 +151,30 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 
     }
 
+    #endregion
+
+    #region AntecedentesSalud
+
+    public class AntecedentesSaludImpl : IAntecedentesSalud
+    {
+        private readonly AntecedentesSaludDao _antecedentesSaludDao;
+
+        public AntecedentesSaludImpl()
+        {
+            _antecedentesSaludDao = new AntecedentesSaludDao();
+        }
+
+        public DTO.AntecedentesSaludDto ObtenerAntecedentesSalud(int CodNino)
+        {
+            var result = _antecedentesSaludDao.ObtenerAntecedentesSalud(CodNino);
+            return AntecedentesSaludMapper.ToDto(result);
+        }
+    }
+
+    #endregion
+
+    #region Proceso Intervencion
+
     public class ProcesoIntervencionImpl : IProcesoIntervencion
     {
         private readonly ProcesoIntervencionDao _procesoIntervencionDao;
@@ -152,6 +191,56 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         }
 
     }
+
+    public class MaltratoIntraResidencialImpl : IMaltratoIntraResidencial
+    {
+        private readonly MaltratoIntraResidencialDao _maltratoDao;
+
+        public MaltratoIntraResidencialImpl()
+        {
+            _maltratoDao = new MaltratoIntraResidencialDao();
+        }
+
+        public List<MaltratoIntraResidencialDto> ObtenerMaltratoIntraResidencial(int codnino)
+        {
+            var result = _maltratoDao.ObtenerMaltratoIntraResidencial(codnino);
+            return MaltratoIntraResidencialMapper.ToDto(result);
+        }
+    }
+
+    public class CasoAgresorImpl : ICasoAgresor
+    {
+        private readonly CasoAgresorDao _agresorDao;
+
+        public CasoAgresorImpl()
+        {
+            _agresorDao = new CasoAgresorDao();
+        }
+
+        public List<CasoAgresorDto> ObtenerCasoAgresor(int CodNino)
+        {
+            var result = _agresorDao.ObtenerCasoAgresor(CodNino);
+            return CasoAgresorMapper.ToDto(result);
+        }
+    }
+
+    public class MedidaImplementadaImpl : IMedidaImplementada
+    {
+        private readonly MedidaImplementadaDao _medidaImplementadaDao;
+
+        public MedidaImplementadaImpl()
+        {
+            _medidaImplementadaDao = new MedidaImplementadaDao();
+        }
+
+        public List<MedidaImplementadaDto> ObtenerMedidaImplementada(int CodNino)
+        {
+            var result = _medidaImplementadaDao.ObtenerMedidasIMplementadas(CodNino);
+            return MedidaImplementadaMapper.ToDto(result);
+        }
+    }
+
+    #endregion
 
 }
 

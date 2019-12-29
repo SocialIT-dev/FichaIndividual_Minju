@@ -8,7 +8,10 @@ using SENAME.Senainfo.ModFichaIndividual.BLL.DTO;
 
 namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 {
-	public class NiñosVigentesMapper
+
+    #region Buscador 
+
+    public class NiñosVigentesMapper
 	{
 		public static List<NiñosVigentesDto> ToDto(DataTable dt)
 		{
@@ -113,6 +116,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 		}
 	}
 
+    #endregion
+
+    #region Antecedentes Generales
+
     public class AntecedentesGeneralesPJUDMapper
     {
         public static AntecedentesGeneralesPJUDDto ToDto(DataTable dt)
@@ -181,6 +188,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
         }
     }
 
+    #endregion
+
+    #region Antecedentes Procesales
+
     public class AntecedentesProcesalesPJUDMapper
     {
         public static AntecedentesProcesalesPJUDDto ToDto(DataTable dt)
@@ -213,6 +224,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
         }
     }
+
+    #endregion
+
+    #region Detalle Visitas
 
     public class DetalleAnualMapper
     {
@@ -276,6 +291,47 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
         }
     }
 
+    #endregion
+
+    #region Antecedentes Salud
+
+    public class AntecedentesSaludMapper
+    {
+        public static AntecedentesSaludDto ToDto(DataTable dt)
+        {
+            var dto = new AntecedentesSaludDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new AntecedentesSaludDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.FechaDiagnosticoDiscapacidad = (dr["FechaDiagnosticoDiscapacidad"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FechaDiagnosticoDiscapacidad"].ToString());
+                    dto.FechaUltimoControl = (dr["FechaUltimoControl"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FechaUltimoControl"].ToString());
+                    dto.InscritoConsultorio = (dr["FechaUltimoControl"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FechaUltimoControl"].ToString());
+                    dto.NivelDiscapacidad = dr["NivelDiscapacidad"].ToString();
+                    dto.Observacion = dr["Observacion"].ToString();
+                    dto.ProblemaSaludMental = dr["ProblemaSaludMental"].ToString();
+                    dto.RecibeTratamiento = dr["RecibeTratamiento"].ToString();
+                    dto.RecibeTratamientoDis = dr["RecibeTratamientoDis"].ToString();
+                    dto.RegistroDiscapacidad = dr["RegistroDiscapacidad"].ToString();
+                    dto.TieneDiscapacidad = dr["TieneDiscapacidad"].ToString();
+                    dto.TipoDiscapacidad = dr["TipoDiscapacidad"].ToString();
+                    dto.TratadoPor = dr["TratadoPor"].ToString();
+                    dto.TratamientoDiagnostico = dr["TratamientoDiagnostico"].ToString();                  
+                }
+            }
+            return dto;
+
+        }
+    }
+
+    #endregion
+
+    #region Proceso de Intervención
+
     public class ProcesoIntervencionMapper
     {
         public static ProcesoIntervencionDto ToDto(DataTable dt)
@@ -303,5 +359,81 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
         }
     }
 
+    public class MaltratoIntraResidencialMapper
+    {
+        public static List<MaltratoIntraResidencialDto> ToDto(DataTable dt)
+        {
+            var dto = new MaltratoIntraResidencialDto();
+            var lstMaltrato = new List<MaltratoIntraResidencialDto>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new MaltratoIntraResidencialDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.Circular = dr["Circular"].ToString();
+                    dto.CodProyecto = dr["CodProyecto"].ToString();
+                    dto.Lugar = dr["Lugar"].ToString();
+                    dto.NombreProyecto = dr["NombreProyecto"].ToString();
+                    dto.NumeroCaso = dr["NumeroCaso"].ToString();
+                    dto.TipoInvolucrado = dr["TipoInvolucrado"].ToString();
+                    dto.TipoVulneracion = dr["TipoVulneracion"].ToString();
+                    lstMaltrato.Add(dto);
+                }
+            }
+            return lstMaltrato;
+        }
+    }
+
+    public class CasoAgresorMapper
+    {
+        public static List<CasoAgresorDto> ToDto(DataTable dt)
+        {
+            var dto = new CasoAgresorDto();
+            var lstCasos = new List<CasoAgresorDto>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new CasoAgresorDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.CantidadInvolucrados = dr["CantidadInvolucrados"].ToString();
+                    dto.NumeroCaso = dr["NumeroCaso"].ToString();
+                    dto.TipoAgredido = dr["TipoAgredido"].ToString();
+                    dto.TipoInvolucrado = dr["TipoInvolucrado"].ToString();
+                    dto.TipoRelacion = dr["TipoRelacion"].ToString();
+                    lstCasos.Add(dto);
+                }
+            }
+            return lstCasos;
+        }
+    }
+
+    public class MedidaImplementadaMapper
+    {
+        public static List<MedidaImplementadaDto> ToDto(DataTable dt)
+        {
+            var dto = new MedidaImplementadaDto();
+            var lstMedidas = new List<MedidaImplementadaDto>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new MedidaImplementadaDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.MedidaImplementada = dr["MedidaImplementada"].ToString();
+                    dto.NumeroCaso = dr["NumeroCaso"].ToString();
+                    dto.TipoInvolucrado = dr["TipoInvolucrado"].ToString();
+                    lstMedidas.Add(dto);
+                }
+            }
+            return lstMedidas;
+        }
+    }
+
+    #endregion
 
 }

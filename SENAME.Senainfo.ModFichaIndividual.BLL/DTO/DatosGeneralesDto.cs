@@ -157,11 +157,12 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string InscritoConsultorio { get; set; }
         public string FechaUltimoControl { get; set; }
         public string EnfermedadCronicaDiagnosticada { get; set; }
-        public string EnferemedadCronica { get; set; }
+        public string EnfermedadCronica { get; set; }
         public string RecibeTratamiento { get; set; }
         public string ProblemaSaludMental { get; set; }
         public string Diagnosticado { get; set; }
         public string TratamientoDiagnostico { get; set; }
+        public string FechaDiagnosticoDiscapacidad { get; set; }
         public string TieneDiscapacidad { get; set; }
         public string TratadoPor { get; set; }
         public string RecibeTratamientoDis { get; set; }
@@ -273,9 +274,9 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string ConclusionInforme { get; set; }
         public string IntervencionEspecializada { get; set; }
         public string InterventorEspecialista { get; set; }
-        public List<MaltratoIntraResidencialDto> MaltratoResidencialLista { get; set; }
-        public List<CasoAgresorDto> CasoAgresorLista { get; set; }
-        public List<MedidaImplementadaDto> MedidaImplementadaLista { get; set; }
+        //public List<MaltratoIntraResidencialDto> MaltratoResidencialLista { get; set; }
+        //public List<CasoAgresorDto> CasoAgresorLista { get; set; }
+        //public List<MedidaImplementadaDto> MedidaImplementadaLista { get; set; }
         public string Error { get; set; }
     }
 

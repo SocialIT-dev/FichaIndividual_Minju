@@ -7,6 +7,9 @@ using System.Text;
 
 namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
 {
+
+    #region Buscador 
+
     public class ProyectosUsuarioDao : Repository
     {
         public DataTable ObtenerProyectosUsuario(int? IdUsuario)
@@ -199,6 +202,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
         }
     }
 
+    #endregion
+
+    #region Antecedentes Generales
+
     public class AntecedentesGeneralesPJUDDao : RepositoryP
     {
         public DataTable ObtenerAntecedentesGenerales(string codNino, int codProyecto)
@@ -246,6 +253,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
         }
     }
 
+    #endregion
+
+    #region Antecedentes Procesales
+
     public class AntecedentesProcesalesPJUDDao : RepositoryP
     {
         public DataTable ObtenerAntecedentesProcesalesPJUD(string codNino)
@@ -292,6 +303,9 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
         }
     }
 
+    #endregion
+
+    #region Detalle Visitas
 
     public class DetalleAnualDao : Repository
     {
@@ -435,6 +449,62 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
         }
     }
 
+    #endregion
+
+    #region Antecedentes Salud
+
+    public class AntecedentesSaludDao : Repository
+    {
+        public DataTable ObtenerAntecedentesSalud(int CodNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("[FichaInd].[GetAntecedentesSalud]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerAntecedentesSalud";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+
+        
+    }
+
+    #endregion
+
+    #region Proceso de Intervención
+
     public class ProcesoIntervencionDao : Repository
     {
         public DataTable ObtenerProcesoIntervencion(int CodNino)
@@ -481,6 +551,148 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
         }
     }
 
+    public class MaltratoIntraResidencialDao : Repository
+    {
+        public DataTable ObtenerMaltratoIntraResidencial(int CodNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    // Falta crear procedimiento Almacenado
+                    using (var cmd = new SqlCommand("[FichaInd].[GetMaltratoIntraresidencial]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerMaltratoIntraResidencial";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+
+    public class CasoAgresorDao : Repository
+    {
+        public DataTable ObtenerCasoAgresor(int CodNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    // Falta crear procedimiento Almacenado
+                    using (var cmd = new SqlCommand("[FichaInd].[GetCasoAgresor]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerCasoAgresor";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+
+    public class MedidaImplementadaDao : Repository
+    {
+        public DataTable ObtenerMedidasIMplementadas(int CodNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    // Falta crear procedimiento Almacenado
+                    using (var cmd = new SqlCommand("[FichaInd].[GetMedidasImplementadas]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerMedidasIMplementadas";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+
+    #endregion
 
     #region Excepciones
 

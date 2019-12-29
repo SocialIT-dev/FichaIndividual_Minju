@@ -1,23 +1,19 @@
 ﻿$(document).ready(function () {
-    $("#boton").click(function (event) {
-        $("#FichaIndividualResultadosBusqueda").load('FichaIndividualResultadosBusqueda.aspx');
-    });
-
-    $('.tituloarrow').on("click", function () {
-        var $arrows = $(this).find("span");
-        $arrows.toggle();
-        $arrows.removeClass("noned");
-    });
     $("#botonimprimir").mouseover(function (event) {
         $("#botonimprimir").click();
     });
-    var rolVisita = $("#ddlVisitante").val();
-    var rolPernocta = $("#ddlPernoctacion").val();
+
     setTimeout(function () {
+        var rolVisita = $("#ddlVisitante").val();
+        var rolPernocta = $("#ddlPernoctacion").val();
+        var cod_nino = $("#hdnCodNino").val();
         RefrescarVisitas(rolVisita);
         RefrescarPernoctacion(rolPernocta);
+        CargarGrillaMaltrato(cod_nino);
+        CargarGrillaAgresor(cod_nino);
+        CargarGrillaMedidas(cod_nino);
     }, 200);
-    
+
 });
 
 function RefrescarVisitas(tipo) {
@@ -101,5 +97,122 @@ function RefrescarPernoctacion(tipo) {
             $("#txtTotalPernoctacion").text(r.d.Total);
             $("#txtCantidadPernoctacion").val(r.d.Total);
         }
+    });
+}
+
+function CargarGrillaMaltrato(cod_nino) {
+    $('#divLoading').modal('show');
+    var parametros = JSON.stringify({
+        'codnino': cod_nino
+    });
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "FichaIndividual.aspx/ObtenerDatosMaltrato",
+        data: parametros,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (r) {
+        },
+        error: function (r) {
+            $('#divLoading').modal('hide');
+            DesplegarExcepcionCriticaApp(r.responseText);
+        }
+    }).then(function (r) {
+        var datatableVariable = $('#tblMaltrato').DataTable({
+            paging: false,
+            searching: false,
+            ordering: false,
+            info: false,
+            language: {
+                "emptyTable": "No existen datos"
+            },
+            data: r.d,
+            columns: [
+                { "data": "NumeroCaso" },
+                { "data": "Circular" },
+                { "data": "CodProyecto" },
+                { "data": "NombreProyecto" },
+                { "data": "Lugar" },
+                { "data": "TipoVulneracion" },
+                { "data": "TipoInvolucrado" }
+            ]
+        });
+    });
+}
+
+function CargarGrillaAgresor(cod_nino) {
+    $('#divLoading').modal('show');
+    var parametros = JSON.stringify({
+        'codnino': cod_nino
+    });
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "FichaIndividual.aspx/ObtenerDatosAgresor",
+        data: parametros,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (r) {
+        },
+        error: function (r) {
+            $('#divLoading').modal('hide');
+            DesplegarExcepcionCriticaApp(r.responseText);
+        }
+    }).then(function (r) {
+        var datatableVariable = $('#tblCasoAgresor').DataTable({
+            paging: false,
+            searching: false,
+            ordering: false,
+            info: false,
+            language: {
+                "emptyTable": "No existen datos"
+            },
+            data: r.d,
+            columns: [
+                { "data": "NumeroCaso" },
+                { "data": "TipoInvolucrado" },
+                { "data": "TipoAgredido" },
+                { "data": "TipoRelacion" },
+                { "data": "CantidadInvolucrados" }
+            ]
+        });
+    });
+}
+
+function CargarGrillaMedidas(cod_nino) {
+    $('#divLoading').modal('show');
+    var parametros = JSON.stringify({
+        'codnino': cod_nino
+    });
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "FichaIndividual.aspx/ObtenerDatosMedidas",
+        data: parametros,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (r) {
+        },
+        error: function (r) {
+            $('#divLoading').modal('hide');
+            DesplegarExcepcionCriticaApp(r.responseText);
+        }
+    }).then(function (r) {
+        var datatableVariable = $('#tblMedidas').DataTable({
+            paging: false,
+            searching: false,
+            ordering: false,
+            info: false,
+            language: {
+                "emptyTable": "No existen datos"
+            },
+            data: r.d,
+            columns: [
+                { "data": "NumeroCaso" },
+                { "data": "MedidaImplementada" },
+                { "data": "TipoInvolucrado" }
+            ]
+        });
     });
 }

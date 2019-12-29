@@ -8,6 +8,7 @@ using System.Text;
 using System.Web.Security;
 using System.Security.Cryptography;
 using System.Data;
+using Newtonsoft.Json;
 
 namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
 {

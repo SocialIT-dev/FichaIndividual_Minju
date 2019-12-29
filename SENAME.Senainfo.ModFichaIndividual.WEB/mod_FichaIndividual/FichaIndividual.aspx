@@ -29,15 +29,18 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="Scripts/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="Scripts/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
+
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
-    <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
+    <script type='text/javascript' src="Scripts/Ficha_Individual/funcionesComunes.js"></script>
     <script type='text/javascript' src="Scripts/Ficha_Individual/fichaIndividual.js"></script>
 </head>
 
 <body>
+
     <!-- titulo ficha, botonoes -->
     <div class="container-fluid" style="background: #F8F8F8;">
         <form id="forminju" runat="server">
@@ -49,8 +52,8 @@
             <asp:HiddenField ID="hdnCodNino" runat="server" Value="" />
             <asp:HiddenField ID="hdnAnioVisita" runat="server" Value="" />
             <asp:HiddenField ID="hdnAnioPernocta" runat="server" Value="" />
-
         </form>
+
         <div class="container mytop1">
 
             <div class="row">
@@ -254,7 +257,6 @@
                                         <div class="col-xs-12 col-sm-12 col-md-4 colgeneralesmidmbot hcol">
                                             <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtEdadNino" runat="server" readonly="true" />
                                         </div>
-
                                         <!-- info nacionalidad niño -->
                                         <div class="col-xs-12 col-sm-12 col-md-2 ntop2 nt3 colnacionalidad hcol diflex">
                                             <p class="textauto">NACIONALIDAD</p>
@@ -1017,8 +1019,7 @@
                                                                             </h6>
                                                                         </div>
                                                                         <div class="col-xs-6 col-sm-6 col-md-9 ntop2 hcol diflex ntop3" style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1; border-right: 1px solid #E1E1E1; border-radius: 0px 5px 5px 0px;">
-                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;">
-                                                                            </h6>
+                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;"></h6>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1436,7 +1437,7 @@
                                                                     </div>
                                                                 </div>
 
-<%--                                                                <div class="modal-footer">
+                                                                <%--                                                                <div class="modal-footer">
                                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button> 
                                                                 </div>--%>
@@ -1618,7 +1619,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <%--    <div class="modal-footer">
+                                                                <%--    <div class="modal-footer">
                                                                 </div>--%>
                                                             </div>
                                                         </div>
@@ -1733,41 +1734,55 @@
                                             </h4>
                                         </div>
 
-                                        <div class="col-xs-6 col-sm-6 col-md-2 colfechavisita diflex hcol ">
-                                            <p class="textauto" style="font-size: 10px;">Numero de Caso</p>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 ntop2" style="padding-left: 0px;">
+                                            <table id="tblMaltrato" class="table table-responsive cell-border" style="width: 100%; font-size: 10px;">
+                                                <thead>
+                                                    <tr 
+                                                        >
+                                                        <th class="casocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="NumeroCaso">Número de Caso</th>
+                                                        <th class="circularcol col-xs-12 col-sm-12 col-md-1 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="Circular">Circular</th>
+                                                        <th class="proyectocol col-xs-12 col-sm-12 col-md-1 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="CodProyecto">Proyecto</th>
+                                                        <th class="nombrecol col-xs-12 col-sm-12 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="NompreProyecto">Nombre</th>
+                                                        <th class="lugarcol col-xs-12 col-sm-12 col-md-2 colmidgene  hcol textauto" style="font-size: 10px; height: 10px !important;" id="Lugar">Lugar</th>
+                                                        <th class="tipovulneracioncol col-xs-12 col-sm-12 col-md-2 colmidgene  hcol textauto" style="font-size: 10px; height: 10px !important;" id="TipoVulneracion">Tipo Vulneración</th>
+                                                        <th class="tipoinvolucradocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="TipoInvolucrado">Tipo Involucrado</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                </tfoot>
+                                            </table>
                                         </div>
 
+
+                                        <%--                                        <div class="col-xs-6 col-sm-6 col-md-2 colfechavisita diflex hcol ">
+                                            <p class="textauto" style="font-size: 10px;">Numero de Caso</p>
+                                        </div>
                                         <div class="circularcol">
                                             <div class="col-xs-12 col-sm-12 col-md-1 colmidgene  diflex hcol">
                                                 <p class="textauto" style="font-size: 10px;">Circular</p>
                                             </div>
                                         </div>
-
                                         <div class="proyectocol">
                                             <div class="col-xs-12 col-sm-12 col-md-1 colmidgene  diflex hcol">
                                                 <p class="textauto" style="font-size: 10px;">Proyecto</p>
                                             </div>
                                         </div>
-
                                         <div class="nombrecol">
                                             <div class="col-xs-12 col-sm-12 col-md-2 colmidgene  diflex hcol">
                                                 <p class="textauto" style="font-size: 10px;">Nombre</p>
                                             </div>
                                         </div>
-
                                         <div class="lugarcol">
                                             <div class="col-xs-12 col-sm-12 col-md-2 colmidgene  diflex hcol">
                                                 <p class="textauto" style="font-size: 10px;">Lugar</p>
                                             </div>
                                         </div>
-
                                         <div class="tipovulneracioncol">
                                             <div class="col-xs-12 col-sm-12 col-md-2 colmidgene  diflex hcol"
                                                 style="border-radius: 0px 5px 0px 0px;">
                                                 <p class="textauto" style="font-size: 10px;">Tipo Vulneración</p>
                                             </div>
                                         </div>
-
                                         <div class="col-xs-6 col-sm-6 col-md-2 colmidgene diflex hcol"
                                             style="border-radius: 0px 5px 0px 0px;">
                                             <p class="textauto" style="font-size: 10px;">Tipo Involucrado</p>
@@ -1822,7 +1837,7 @@
                                                     readonly="readonly" />
                                             </div>
 
-                                        </div>
+                                        </div>--%>
 
                                         <div id="agresor">
                                             <div class="col-xs-12 col-sm-12 col-md-12 ntop2" style="padding-left: 0px;">
@@ -1830,7 +1845,23 @@
                                                 </h4>
                                             </div>
 
-                                            <div class="col-numerocaso-agresor">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 ntop2" style="padding-left: 0px;">
+                                                <table id="tblCasoAgresor" class="table table-responsive cell-border" style="width: 100%; font-size: 10px;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="casocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="NumeroCasoAgresor">Número de Caso</th>
+                                                            <th class="tipoinvolucradocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="TipoInvolucradoAgresor">Tipo Involucrado</th>
+                                                            <th class="tipoagredidocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="TipoAgredidoAgresor">Tipo Ageredido</th>
+                                                            <th class="tiporelacioncol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="TipoRelacionAgresor">Tipo Relación</th>
+                                                            <th class="cantidadInvolucradoscol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="CantidadInvolucradosAgresor">Cantidad Involucrados</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+
+                                            <%--                                            <div class="col-numerocaso-agresor">
                                                 <div class="col-xs-12 col-sm-12 col-md-2 colfechavisita diflex hcol">
                                                     <p class="textauto" style="font-size: 10px;">
                                                         Numero de Caso
@@ -1887,7 +1918,7 @@
 
                                             <div class="col-xs-4 col-sm-4 col-md-3 colgeneralesmid hcol">
                                                 <input type="text" class="" style="margin-top: 5px; margin-bottom: 5px; font-size: 10px; width: 100%;" id="txtCantInvolucrados" runat="server" readonly="true" />
-                                            </div>
+                                            </div>--%>
 
                                             <!-- informacion como agresor medidas implementadas y tipo involucrado-->
                                             <div class="col-xs-12 col-sm-12 col-md-12 ntop2" style="padding-left: 0px;">
@@ -1895,7 +1926,21 @@
                                                 </h4>
                                             </div>
 
-                                            <div class="col-numerocaso-involucrado">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 ntop2" style="padding-left: 0px;">
+                                                <table id="tblMedidas" class="table table-responsive cell-border" style="width: 100%; font-size: 10px;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="casocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="NumeroCasoMedidas">Número de Caso</th>
+                                                            <th class="medidaimplementadacol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="MedidaImplementada">Medida Implementada</th>
+                                                            <th class="tipoInvolucradocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="TipoInvolucradoMedida">Tipo Involucrado</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+
+                                            <%--           <div class="col-numerocaso-involucrado">
                                                 <div class="col-xs-4 col-sm-4 col-md-4 colfechavisita diflex hcol">
                                                     <p class="textauto" style="font-size: 10px;">
                                                         Numero de Caso
@@ -1928,8 +1973,7 @@
                                                 <div class="col-xs-6 col-sm-6 col-md-4 colgeneralesmid hcol diflex">
                                                     <input type="text" class="" style="margin-top: 5px; margin-bottom: 5px; font-size: 10px; width: 100%;" id="txtTipoInvolMedidas" runat="server" readonly="true" />
                                                 </div>
-                                            </div>
-
+                                            </div>--%>
                                         </div>
 
                                         <!-- datos obtenidos -->

@@ -43,10 +43,31 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
         DTO.AntecedentesVisitasSenameDto ObtenerAntecedentesVisita(int CodNino);
     }
 
+    public interface IAntecedentesSalud
+    {
+        DTO.AntecedentesSaludDto ObtenerAntecedentesSalud(int CodNino);
+    }
+
     public interface IProcesoIntervencion
     {
         DTO.ProcesoIntervencionDto ObtenerProcesoIntervencion(int CodNino);
     }
+
+    public interface IMaltratoIntraResidencial
+    {
+        List<DTO.MaltratoIntraResidencialDto> ObtenerMaltratoIntraResidencial(int CodNino);
+    }
+
+    public interface ICasoAgresor
+    {
+        List<DTO.CasoAgresorDto> ObtenerCasoAgresor(int CodNino);
+    }
+
+    public interface IMedidaImplementada
+    {
+        List<DTO.MedidaImplementadaDto> ObtenerMedidaImplementada(int CodNino);
+    }
+
 
 
 }
