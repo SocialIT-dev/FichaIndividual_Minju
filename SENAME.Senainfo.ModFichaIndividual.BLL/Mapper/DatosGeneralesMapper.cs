@@ -330,6 +330,45 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
     #endregion
 
+    #region Antecedentes Escolares
+
+    public class AntecedentesEscolaresMapper
+    {
+        public static AntecedentesEscolaresDto ToDto(DataTable dt)
+        {
+            var dto = new AntecedentesEscolaresDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new AntecedentesEscolaresDto();
+                dto.CursoActual = dr["CursoActual"].ToString();
+                dto.UltimoCursoAprobado = dr["UltimoCursoAprobado"].ToString();
+                dto.AnioUltimoCursoAprobado = dr["AnioUltimoCursoAprobado"].ToString();
+                dto.AsistenciaEscolar = float.Parse(dr["PromedioAsistencia"].ToString());
+                dto.RazonInasistencia = dr["RazonInasistencia"].ToString();
+                dto.PresentaRetraso = dr["PresentaRetraso"].ToString();
+                dto.Observacion = dr["Observacion"].ToString();
+                dto.EneroAsistencia = float.Parse(dr["Enero"].ToString());
+                dto.FebreroAsistencia = float.Parse(dr["Febrero"].ToString());
+                dto.MarzoAsistencia = float.Parse(dr["Marzo"].ToString());
+                dto.AbrilAsistencia = float.Parse(dr["Abril"].ToString());
+                dto.MayoAsistencia = float.Parse(dr["Mayo"].ToString());
+                dto.JunioAsistencia = float.Parse(dr["Junio"].ToString());
+                dto.JulioAsistencia = float.Parse(dr["Julio"].ToString());
+                dto.AgostoAsistencia = float.Parse(dr["Agosto"].ToString());
+                dto.SeptiembreAsistencia = float.Parse(dr["Septiembre"].ToString());
+                dto.OctubreAsistencia = float.Parse(dr["Octubre"].ToString());
+                dto.NoviembreAsistencia = float.Parse(dr["Noviembre"].ToString());
+                dto.DiciembreAsistencia = float.Parse(dr["Diciembre"].ToString());
+
+                dto.Error = dr["Error"].ToString();                
+            }
+            return dto;
+        }
+    }
+
+    #endregion
+
     #region Proceso de Intervención
 
     public class ProcesoIntervencionMapper

@@ -48,6 +48,11 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
         DTO.AntecedentesSaludDto ObtenerAntecedentesSalud(int CodNino);
     }
 
+    public interface IAntecedentesEscolares
+    {
+        DTO.AntecedentesEscolaresDto ObtenerAntecedentesEscolares(int CodNino);
+    }
+
     public interface IProcesoIntervencion
     {
         DTO.ProcesoIntervencionDto ObtenerProcesoIntervencion(int CodNino);

@@ -928,98 +928,98 @@
                                                                             </h2>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1  hcol diflex col-ene1">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1  hcol diflex col-ene1" style="height:36px;">
                                                                             <h6 class="textauto">ENE</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>3</h6>
+                                                                           <h6><input type="text" id="txtEscEne" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">FEB</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-feb">
-                                                                            <h6>10</h6>
+                                                                             <h6><input type="text" id="txtEscFeb" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">MAR</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>7</h6>
+                                                                             <h6><input type="text" id="txtEscMar" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">ABR</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-abr">
-                                                                            <h6>5</h6>
+                                                                            <h6><input type="text" id="txtEscAbr" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">MAY</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>1</h6>
+                                                                            <h6><input type="text" id="txtEscMay" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">JUN</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-jun">
-                                                                            <h6>-</h6>
+                                                                            <h6><input type="text" id="txtEscJun" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">JUL</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2" style="border-top: 1px solid #E1E1E1;">
-                                                                            <h6>16</h6>
+                                                                            <h6><input type="text" id="txtEscJul" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">AGO</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-ago">
-                                                                            <h6>5</h6>
+                                                                            <h6><input type="text" id="txtEscAgo" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgenebot hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgenebot hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">SEPT</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2"
                                                                             style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1;">
-                                                                            <h6>-</h6>
+                                                                            <h6><input type="text" id="txtEscSep" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">OCT</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-oct">
-                                                                            <h6>8</h6>
+                                                                            <h6><input type="text" id="txtEscOct" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex col-nov1">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex col-nov1" style="height:36px;">
                                                                             <h6 class="textauto">NOV</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2"
                                                                             style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1;">
-                                                                            <h6>5</h6>
+                                                                            <h6><input type="text" id="txtEscNov" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
-                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex">
+                                                                        <div class="col-xs-3 col-sm-3 col-md-1 colmidgene hcol diflex" style="height:36px;">
                                                                             <h6 class="textauto">DIC</h6>
                                                                         </div>
                                                                         <div class="col-xs-3 col-sm-3 col-md-2 col-dic">
-                                                                            <h6>1</h6>
+                                                                            <h6><input type="text" id="txtEscDic" runat="server" style="border: none;" /></h6>
                                                                         </div>
 
                                                                         <div class="col-xs-6 col-sm-6 col-md-3 hcol diflex ntop2 ntop3 col-total" style="background-color: #F59806 !important;">
-                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;">TOTAL
+                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;" >TOTAL
                                                                             </h6>
                                                                         </div>
                                                                         <div class="col-xs-6 col-sm-6 col-md-9 ntop2 hcol diflex ntop3" style="border-top: 1px solid #E1E1E1; border-bottom: 1px solid #E1E1E1; border-right: 1px solid #E1E1E1; border-radius: 0px 5px 5px 0px;">
-                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;"></h6>
+                                                                            <h6 class="textauto" style="margin-left: auto; margin-right: auto;"><input type="text" id="txtEscTotal" runat="server" style="border: none;" /></h6>
                                                                         </div>
                                                                     </div>
                                                                 </div>

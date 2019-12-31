@@ -153,7 +153,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 
     #endregion
 
-    #region AntecedentesSalud
+    #region Antecedentes Salud
 
     public class AntecedentesSaludImpl : IAntecedentesSalud
     {
@@ -168,6 +168,26 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         {
             var result = _antecedentesSaludDao.ObtenerAntecedentesSalud(CodNino);
             return AntecedentesSaludMapper.ToDto(result);
+        }
+    }
+
+    #endregion
+
+    #region Antecedentes Escolares
+
+    public class AntecedentesEscolaresImpl : IAntecedentesEscolares
+    {
+        private readonly AntecedentesEscolaresDao _antecedentesEscolaresDao;
+
+        public AntecedentesEscolaresImpl()
+        {
+            _antecedentesEscolaresDao = new AntecedentesEscolaresDao();
+        }
+
+        public DTO.AntecedentesEscolaresDto ObtenerAntecedentesEscolares(int CodNino)
+        {
+            var result = _antecedentesEscolaresDao.ObtenerAntecedentesEscolares(CodNino);
+            return AntecedentesEscolaresMapper.ToDto(result);
         }
     }
 

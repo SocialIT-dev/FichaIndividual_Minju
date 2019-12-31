@@ -126,6 +126,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 CargarDatosProcesales(codNino);
                 CargarAntecedentesVisitas(codNino);
                 CargarAntecedentesSalud(codNino);
+                CargarAntecedentesEscolares(codNino);
                 CargarProcesoIntervencion(codNino);
 
             }
@@ -301,7 +302,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
             var antecedentesSaludDTO = _antecedentesSaludImpl.ObtenerAntecedentesSalud(Int32.Parse(codNino));
             if (antecedentesSaludDTO != null)
             {
-                /****************** Antecedentes Visitas **********************/
+                /****************** Antecedentes de Salud **********************/
                 this.txtInscritoConsultorio.Value = antecedentesSaludDTO.InscritoConsultorio;
                 this.txtFechaUltControl.Value = antecedentesSaludDTO.FechaUltimoControl;
                 this.txtDiagnostico.Value = antecedentesSaludDTO.EnfermedadCronicaDiagnosticada;
@@ -317,6 +318,45 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 this.txtTipoDiscapacidad.Value = antecedentesSaludDTO.TipoDiscapacidad;
                 this.txtNivelDiscapacidad.Value = antecedentesSaludDTO.NivelDiscapacidad;
                 this.txtObsDiscapacidad.Value = antecedentesSaludDTO.Observacion;
+            }
+        }
+
+        #endregion
+
+        #region Antecedentes Escolares
+
+        private void CargarAntecedentesEscolares(string codNino)
+        {
+            var _antecedentesEscolaresImpl = new BLL.Impl.AntecedentesEscolaresImpl();
+            var antecedentesEscolaresDTO = _antecedentesEscolaresImpl.ObtenerAntecedentesEscolares(Int32.Parse(codNino));
+            if (antecedentesEscolaresDTO != null)
+            {
+                /****************** Antecedentes Escolares **********************/
+                this.txtCursoActual.Value = antecedentesEscolaresDTO.CursoActual;
+                this.txtUltimoCurso.Value = antecedentesEscolaresDTO.UltimoCursoAprobado;
+                this.txtUltimoAgnoAprobado.Value = antecedentesEscolaresDTO.AnioUltimoCursoAprobado;
+                this.txtAsistenciaEscolar.Value = antecedentesEscolaresDTO.AsistenciaEscolar.ToString();
+                this.txtRazonInasistencia.Value = antecedentesEscolaresDTO.RazonInasistencia;
+                this.txtPresentaRetraso.Value = antecedentesEscolaresDTO.PresentaRetraso;
+                this.txtNivelDiferencial.Value = antecedentesEscolaresDTO.NivelDiferencial;
+                this.txtObservEducacion.Value = antecedentesEscolaresDTO.Observacion;
+                this.txtEscEne.Value = antecedentesEscolaresDTO.EneroAsistencia.ToString();
+                this.txtEscFeb.Value = antecedentesEscolaresDTO.FebreroAsistencia.ToString();
+                this.txtEscMar.Value = antecedentesEscolaresDTO.MarzoAsistencia.ToString();
+                this.txtEscAbr.Value = antecedentesEscolaresDTO.AbrilAsistencia.ToString();
+                this.txtEscMay.Value = antecedentesEscolaresDTO.MayoAsistencia.ToString();
+                this.txtEscJun.Value = antecedentesEscolaresDTO.JunioAsistencia.ToString();
+                this.txtEscJul.Value = antecedentesEscolaresDTO.JulioAsistencia.ToString();
+                this.txtEscAgo.Value = antecedentesEscolaresDTO.AgostoAsistencia.ToString();
+                this.txtEscSep.Value = antecedentesEscolaresDTO.SeptiembreAsistencia.ToString();
+                this.txtEscOct.Value = antecedentesEscolaresDTO.OctubreAsistencia.ToString();
+                this.txtEscNov.Value = antecedentesEscolaresDTO.NoviembreAsistencia.ToString();
+                this.txtEscDic.Value = antecedentesEscolaresDTO.DiciembreAsistencia.ToString();
+                this.txtEscTotal.Value = (antecedentesEscolaresDTO.EneroAsistencia + antecedentesEscolaresDTO.FebreroAsistencia +
+                                    antecedentesEscolaresDTO.MarzoAsistencia + antecedentesEscolaresDTO.AbrilAsistencia + antecedentesEscolaresDTO.MayoAsistencia +
+                                    antecedentesEscolaresDTO.JunioAsistencia + antecedentesEscolaresDTO.JulioAsistencia + antecedentesEscolaresDTO.AgostoAsistencia +
+                                    antecedentesEscolaresDTO.SeptiembreAsistencia + antecedentesEscolaresDTO.OctubreAsistencia + antecedentesEscolaresDTO.NoviembreAsistencia +
+                                    antecedentesEscolaresDTO.DiciembreAsistencia).ToString();
             }
         }
 
