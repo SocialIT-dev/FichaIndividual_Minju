@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaIndividual.aspx.cs" Inherits="SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual.FichaIndividual" %>
-
-<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
-<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>--%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Proyecto Minju</title>
 
-    <%--<script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
     <link href="../css/jquery-ui.css" rel="stylesheet" />
@@ -22,13 +21,13 @@
     <link href="../css/themes/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/jquery-confirm.min.css" rel="stylesheet" />
     <script src="../js/moment.min.js"></script>
-    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />--%>
+    <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
 
-    <script src="Scripts/jquery-3.2.1.min.js"></script>
+<%--    <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
     <link href="Scripts/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="Scripts/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
@@ -45,7 +44,7 @@
     <div class="container-fluid" style="background: #F8F8F8;">
         <form id="forminju" runat="server">
             <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-            <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
+            <uc2:menu_colgante runat="server" ID="menu_colgante" />
             <asp:HiddenField ID="idusuario_conect" runat="server" />
             <asp:HiddenField ID="tokensUsr" runat="server" />
             <asp:HiddenField ID="hdnCodProyecto" runat="server" Value="" />
