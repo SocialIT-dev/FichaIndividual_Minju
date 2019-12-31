@@ -173,6 +173,26 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 
     #endregion
 
+    #region Antecedentes Consumo
+
+    public class AntecedentesConsumoImpl : IAntecedentesConsumo
+    {
+        private readonly AntecedentesConsumoDao _antecedentesConsumoDao;
+
+        public AntecedentesConsumoImpl()
+        {
+            _antecedentesConsumoDao = new AntecedentesConsumoDao();
+        }
+
+        public DTO.AntecedentesConsumoDto ObtenerAntecedentesConsumo(int CodNino)
+        {
+            var result = _antecedentesConsumoDao.ObtenerAntecedentesConsumo(CodNino);
+            return AntecedentesConsumoMapper.ToDto(result);
+        }
+    }
+
+    #endregion
+
     #region Antecedentes Escolares
 
     public class AntecedentesEscolaresImpl : IAntecedentesEscolares

@@ -128,7 +128,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 CargarAntecedentesSalud(codNino);
                 CargarAntecedentesEscolares(codNino);
                 CargarProcesoIntervencion(codNino);
-
+                CargarAntecedentesConsumo(codNino);
             }
         }
 
@@ -318,6 +318,29 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 this.txtTipoDiscapacidad.Value = antecedentesSaludDTO.TipoDiscapacidad;
                 this.txtNivelDiscapacidad.Value = antecedentesSaludDTO.NivelDiscapacidad;
                 this.txtObsDiscapacidad.Value = antecedentesSaludDTO.Observacion;
+            }
+        }
+
+        #endregion
+
+        #region Antecedentes Consumo
+
+        private void CargarAntecedentesConsumo(string codNino)
+        {
+            var _antecedentesConsumoImpl = new BLL.Impl.AntecedentesConsumoImpl();
+            var antecedentesConsumoDTO = _antecedentesConsumoImpl.ObtenerAntecedentesConsumo(Int32.Parse(codNino));
+            if (antecedentesConsumoDTO != null)
+            {
+                /****************** Antecedentes de Consumo **********************/
+                this.txtConsumeDrogas.Value = antecedentesConsumoDTO.ConsumeDrogas;
+                this.txtTipoDroga.Value = antecedentesConsumoDTO.TipoDroga;
+                this.txtTipoConsumo.Value = antecedentesConsumoDTO.TipoConsumo;
+                this.txtTieneEvaluacion.Value = antecedentesConsumoDTO.TieneEvaluacion;
+                this.txtTieneTratamiento.Value = antecedentesConsumoDTO.TieneTratamiento;
+                this.txtTieneRehabilitacion.Value = antecedentesConsumoDTO.TieneRehabilitacion;
+                this.txtInstitucionRehab.Value = antecedentesConsumoDTO.InstitucionTratamiento;
+                this.txtConclusiones.Value = antecedentesConsumoDTO.ConclusionUltimoInforme;
+                this.txtObservConsumo.Value = antecedentesConsumoDTO.Observacion;
             }
         }
 

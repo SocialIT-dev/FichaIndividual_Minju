@@ -217,6 +217,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string InstitucionTratamiento { get; set; }
         public string ConclusionUltimoInforme { get; set; }
         public string Observacion { get; set; }
+        public string Error { get; set; }
     }
 
     #endregion
@@ -286,9 +287,6 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string ConclusionInforme { get; set; }
         public string IntervencionEspecializada { get; set; }
         public string InterventorEspecialista { get; set; }
-        //public List<MaltratoIntraResidencialDto> MaltratoResidencialLista { get; set; }
-        //public List<CasoAgresorDto> CasoAgresorLista { get; set; }
-        //public List<MedidaImplementadaDto> MedidaImplementadaLista { get; set; }
         public string Error { get; set; }
     }
 

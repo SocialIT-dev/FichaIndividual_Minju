@@ -330,6 +330,39 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
     #endregion
 
+    #region Antecedentes Consumo
+
+    public class AntecedentesConsumoMapper
+    {
+        public static AntecedentesConsumoDto ToDto(DataTable dt)
+        {
+            var dto = new AntecedentesConsumoDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new AntecedentesConsumoDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.ConsumeDrogas = dr["ConsumeDroga"].ToString();
+                    dto.TipoDroga = dr["TipoDroga"].ToString();
+                    dto.TipoConsumo = dr["TipoConsumoDroga"].ToString();
+                    dto.TieneEvaluacion = dr["EvaluacionConsumoDroga"].ToString();
+                    dto.TieneTratamiento = dr["TratamientoDroga"].ToString();
+                    dto.TieneRehabilitacion = dr["RehabilitacionDroga"].ToString();
+                    dto.InstitucionTratamiento = dr["InstitucionTratamientoDroga"].ToString();
+                    dto.ConclusionUltimoInforme = dr["ConclusionTratamientoDroga"].ToString();
+                    dto.Observacion = dr["ObservacionDroga"].ToString();
+                }
+            }
+            return dto;
+        }
+    }
+
+
+    #endregion
+
     #region Antecedentes Escolares
 
     public class AntecedentesEscolaresMapper
