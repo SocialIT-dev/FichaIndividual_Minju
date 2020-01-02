@@ -330,6 +330,35 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
 
     #endregion
 
+    #region Situación familiar
+
+    public class SituacionFamiliarMapper
+    {
+        public static SituacionFamiliarDto ToDto(DataTable dt)
+        {
+            var dto = new SituacionFamiliarDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new SituacionFamiliarDto();
+                dto.Error = dr["Error"].ToString();
+
+                if (dto.Error == "")
+                {
+                    dto.ExisteTrabajoEgreso = dr["NombreTrabajoEgreso"].ToString();
+                    dto.TrabajoDesde = (dr["FechaDesde"].ToString() == "01-01-1900 0:00:00" ? "Sin dato" : dr["FechaDesde"].ToString());
+                    dto.Comuna = dr["Comuna"].ToString();
+                    dto.QuienRealizaTrabajo = dr["QuienRealizaTrabajo"].ToString();
+                    dto.Observacion = dr["Observacion"].ToString();
+                }
+            }
+            return dto;
+
+        }
+    }
+
+    #endregion
+
     #region Antecedentes Consumo
 
     public class AntecedentesConsumoMapper

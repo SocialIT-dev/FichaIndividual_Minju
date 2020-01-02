@@ -123,6 +123,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 this.txtObservSugTribunal.Value = datosGeneralesDTO.SugerenciasAlTribunal;
                 this.txtObservSugSename.Value = datosGeneralesDTO.SugerenciasAlSename;
                 CargarDatosProcesales(codNino);
+                CargarSituacionFamiliar(codNino);
                 CargarAntecedentesVisitas(codNino);
                 CargarAntecedentesSalud(codNino);
                 CargarAntecedentesConsumo(codNino);
@@ -213,6 +214,25 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
                 lstCausales = causales.Split('#').ToList();
             }
             return lstCausales;
+        }
+
+        #endregion
+
+        #region Situación Familiar
+
+        private void CargarSituacionFamiliar(string codNino)
+        {
+            var _situacionFamiliarImpl = new BLL.Impl.SituacionFamiliarImpl();
+            var situacionFamiliarDTO = _situacionFamiliarImpl.ObtenerSituacionFamiliar(Int32.Parse(codNino));
+            if (situacionFamiliarDTO != null)
+            {
+                /****************** Antecedentes de Consumo **********************/
+                this.txtTrabajoEgreso.Value = situacionFamiliarDTO.ExisteTrabajoEgreso;
+                this.txtDesdeCuando.Value = situacionFamiliarDTO.TrabajoDesde;
+                this.txtComunaSitFam.Value = situacionFamiliarDTO.Comuna;
+                this.txtRealizaTrabajo.Value = situacionFamiliarDTO.QuienRealizaTrabajo;
+                this.txtObservSitFam.Value = situacionFamiliarDTO.Observacion;
+            }
         }
 
         #endregion

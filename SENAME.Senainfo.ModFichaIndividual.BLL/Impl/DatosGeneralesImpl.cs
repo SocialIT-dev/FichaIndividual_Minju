@@ -173,6 +173,26 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 
     #endregion
 
+    #region SituacionFamiliar
+
+    public class SituacionFamiliarImpl : ISituacionFamiliar
+    {
+        private readonly SituacionFamiliarDao _situacionFamiliarDao;
+
+        public SituacionFamiliarImpl()
+        {
+            _situacionFamiliarDao = new SituacionFamiliarDao();
+        }
+
+        public DTO.SituacionFamiliarDto ObtenerSituacionFamiliar(int CodNino)
+        {
+            var result = _situacionFamiliarDao.ObtenerSituacionFamiliar(CodNino);
+            return SituacionFamiliarMapper.ToDto(result);
+        }
+    }
+
+    #endregion
+
     #region Antecedentes Consumo
 
     public class AntecedentesConsumoImpl : IAntecedentesConsumo
@@ -281,6 +301,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
     }
 
     #endregion
+
 
 }
 
