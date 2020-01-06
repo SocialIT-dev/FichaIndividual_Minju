@@ -182,7 +182,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
         public string CursoActual { get; set; }
         public string UltimoCursoAprobado { get; set; }
         public string AnioUltimoCursoAprobado { get; set; }
-        public float AsistenciaEscolar { get; set; }
+        public string AsistenciaEscolar { get; set; }
         public string RazonInasistencia { get; set; }
         public string PresentaRetraso { get; set; }
         public string NivelDiferencial { get; set; }

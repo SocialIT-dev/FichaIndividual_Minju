@@ -406,7 +406,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Mapper
                 dto.CursoActual = dr["CursoActual"].ToString();
                 dto.UltimoCursoAprobado = dr["UltimoCursoAprobado"].ToString();
                 dto.AnioUltimoCursoAprobado = dr["AnioUltimoCursoAprobado"].ToString();
-                dto.AsistenciaEscolar = float.Parse(dr["PromedioAsistencia"].ToString());
+                dto.AsistenciaEscolar = dr["PromedioAsistencia"].ToString();
                 dto.RazonInasistencia = dr["RazonInasistencia"].ToString();
                 dto.PresentaRetraso = dr["PresentaRetraso"].ToString();
                 dto.Observacion = dr["Observacion"].ToString();
