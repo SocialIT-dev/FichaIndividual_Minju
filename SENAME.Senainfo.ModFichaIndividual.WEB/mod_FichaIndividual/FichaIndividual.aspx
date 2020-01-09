@@ -23,14 +23,14 @@
     <script src="../js/moment.min.js"></script>
     <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
 
-<%--    <script src="Scripts/jquery-3.2.1.min.js"></script>
+   <%-- <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Scripts/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="Scripts/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="Content/css/fichaIndividual.css" />
+    <link rel="stylesheet" href="Content/css/fichaIndividual.css" />--%>
 
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
@@ -40,7 +40,7 @@
 
 <body>
 
-    <!-- titulo ficha, botonoes -->
+    <!-- titulo ficha, botones -->
     <div class="container-fluid" style="background: #F8F8F8;">
         <form id="forminju" runat="server">
             <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
@@ -740,14 +740,14 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-6 colmidgene hcol diflex">
                                             <p class="textauto">
-                                                ENFERMEDAD CRONICA CON DIAGNOSTICO MEDICO
+                                                ENFERMEDAD CRÓNICA CON DIAGNÓSTICO MÉDICO
                                             </p>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-6 colgeneralesmid hcol">
                                             <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtDiagnostico" runat="server" readonly="true" />
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-3 colmidgene hcol diflex">
-                                            <p class="textauto">ENFERMEDAD CRONICA</p>
+                                            <p class="textauto">ENFERMEDAD CRÓNICA</p>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-3 colgeneralesmidmid hcol">
                                             <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtCronica" runat="server" readonly="true" />
@@ -777,7 +777,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-5 colmidgene ntop2 hcol diflex">
                                             <p class="textauto">
-                                                RECIBE TRATAMIENTO DE ACUERDO AL DIAGNOSTICO
+                                                RECIBE TRATAMIENTO DE ACUERDO AL DIAGNÓSTICO
                                             </p>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidtop ntop2 hcol">
@@ -791,7 +791,7 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-5 colmidgene hcol diflex">
-                                            <p class="textauto">QUIEN REALIZA EL TRATAMIENTO</p>
+                                            <p class="textauto">QUIÉN REALIZA EL TRATAMIENTO</p>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-2 colgeneralesmidmid hcol">
                                             <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtTratadoPor" runat="server" readonly="true" />
@@ -1036,7 +1036,7 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-6 colmidgene hcol diflex">
-                                            <p class="textauto">RAZÓN INASISTENCIA Y/O DESERCION</p>
+                                            <p class="textauto">RAZÓN INASISTENCIA Y/O DESERCIÓN</p>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-6 colgeneralesmid hcol">
                                             <input type="text" class="inputfichaante" style="margin-top: 5px; margin-bottom: 5px; width: 100%;" id="txtRazonInasistencia" runat="server" readonly="true" />
@@ -1467,7 +1467,7 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-3 ntop2 colmidgene hcol diflex">
-                                            <p class="textauto">¿CON QUIEN?</p>
+                                            <p class="textauto">¿CON QUIÉN?</p>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-3  colgeneralesmidtop hcol ntop2">
@@ -1690,8 +1690,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-7 colmidgene hcol diflex">
                                             <p class="textauto">
-                                                SE VISUALIZA POSIBILIDAD DE RESTITUIR EL DERECHO A
-                        VIVIR EN FAMILIA
+                                                SE VISUALIZA POSIBILIDAD DE RESTITUIR EL DERECHO A VIVIR EN FAMILIA
                                             </p>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-5 colgeneralesmid hcol">
@@ -1720,7 +1719,7 @@
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-3 ntop2 colmidgene hcol diflex">
-                                            <p class="textauto">¿QUIEN LA REALIZA?</p>
+                                            <p class="textauto">¿QUIÉN LA REALIZA?</p>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-12 col-md-3 ntop2 colcodnino hcol">

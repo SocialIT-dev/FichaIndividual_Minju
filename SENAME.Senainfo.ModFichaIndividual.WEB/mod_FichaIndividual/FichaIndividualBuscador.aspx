@@ -22,7 +22,7 @@
     <script src="../js/moment.min.js"></script>
     <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
 
- <%--       <script src="Scripts/jquery-3.2.1.min.js"></script>
+<%--    <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />

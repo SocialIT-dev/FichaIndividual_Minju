@@ -80,6 +80,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
             return result;
         }
 
+        #region Control de Acceso
+
         #region ExisteToken
         public static bool existetoken(string token)
         {
@@ -213,5 +215,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
         }
         #endregion
     }
+
+    #endregion
 
 }
