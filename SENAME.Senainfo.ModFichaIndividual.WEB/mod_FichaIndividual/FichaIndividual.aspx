@@ -23,15 +23,16 @@
     <script src="../js/moment.min.js"></script>
     <link href="../css/jquery.ui.theme.css" rel="stylesheet" />
 
-   <%-- <script src="Scripts/jquery-3.2.1.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Scripts/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <script src="Scripts/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="Content/css/fichaIndividual.css" />--%>
-
+<%--    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <link href="content/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="content/bootstrap.min.css" rel="stylesheet" />
+    --%>
+    
+    <link rel="stylesheet" href="content/css/fichaindividual.css" />
+    <link href="scripts/datatables-1.10.20/css/jquery.datatables.min.css" rel="stylesheet" />
+    <script src="scripts/datatables-1.10.20/js/jquery.datatables.min.js"></script>
     <link href="Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script type='text/javascript' src="Scripts/sweetalert2/sweetalert2.all.min.js"></script>
     <script type='text/javascript' src="Scripts/Ficha_Individual/funcionesComunes.js"></script>
@@ -1735,8 +1736,7 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12 ntop2" style="padding-left: 0px;">
                                             <table id="tblMaltrato" class="table table-responsive cell-border" style="width: 100%; font-size: 10px;">
                                                 <thead>
-                                                    <tr 
-                                                        >
+                                                    <tr>
                                                         <th class="casocol col-xs-6 col-sm-6 col-md-2 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="NumeroCaso">Número de Caso</th>
                                                         <th class="circularcol col-xs-12 col-sm-12 col-md-1 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="Circular">Circular</th>
                                                         <th class="proyectocol col-xs-12 col-sm-12 col-md-1 colmidgene hcol textauto" style="font-size: 10px; height: 10px !important;" id="CodProyecto">Proyecto</th>

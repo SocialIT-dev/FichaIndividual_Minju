@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SENAME.Senainfo.ModFichaResidencial.WEB</RootNamespace>
-    <AssemblyName>SENAME.Senainfo.ModFichaResidencial.WEB</AssemblyName>
+    <RootNamespace>SENAME.Senainfo.ModFichaIndividual.WEB</RootNamespace>
+    <AssemblyName>SENAME.Senainfo.ModFichaIndividual.WEB</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -98,7 +98,6 @@
     <Content Include="mod_FichaIndividual\Content\css\Site.css" />
     <Content Include="mod_FichaIndividual\FichaIndividual.aspx" />
     <Content Include="mod_FichaIndividual\FichaIndividualBuscador.aspx" />
-    <Content Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx" />
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="mod_FichaIndividual\images\calendario.svg" />
     <Content Include="mod_FichaIndividual\images\loading.gif" />
@@ -188,13 +187,6 @@
     <Compile Include="mod_FichaIndividual\FichaIndividualBuscador.aspx.designer.cs">
       <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx.cs">
-      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="mod_FichaIndividual\FichaIndividualResultadosBusqueda.aspx.designer.cs">
-      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -237,7 +229,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53025</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:33333/ficharesidencial</IISUrl>
+          <IISUrl>http://localhost:33333/fichaindividual</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -8,6 +8,7 @@ var cabmodal = "SENAINFO ";
 
 $(document).ready(function () {
     CargaInicial();
+    $("#divTabla").hide();
 });
 
 function CargaInicial() {
@@ -90,9 +91,9 @@ function LimpiarFormularioBusquedaFI() {
 	document.getElementById("optMasculino").value = "";
 	$("#optFemenino").prop('checked', false);
 	$("#optMasculino").prop('checked', false);
-    $("#FichaIndividualResultadosBusqueda").html("");
     $("#lblMensaje").text("");
     $("#divMsjError").hide();
+    $("#divTabla").hide();
 
 }
 
@@ -179,7 +180,6 @@ function CargaProyectosInstitucion(codigoInstitucion) {
 }
 
 function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino, apellPaterno, sexoNino) {
-    $("#FichaIndividualResultadosBusqueda").html("");
     $("#lblMensaje").text("");
     $("#divMsjError").hide();
 	var parametros = JSON.stringify({
@@ -199,12 +199,6 @@ function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function (r) {
-			//alert("ajax OK");
-			// Ajax OK !
-			var proyecto = $("#FichaIndividualResultadosBusqueda");
-
-			proyecto.append("<div class='col-xs-12 col-sm-12 mytop1y'><hr class='hrmin'></div >");
-
             if (r.d[0] != null) {
                 if (r.d != "") {
                     if (r.d[0].Error == "" || r.d[0].Error == undefined) {
@@ -214,24 +208,39 @@ function ListarNinosConsulta(codInstitucion, codProyecto, rut, codNino, nombNino
                             $("#divMsjError").show();
                         }
                         else {
-                            $.each(r.d,
-                                function () {
-                                    //$("#FichaIndividualResultadosBusqueda").append("<option value='" + this.CodProyecto + "'>" + this.NombreProyecto + "</option>");
+                            $("#divTabla").show();
+                            var datatableBusqueda = $('#FichaIndividualResultadosBusqueda').DataTable({
+                                destroy: true,
+                                paging: true,
+                                pageLength: 20,
+                                pagingType: "full_numbers",
+                                searching: false,
+                                lengthChange: false,
+                                ordering: false,
+                                info: false,
+                                language: {                                   
+                                    "emptyTable": "No existen datos",
+                                    "paginate": {                        
+                                        "infoEmpty": "No se encontraron registros",
+                                        "first": "Primera",
+                                        "last": "Última",
+                                        "previous": "Anterior",
+                                        "next": "Siguiente"
+                                    }
+                                },
+                                data: r.d,
+                                columns: [
+                                    { "data": "Nombres" },
+                                    { "data": "Rut" },
+                                    { "data": "Boton" }
+                                ]
+                            });
 
-
-                                    $("#FichaIndividualResultadosBusqueda").append("<div class='row padding' style='margin-bottom:5px;'>");
-                                    $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Nombre</p> </div >");
-                                    $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Nombres + "'></input>");
-                                    $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2 mytop1 diflex colnombre mytop1y'> <p class= 'mrlautoinput'> Run o Nº Pasaporte</p> </div >");
-                                    $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-3 col-md-3 mytop1 colnombreinput'> <input type='text' class='form-control inputnombre' value = '" + this.Rut + "'></input>");
-                                    $("#FichaIndividualResultadosBusqueda").append("<div class='col-xs-2 col-md-2'> <button type='button' class='btn btn-primary' onclick='AbrirFicha(" + this.CodNino + "," + this.CodProyecto + ")'>Ver información </button>");
-                                    $("#FichaIndividualResultadosBusqueda").append("</div>");
-                                }
-                            );
                         }
                     }
                     else {
                         $('.modal').modal('hide');
+                        $("#divTabla").hide();
                         $("#lblMensaje").text("Existe un problema con la conexión a la base de datos, se agotó el tiempo de espera. Reintente nuevamente.");
                         $("#divMsjError").show();
                     }

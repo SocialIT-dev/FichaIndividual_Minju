@@ -77,6 +77,11 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
         {
             NiñosVigentesImpl NinosVigentesImpl = new NiñosVigentesImpl();
             var result = NinosVigentesImpl.ObtenerNiñosVigentes(CodInstitucion, CodProyecto, Rut, CodNino, NombNino, ApellPaterno, SexoNino);
+            foreach(NiñosVigentesDto nino in result)
+            {
+                nino.Nombres = nino.Nombres + " " + nino.ApellidoPaterno + " " + nino.ApellidoMaterno;
+                nino.Boton = "<button type ='button' class='btn btn-primary pull-right' onclick='AbrirFicha("+ nino.CodNino + "," + nino.CodProyecto + ")'>Ver información</button>";
+            }
             return result;
         }
 
