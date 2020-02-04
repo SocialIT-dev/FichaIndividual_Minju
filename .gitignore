@@ -1,10 +1,12 @@
 ﻿################################################################################
 # Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
 ################################################################################
-
 /SENAME.Senainfo.ModFichaIndividual.WEB/Web.Release.config
 /SENAME.Senainfo.ModFichaIndividual.WEB/Web.Debug.config
 /SENAME.Senainfo.ModFichaIndividual.WEB/Web.config
 /SENAME.Senainfo.ModFichaIndividual.BLL/obj
 /SENAME.Senainfo.ModFichaIndividual.DAL/obj
 /SENAME.Senainfo.ModFichaIndividual.WEB/obj/Debug
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/

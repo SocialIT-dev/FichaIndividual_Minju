@@ -404,6 +404,19 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.ModFichaIndividual
 
         #endregion
 
+        #region Imprimir Ficha
+
+        [WebMethod]
+        public static string ImprimirFicha(string codProyecto, string codnino, string secciones)
+        {
+            secciones = secciones.Substring(0, secciones.Length-1);
+            var listaSecciones = secciones.Split('|');
+            var parametros = codnino + "_" + codProyecto + "_" + secciones;
+            return "FichaIndividualRPT.aspx?parametros=" + parametros;
+        }
+
+        #endregion
+
         #region Control de Acceso
 
         #region ExisteToken

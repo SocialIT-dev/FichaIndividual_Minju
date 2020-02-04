@@ -12,9 +12,44 @@
         CargarGrillaMaltrato(cod_nino);
         CargarGrillaAgresor(cod_nino);
         CargarGrillaMedidas(cod_nino);
+        $("#btnImprimirFicha").click(function () {
+            ImprimirFicha(cod_nino);
+        });
+      
     }, 200);
 
+    $('#chkTodo').click(function () {
+        if ($('#chkTodo').is(':checked')) {
+            $('#chkGenerales').prop("checked", true);
+            $('#chkProcesales').prop("checked", true);
+            $('#chkSalud').prop("checked", true);
+            $('#chkEscolares').prop("checked", true);
+            $('#chkConsumo').prop("checked", true);
+            $('#chkFamiliar').prop("checked", true);
+            $('#chkVisitas').prop("checked", true);
+            $('#chkIntervencion').prop("checked", true);
+            $('#chkSugerenciaTribunal').prop("checked", true);
+            $('#chkSugerenciaSename').prop("checked", true);
+        }
+        else {
+            LimpiarSeleccionImprimir();
+        }
+    });
 });
+
+function LimpiarSeleccionImprimir() {
+    $('#chkGenerales').prop("checked", false);
+    $('#chkProcesales').prop("checked", false);
+    $('#chkSalud').prop("checked", false);
+    $('#chkEscolares').prop("checked", false);
+    $('#chkConsumo').prop("checked", false);
+    $('#chkFamiliar').prop("checked", false);
+    $('#chkVisitas').prop("checked", false);
+    $('#chkIntervencion').prop("checked", false);
+    $('#chkSugerenciaTribunal').prop("checked", false);
+    $('#chkSugerenciaSename').prop("checked", false);
+    $('#chkTodo').prop("checked", false);
+}
 
 function RefrescarVisitas(tipo) {
     $('#divLoading').modal('show');
@@ -216,3 +251,75 @@ function CargarGrillaMedidas(cod_nino) {
         });
     });
 }
+
+
+function ImprimirFicha(cod_nino) {
+    var secciones = ObtenerSeccionesSeleccionadas();
+
+    if (secciones != "") {
+        $('#divLoading').modal('show');
+        var parametros = JSON.stringify({
+            'codProyecto': $("#hdnCodProyecto").val(),
+            'codnino': cod_nino,
+            'secciones': secciones
+        });
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "FichaIndividual.aspx/ImprimirFicha",
+            data: parametros,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (r) {
+                $('#divLoading').modal('hide');
+                LimpiarSeleccionImprimir();
+                window.open(r.d);
+            },
+            error: function (r) {
+                $('#divLoading').modal('hide');
+                DesplegarExcepcionCriticaApp(r.responseText);
+            }
+        });
+    }
+    else {
+        $("#msgError").text("No ha seleccionado ninguna sección para imprimir");
+        $('#myModal').modal("show");       
+    }
+}
+
+function ObtenerSeccionesSeleccionadas() {
+    var secciones = "";
+    if ($('#chkGenerales').is(':checked')) {
+        secciones = "1AG|"; 
+    };
+    if ($('#chkProcesales').is(':checked')) {
+        secciones = secciones + "2AP|"; 
+    }
+    if ($('#chkSalud').is(':checked')) {
+        secciones = secciones + "3AS|";
+    }
+    if ($('#chkEscolares').is(':checked')) {
+        secciones = secciones + "4AE|";
+    }
+    if ($('#chkConsumo').is(':checked')) {
+        secciones = secciones + "5CO|";
+    }
+    if ($('#chkFamiliar').is(':checked')){
+        secciones = secciones + "6SF|";
+    }
+    if ($('#chkVisitas').is(':checked')) {
+        secciones = secciones + "7VI|";
+    }
+    if ($('#chkIntervencion').is(':checked')) {
+        secciones = secciones + "8PI|";
+    }
+    if ($('#chkSugerenciaTribunal').is(':checked')) {
+        secciones = secciones + "9ST|";
+    }
+    if ($('#chkSugerenciaSename').is(':checked')) {
+        secciones = secciones + "10SS|";
+    }
+    return secciones;
+}
+
+

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada a un ensamblado.
-[assembly: AssemblyTitle("SENAME.Senainfo.ModFichaResidencial.WEB")]
+[assembly: AssemblyTitle("SENAME.Senainfo.ModFichaIndividual.WEB")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SENAME.Senainfo.ModFichaResidencial.WEB")]
+[assembly: AssemblyProduct("SENAME.Senainfo.ModFichaIndividual.WEB")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

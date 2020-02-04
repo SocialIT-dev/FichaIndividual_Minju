@@ -293,7 +293,50 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
                 ControlExcepcion ce = new ControlExcepcion();
                 glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
 
-                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerAntecedentesGenerales";
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerAntecedentesProcesales";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+
+        public DataTable ObtenerCausalesIngreso(string codNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("[dbo].[GetCausalesDeIngresoPorCodNino]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodNino", codNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerCausalesIngreso";
 
                 dr["Error"] = glosaError;
                 dt.Rows.Add(dr);
@@ -400,6 +443,52 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
                 return dt;
             }
         }
+
+        public DataTable ObtenerDetalleAnualReporte(string Anio, int CodProyecto, int CodNino)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("[FichaInd].[GetVisitasDetalleReporte]", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Año", Anio);
+                        cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto);
+                        cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("Error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerDetalleAnualReporte";
+
+                dr["Error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+
     }
 
 
@@ -498,7 +587,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
             }
         }
 
-        
+
     }
 
     #endregion
@@ -873,5 +962,6 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     }
 
     #endregion
+
 
 }

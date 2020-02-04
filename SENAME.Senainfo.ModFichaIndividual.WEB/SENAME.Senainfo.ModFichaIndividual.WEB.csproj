@@ -16,10 +16,11 @@
     <AssemblyName>SENAME.Senainfo.ModFichaIndividual.WEB</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -59,6 +60,10 @@
     <Reference Include="AJAXExtensionsToolbox">
       <HintPath>..\lib\AJAXExtensionsToolbox.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Elmah">
       <HintPath>..\lib\Elmah.dll</HintPath>
     </Reference>
@@ -98,9 +103,13 @@
     <Content Include="mod_FichaIndividual\Content\css\Site.css" />
     <Content Include="mod_FichaIndividual\FichaIndividual.aspx" />
     <Content Include="mod_FichaIndividual\FichaIndividualBuscador.aspx" />
+    <Content Include="mod_FichaIndividual\FichaIndividualRPT.aspx" />
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="mod_FichaIndividual\images\calendario.svg" />
+    <Content Include="mod_FichaIndividual\images\isologo_minjuddhh2018.png" />
     <Content Include="mod_FichaIndividual\images\loading.gif" />
+    <Content Include="mod_FichaIndividual\images\logo-poder-judicial-chile.png" />
+    <Content Include="mod_FichaIndividual\images\logo-sename-2019-180.png" />
     <Content Include="mod_FichaIndividual\images\pdf.svg" />
     <Content Include="mod_FichaIndividual\images\pdf_gray.svg" />
     <Content Include="mod_FichaIndividual\images\pregunta_12png.png" />
@@ -187,6 +196,19 @@
     <Compile Include="mod_FichaIndividual\FichaIndividualBuscador.aspx.designer.cs">
       <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividualRPT.aspx.cs">
+      <DependentUpon>FichaIndividualRPT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\FichaIndividualRPT.aspx.designer.cs">
+      <DependentUpon>FichaIndividualRPT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\reportes\rpt_fichaIndividual.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_fichaIndividual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SENAME.Senainfo.ModFichaIndividual.BLL\SENAME.Senainfo.ModFichaIndividual.BLL.csproj">
@@ -209,6 +232,12 @@
       <Project>{e6b3a6d0-e2fe-46d6-8e66-1a049d66f253}</Project>
       <Name>SENAME.Senainfo.ModFichaIndividual.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mod_FichaIndividual\reportes\rpt_fichaIndividual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_fichaIndividual.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -225,16 +254,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53025</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:33333/fichaindividual</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
