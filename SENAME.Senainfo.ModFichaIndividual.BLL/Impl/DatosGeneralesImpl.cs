@@ -108,6 +108,22 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         }
     }
 
+    public class CausalesDeIngresoImpl : ICausalesDeIngreso
+    {
+        private readonly CausalesDeIngresoDao _causalesDeIngresoDao;
+
+        public CausalesDeIngresoImpl()
+        {
+            _causalesDeIngresoDao = new CausalesDeIngresoDao();
+        }
+
+        public DTO.CausalesDeIngresoDto ObtenerCausalesDeIngreso(string codNino)
+        {
+            var result = _causalesDeIngresoDao.ObtenerCausalesIngreso(codNino);
+            return CausalesDeIngresoMapper.ToDto(result);
+        }
+    }
+
     #endregion
 
     #region Detalle Visitas
@@ -304,10 +320,11 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
 
     #region Reportes
 
-    public class ReporteFichaIndividualImpl 
+    public class ReporteFichaIndividualImpl
     {
         private readonly AntecedentesGeneralesPJUDDao _antecedentesGenerales;
         private readonly AntecedentesProcesalesPJUDDao _antecedentesProcesalesPJUDDao;
+        private readonly CausalesDeIngresoDao _causalesDeIngresoDao;
         private readonly DetalleAnualDao _detalleAnualDao;
         private readonly AntecedentesSaludDao _antecedentesSaludDao;
         private readonly SituacionFamiliarDao _situacionFamiliarDao;
@@ -317,11 +334,13 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
         private readonly MaltratoIntraResidencialDao _maltratoDao;
         private readonly CasoAgresorDao _agresorDao;
         private readonly MedidaImplementadaDao _medidaImplementadaDao;
+        private readonly AntecedentesVisitasSenameDao _antecedentesVisitasSenameDao;
 
         public ReporteFichaIndividualImpl()
         {
             _antecedentesGenerales = new AntecedentesGeneralesPJUDDao();
             _antecedentesProcesalesPJUDDao = new AntecedentesProcesalesPJUDDao();
+            _causalesDeIngresoDao = new CausalesDeIngresoDao();
             _procesoIntervencionDao = new ProcesoIntervencionDao();
             _detalleAnualDao = new DetalleAnualDao();
             _antecedentesSaludDao = new AntecedentesSaludDao();
@@ -332,6 +351,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
             _maltratoDao = new MaltratoIntraResidencialDao();
             _agresorDao = new CasoAgresorDao();
             _medidaImplementadaDao = new MedidaImplementadaDao();
+            _antecedentesVisitasSenameDao = new AntecedentesVisitasSenameDao();
         }
 
         public System.Data.DataSet ObtenerDatosReporteFicha(int CodNino, int codProyecto)
@@ -339,8 +359,10 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
             var ds = new System.Data.DataSet();
             var dtDatosGen = _antecedentesGenerales.ObtenerAntecedentesGenerales(CodNino.ToString(), codProyecto);
             var dtAntecedenesProcesales = _antecedentesProcesalesPJUDDao.ObtenerAntecedentesProcesalesPJUD(CodNino.ToString());
-            var dtCausalesIngreso = _antecedentesProcesalesPJUDDao.ObtenerCausalesIngreso(CodNino.ToString());
-            var dtDetalleAnual = _detalleAnualDao.ObtenerDetalleAnualReporte("2020",codProyecto, CodNino);
+            var dtCausalesIngreso = _causalesDeIngresoDao.ObtenerCausalesIngreso(CodNino.ToString());
+            var dtDetallesVisita = _antecedentesVisitasSenameDao.ObtenerAntecedentesVisita(CodNino);
+            var dtDetalleAnual = _detalleAnualDao.ObtenerDetalleAnualReporte("2020", codProyecto, CodNino);
+            var dtPernoctacionDetalle = _detalleAnualDao.ObtenerPernoctacionDetalle("2020", codProyecto, CodNino);
             var dtAntecedentesSalud = _antecedentesSaludDao.ObtenerAntecedentesSalud(CodNino);
             var dtSituacionFamiliar = _situacionFamiliarDao.ObtenerSituacionFamiliar(CodNino);
             var dtAntecedentesConsumo = _antecedentesConsumoDao.ObtenerAntecedentesConsumo(CodNino);
@@ -349,18 +371,20 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Impl
             var dtMaltrato = _maltratoDao.ObtenerMaltratoIntraResidencial(CodNino);
             var dtAgresor = _agresorDao.ObtenerCasoAgresor(CodNino);
             var dtMedidas = _medidaImplementadaDao.ObtenerMedidasIMplementadas(CodNino);
-            ds.Tables.Add("dtDatosGen");
-            ds.Tables.Add("dtAntecedenesProcesales");
-            ds.Tables.Add("dtCausalesIngreso");
-            ds.Tables.Add("dtDetalleAnual");
-            ds.Tables.Add("dtAntecedentesSalud");
-            ds.Tables.Add("dtSituacionFamiliar");
-            ds.Tables.Add("dtAntecedentesConsumo");
-            ds.Tables.Add("dtAntecedentesEscolares");
-            ds.Tables.Add("dtProcesoInterv");
-            ds.Tables.Add("dtMaltrato");
-            ds.Tables.Add("dtAgresor");
-            ds.Tables.Add("dtMedidas");
+            ds.Tables.Add(dtDatosGen);
+            ds.Tables.Add(dtAntecedenesProcesales);
+            ds.Tables.Add(dtCausalesIngreso);
+            ds.Tables.Add(dtDetallesVisita);
+            ds.Tables.Add(dtDetalleAnual);
+            ds.Tables.Add(dtPernoctacionDetalle);
+            ds.Tables.Add(dtAntecedentesSalud);
+            ds.Tables.Add(dtSituacionFamiliar);
+            ds.Tables.Add(dtAntecedentesConsumo);
+            ds.Tables.Add(dtAntecedentesEscolares);
+            ds.Tables.Add(dtProcesoInterv);
+            ds.Tables.Add(dtMaltrato);
+            ds.Tables.Add(dtAgresor);
+            ds.Tables.Add(dtMedidas);
             return ds;
         }
     }

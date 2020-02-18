@@ -210,7 +210,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerAntecedentesGenerales(string codNino, int codProyecto)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtDatosGen");
             try
             {
                 using (var con = GetConnection())
@@ -261,7 +261,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerAntecedentesProcesalesPJUD(string codNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtAntecedenesProcesales");
             try
             {
                 using (var con = GetConnection())
@@ -301,16 +301,23 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
                 return dt;
             }
         }
+    }
 
+    #endregion
+
+    #region Antecedentes Procesales
+
+    public class CausalesDeIngresoDao : Repository
+    {
         public DataTable ObtenerCausalesIngreso(string codNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtCausalesIngreso");
             try
             {
                 using (var con = GetConnection())
                 {
                     con.Open();
-                    using (var cmd = new SqlCommand("[dbo].[GetCausalesDeIngresoPorCodNino]", con))
+                    using (var cmd = new SqlCommand("[FichaInd].[GetCausalesDeIngresoPorCodNino]", con))
                     {
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -345,9 +352,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
             }
         }
     }
-
     #endregion
-
     #region Detalle Visitas
 
     public class DetalleAnualDao : Repository
@@ -446,7 +451,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
 
         public DataTable ObtenerDetalleAnualReporte(string Anio, int CodProyecto, int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtDetalleAnual");
             try
             {
                 using (var con = GetConnection())
@@ -489,14 +494,61 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
             }
         }
 
+    
+
+    public DataTable ObtenerPernoctacionDetalle(string Anio, int CodProyecto, int CodNino)
+    {
+        DataTable dt = new DataTable("dtPernoctacionDetalle");
+        try
+        {
+            using (var con = GetConnection())
+            {
+                con.Open();
+                using (var cmd = new SqlCommand("[FichaInd].[GetPernoctacionDetalleReporte]", con))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Año", Anio);
+                    cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto);
+                    cmd.Parameters.AddWithValue("@CodNino", CodNino);
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+
+                    DataColumn columNew = dt.Columns.Add("Error", typeof(String));
+                    columNew.DefaultValue = "";
+
+                    return dt;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+
+            DataColumn colum = dt.Columns.Add("Error", typeof(String));
+            DataRow dr = dt.NewRow();
+
+            string glosaError = "";
+            ControlExcepcion ce = new ControlExcepcion();
+            glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+            if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerDetalleAnualReporte";
+
+            dr["Error"] = glosaError;
+            dt.Rows.Add(dr);
+
+            return dt;
+        }
     }
 
+}
 
-    public class AntecedentesVisitasSenameDao : Repository
+
+public class AntecedentesVisitasSenameDao : Repository
     {
         public DataTable ObtenerAntecedentesVisita(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtDetallesVisita");
             try
             {
                 using (var con = GetConnection())
@@ -546,7 +598,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerAntecedentesSalud(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtAntecedentesSalud");
             try
             {
                 using (var con = GetConnection())
@@ -598,7 +650,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerSituacionFamiliar(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtSituacionFamiliar");
             try
             {
                 using (var con = GetConnection())
@@ -650,7 +702,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerAntecedentesConsumo(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtAntecedentesConsumo");
             try
             {
                 using (var con = GetConnection())
@@ -702,7 +754,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerAntecedentesEscolares(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtAntecedentesEscolares");
             try
             {
                 using (var con = GetConnection())
@@ -754,7 +806,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerProcesoIntervencion(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtProcesoInterv");
             try
             {
                 using (var con = GetConnection())
@@ -800,7 +852,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerMaltratoIntraResidencial(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtMaltrato");
             try
             {
                 using (var con = GetConnection())
@@ -847,7 +899,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerCasoAgresor(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtAgresor");
             try
             {
                 using (var con = GetConnection())
@@ -894,7 +946,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.DAL.DAO
     {
         public DataTable ObtenerMedidasIMplementadas(int CodNino)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("dtMedidas");
             try
             {
                 using (var con = GetConnection())

@@ -16,14 +16,14 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_fichaIndividual : ReportClass {
+    public class fichaIndividual : ReportClass {
         
-        public rpt_fichaIndividual() {
+        public fichaIndividual() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_fichaIndividual.rpt";
+                return "fichaIndividual.rpt";
             }
             set {
                 // Do nothing
@@ -41,8 +41,8 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         public override string FullResourceName {
             get {
-                return "SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes.rpt_fichaIndi" +
-                    "vidual.rpt";
+                return "SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes.fichaIndividu" +
+                    "al.rpt";
             }
             set {
                 // Do nothing
@@ -75,7 +75,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection20 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection6 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -83,7 +83,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection19 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection7 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -91,7 +91,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection18 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection8 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -99,7 +99,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection17 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection9 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -107,7 +107,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection16 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection10 {
             get {
                 return this.ReportDefinition.Sections[7];
             }
@@ -115,7 +115,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection15 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
             get {
                 return this.ReportDefinition.Sections[8];
             }
@@ -123,7 +123,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection14 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
             get {
                 return this.ReportDefinition.Sections[9];
             }
@@ -131,7 +131,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection13 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection3 {
             get {
                 return this.ReportDefinition.Sections[10];
             }
@@ -139,7 +139,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection12 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
             get {
                 return this.ReportDefinition.Sections[11];
             }
@@ -163,105 +163,17 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_CodNino {
+        public CrystalDecisions.Shared.IParameterField Parameter_secciones {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_CodProyecto {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetalleAgresor_CodNino {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetalleMaltrato_CodNino {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetalleMedidas_CodNino {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetallePernoctacion_Año {
-            get {
-                return this.DataDefinition.ParameterFields[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetallePernoctacion_CodProyecto {
-            get {
-                return this.DataDefinition.ParameterFields[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetallePernoctacion_CodNino {
-            get {
-                return this.DataDefinition.ParameterFields[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetalleVisitas_Año {
-            get {
-                return this.DataDefinition.ParameterFields[8];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetalleVisitas_CodProyecto {
-            get {
-                return this.DataDefinition.ParameterFields[9];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DetalleVisitas_CodNino {
-            get {
-                return this.DataDefinition.ParameterFields[10];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_causales_CodNino {
-            get {
-                return this.DataDefinition.ParameterFields[11];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_fichaIndividual : Component, ICachedReport {
+    public class CachedfichaIndividual : Component, ICachedReport {
         
-        public Cachedrpt_fichaIndividual() {
+        public CachedfichaIndividual() {
         }
         
         [Browsable(false)]
@@ -298,7 +210,7 @@ namespace SENAME.Senainfo.ModFichaIndividual.WEB.mod_FichaIndividual.reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_fichaIndividual rpt = new rpt_fichaIndividual();
+            fichaIndividual rpt = new fichaIndividual();
             rpt.Site = this.Site;
             return rpt;
         }

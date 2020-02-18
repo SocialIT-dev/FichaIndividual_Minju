@@ -32,6 +32,12 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.Interfaces
 
     }
 
+    public interface ICausalesDeIngreso
+    {
+        DTO.CausalesDeIngresoDto ObtenerCausalesDeIngreso(string codNino);
+
+    }
+
     public interface IDetalleAnual
     {
         DTO.DetalleAnualDto ObtenerDetalleAnualVisita(string Usuario, string Anio, int CodProyecto, int CodNino);

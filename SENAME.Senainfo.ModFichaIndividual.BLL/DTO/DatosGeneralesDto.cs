@@ -151,6 +151,15 @@ namespace SENAME.Senainfo.ModFichaIndividual.BLL.DTO
 
     #endregion
 
+    #region Causales de Ingreso
+    public class CausalesDeIngresoDto
+    {
+        public string CausalIngreso { get; set; }
+        public string Error { get; set; }
+    }
+
+    #endregion
+
     #region Antecedentes de Salud
 
     public class AntecedentesSaludDto
