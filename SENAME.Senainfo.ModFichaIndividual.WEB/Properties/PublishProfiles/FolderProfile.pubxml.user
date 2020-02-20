@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Social IT\Desktop\WebSite</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="bin/AJAXExtensionsToolbox.dll">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ClientDoc.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommLayer.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonControls.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonObjectModel.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Controllers.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CubeDefModel.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataDefModel.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ObjectFactory.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Prompting.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ReportDefModel.dll">
+      <publishTime>06/12/2018 05:53:18</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.XmlSerialize.dll">
+      <publishTime>06/12/2018 05:53:20</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>06/12/2018 05:53:20</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>06/12/2018 05:53:20</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>06/12/2018 05:53:20</publishTime>
+    </File>
+    <File Include="bin/Elmah.dll">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="bin/SenainfoSdk.Kernel.dll">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="bin/SenainfoSdk.UI.dll">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="bin/SENAME.Senainfo.ModFichaIndividual.BLL.dll">
+      <publishTime>02/20/2020 13:09:34</publishTime>
+    </File>
+    <File Include="bin/SENAME.Senainfo.ModFichaIndividual.BLL.pdb">
+      <publishTime>02/20/2020 13:09:34</publishTime>
+    </File>
+    <File Include="bin/SENAME.Senainfo.ModFichaIndividual.DAL.dll">
+      <publishTime>02/19/2020 16:44:28</publishTime>
+    </File>
+    <File Include="bin/SENAME.Senainfo.ModFichaIndividual.DAL.pdb">
+      <publishTime>02/19/2020 16:44:28</publishTime>
+    </File>
+    <File Include="bin/SENAME.Senainfo.ModFichaIndividual.WEB.dll">
+      <publishTime>02/20/2020 13:09:35</publishTime>
+    </File>
+    <File Include="bin/SENAME.Senainfo.ModFichaIndividual.WEB.pdb">
+      <publishTime>02/20/2020 13:09:35</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>02/04/2020 10:39:35</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap-theme.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap-theme.css.map">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap-theme.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap-theme.min.css.map">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap.css.map">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/bootstrap.min.css.map">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/css/fichaIndividual.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/css/FI_Diseño.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/css/minju.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Content/css/Site.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/FichaIndividual.aspx">
+      <publishTime>02/19/2020 16:40:57</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/FichaIndividualBuscador.aspx">
+      <publishTime>02/19/2020 18:04:04</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/FichaIndividualRPT.aspx">
+      <publishTime>02/20/2020 12:51:43</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/calendario.svg">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/isologo_minjuddhh2018.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/loading.gif">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/logo-poder-judicial-chile.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/logo-sename-2019-180.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/pdf.svg">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/pdf_gray.svg">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/pregunta_12png.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/images/volver.svg">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/reportes/DataSet1.xsc">
+      <publishTime>02/14/2020 16:53:56</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/reportes/DataSet1.xss">
+      <publishTime>02/14/2020 16:53:56</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/bootstrap.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/bootstrap.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/bootstrap_3.3.7.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.bootstrap.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.bootstrap.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.bootstrap4.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.bootstrap4.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.foundation.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.foundation.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.jqueryui.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.jqueryui.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.semanticui.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/dataTables.semanticui.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/jquery.dataTables.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/css/jquery.dataTables.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/images/sort_asc.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/images/sort_asc_disabled.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/images/sort_both.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/images/sort_desc.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/images/sort_desc_disabled.png">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/js/dataTables.bootstrap.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/js/dataTables.bootstrap4.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/DataTables-1.10.20/js/jquery.dataTables.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/Ficha_Individual/fichaIndividual.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/Ficha_Individual/FI_Buscador.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/Ficha_Individual/funcionesComunes.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/jquery-3.2.1.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/modernizr-2.8.3.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/sweetalert2/sweetalert2.all.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/sweetalert2/sweetalert2.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/sweetalert2/sweetalert2.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/sweetalert2/sweetalert2.min.css">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/sweetalert2/sweetalert2.min.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/DetailsView.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/Focus.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/GridView.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/Menu.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MenuStandards.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjax.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxComponentModel.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxCore.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxGlobalization.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxHistory.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxNetwork.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxSerialization.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxTimer.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/MSAjax/MicrosoftAjaxWebServices.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/SmartNav.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/TreeView.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/WebForms.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/WebParts.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="mod_FichaIndividual/Scripts/WebForms/WebUIValidation.js">
+      <publishTime>02/04/2020 16:07:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/20/2020 12:26:53</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -60,10 +60,10 @@
     <Reference Include="AJAXExtensionsToolbox">
       <HintPath>..\lib\AJAXExtensionsToolbox.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Elmah">
       <HintPath>..\lib\Elmah.dll</HintPath>
     </Reference>
@@ -176,6 +176,17 @@
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="mod_FichaIndividual\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="mod_FichaIndividual\reportes\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="mod_FichaIndividual\reportes\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="mod_FichaIndividual\reportes\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -203,10 +214,24 @@
     <Compile Include="mod_FichaIndividual\FichaIndividualRPT.aspx.designer.cs">
       <DependentUpon>FichaIndividualRPT.aspx</DependentUpon>
     </Compile>
-    <Compile Include="mod_FichaIndividual\reportes\rpt_fichaIndividual.cs">
+    <Compile Include="mod_FichaIndividual\reportes\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\reportes\DataSet1.Designer.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_fichaIndividual.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\reportes\fichaIndividual.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fichaIndividual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="mod_FichaIndividual\reportes\rpt_fichaIndividual2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_fichaIndividual2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -234,9 +259,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="mod_FichaIndividual\reportes\rpt_fichaIndividual.rpt">
+    <EmbeddedResource Include="mod_FichaIndividual\reportes\fichaIndividual.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_fichaIndividual.cs</LastGenOutput>
+      <LastGenOutput>fichaIndividual.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mod_FichaIndividual\reportes\rpt_fichaIndividual2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_fichaIndividual2.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
